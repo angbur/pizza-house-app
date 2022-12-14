@@ -1,34 +1,42 @@
-const colorNames= ['primary', 'secondary','tertiary', 'accent', 'background'] as const;
-const colorHue = ['main','light', 'lighter', 'dark', 'darker', 'contrastColor'] as const;
-const typographyNames = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'body1', 'body2', 'paragraph', 'button', 'caption', 'subtitle1', 'subtitle2'] as const;
-const typographyProperties = ['fontFamily', 'fontSize', 'fontWeight', 'lineHeight'] as const;
-const breakpoints = ['xs', 'sm', 'md', 'lg', 'xl'] as const;
+const properties = {
+  colorNames: ['primary', 'secondary', 'tertiary', 'accent', 'background'],
+  colorHue: ['main', 'light', 'lighter', 'dark', 'darker', 'contrastColor'],
+  typographyNames: [
+    'h1',
+    'h2',
+    'h3',
+    'h4',
+    'h5',
+    'h6',
+    'body1',
+    'body2',
+    'paragraph',
+    'button',
+    'caption',
+    'subtitle1',
+    'subtitle2',
+  ],
+  typographyProperties: ['fontFamily', 'fontSize', 'fontWeight', 'lineHeight'],
+  breakpoints: ['xs', 'sm', 'md', 'lg', 'xl'],
+} as const;
 
 type Getters<T extends string, K> = {
-    [k in T]?: K
+  [k in T]?: K;
 };
 
-type ColorNameInPalette = (typeof colorNames)[number];
 type HexColor = `#${string}`;
-type ColorHue = (typeof colorHue)[number];
 
-type ColorHueType = Getters<ColorHue, HexColor>;
 type Color = HexColor;
+type ColorHueType = Getters<typeof properties.colorHue[number], HexColor>;
+type PaletteType = Getters<typeof properties.colorNames[number], Color | ColorHueType>;
 
-type BreakpointsNameInPalette = (typeof breakpoints)[number];
+type BreakpointsType = Getters<typeof properties.breakpoints[number], number>;
 
-type TypographyNameInPalette = (typeof typographyNames)[number];
-type TypographyPropertiesTypes = (typeof typographyProperties)[number];
-
-type PaletteType = Getters<ColorNameInPalette, (Color | ColorHueType)>;
-
-type BreakpointsType = Getters<BreakpointsNameInPalette, number>;
-
-type TypographyProps = Getters<TypographyPropertiesTypes, string>;
-type TypographyType = Getters<TypographyNameInPalette, TypographyProps>;
+type TypographyProps = Getters<typeof properties.typographyProperties[number], string>;
+type TypographyType = Getters<typeof properties.typographyNames[number], TypographyProps>;
 
 export type Theme = {
-    palette: PaletteType;
-    typography?: TypographyType;
-    breakpoints?: BreakpointsType;
+  palette: PaletteType;
+  typography?: TypographyType;
+  breakpoints?: BreakpointsType;
 };
