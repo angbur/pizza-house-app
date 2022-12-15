@@ -1,6 +1,15 @@
 const properties = {
-  colorNames: ['primary', 'secondary', 'tertiary', 'accent', 'background'],
-  colorHue: ['main', 'light', 'lighter', 'dark', 'darker', 'contrastColor'],
+  colorNames: [
+    'primary',
+    'primaryDark',
+    'secondary',
+    'secondaryDark',
+    'light',
+    'tertiary',
+    'accent',
+    'background',
+    'contrastColor',
+  ],
   typographyNames: [
     'h1',
     'h2',
@@ -24,11 +33,9 @@ type Getters<T extends string, K> = {
   [k in T]?: K;
 };
 
-type HexColor = `#${string}`;
+export type HexColor = `#${string}`;
 
-type Color = HexColor;
-type ColorHueType = Getters<typeof properties.colorHue[number], HexColor>;
-type PaletteType = Getters<typeof properties.colorNames[number], Color | ColorHueType>;
+type PaletteType = Getters<typeof properties.colorNames[number], HexColor>;
 
 type BreakpointsType = Getters<typeof properties.breakpoints[number], number>;
 
@@ -36,7 +43,7 @@ type TypographyProps = Getters<typeof properties.typographyProperties[number], s
 type TypographyType = Getters<typeof properties.typographyNames[number], TypographyProps>;
 
 export type Theme = {
-  palette: PaletteType;
+  palette: Partial<PaletteType>;
   typography?: TypographyType;
   breakpoints?: BreakpointsType;
 };

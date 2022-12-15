@@ -1,58 +1,72 @@
 import clsx from 'clsx';
 import { CSSProperties, MouseEventHandler, PropsWithChildren } from 'react';
-import styled from 'styled-components';
 import { Theme } from '../../Theme/theme.types';
+import {
+  PrimaryDarkButton,
+  PrimaryLightButton,
+  SecondaryDarkButton,
+  SecondaryLightButton,
+  TextDarkButton,
+  TextLightButton,
+} from './Button.styles';
+import setButtonSize from './setButtonSize';
 
-type ButtonVariant = 'primary' | 'secondary' | 'button-text';
-type ButtonSize = 'sm' | 'md' | 'lg';
+export const buttonVariants = [
+  'primary-light',
+  'primary-dark',
+  'secondary-light',
+  'secondary-dark',
+  'button-text-light',
+  'button-text-dark',
+] as const;
 
-const BaseButton = styled.button`
-  font-size: 1em;
-  text-transform: uppercase;
-  font-weight: 600;
-  letter-spacing: 1px;
-  line-height: 1.4;
-  margin: 1em;
-  padding: 0.625rem 1.25rem;
-  border-radius: 8px;
-  border: 1px solid ${(props) => props.theme.palette.primary.main};
-  background: ${(props) => props.theme.palette.primary.main};
-  color: ${(props) => props.theme.palette.primary.contrastColor};
-  cursor: pointer;
-  &:hover {
-    border: 1px solid ${(props) => props.theme.palette.primary.dark};
-    background: ${(props) => props.theme.palette.primary.dark};
-  }
-`;
+type ButtonVariant = typeof buttonVariants[number];
+export const buttonSizes = ['sm', 'md', 'lg'] as const;
+type ButtonSize = typeof buttonSizes[number];
 
 export type ButtonProps = {
   variant?: ButtonVariant;
   size?: ButtonSize;
   className?: string;
-  style?: CSSProperties;
   theme?: Theme;
+  style?: CSSProperties;
   onClick?: MouseEventHandler<HTMLButtonElement>;
 };
 
 const Button = ({
-  variant = 'primary',
+  variant = 'primary-light',
   size = 'lg',
   className,
   style,
-  children,
   theme,
+  children,
   onClick,
 }: PropsWithChildren<ButtonProps>) => {
+  const props = {
+    className: clsx(variant, `btn-${size}`, className, 'button'),
+    onClick: onClick,
+    style: setButtonSize({ size, style }),
+    theme: theme,
+  };
+
   return (
-    <BaseButton
-      className={clsx(variant, size, className)}
-      onClick={onClick}
-      type={'button'}
-      style={style}
-      theme={theme}
-    >
-      {children}
-    </BaseButton>
+    <>
+      {variant === 'primary-light' ? (
+        <PrimaryLightButton {...props}>{children}</PrimaryLightButton>
+      ) : variant === 'primary-dark' ? (
+        <PrimaryDarkButton {...props}>{children}</PrimaryDarkButton>
+      ) : variant === 'secondary-light' ? (
+        <SecondaryLightButton {...props}>{children}</SecondaryLightButton>
+      ) : variant === 'secondary-dark' ? (
+        <SecondaryDarkButton {...props}>{children}</SecondaryDarkButton>
+      ) : variant === 'button-text-light' ? (
+        <TextLightButton {...props}>{children}</TextLightButton>
+      ) : variant === 'button-text-dark' ? (
+        <TextDarkButton {...props}>{children}</TextDarkButton>
+      ) : (
+        <PrimaryLightButton {...props}>{children}</PrimaryLightButton>
+      )}
+    </>
   );
 };
 
