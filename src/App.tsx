@@ -1,8 +1,14 @@
-import './App.css';
-import Button from './components/Atoms/Button';
+import { useContext } from 'react';
+import Button from './components/Atoms/Button/Button';
+import { ThemeContext } from './components/Theme/ThemeContext';
 
 const App = () => {
-  return <Button variant={'primary'}>Hi</Button>;
+  const theme = useContext(ThemeContext);
+  return (
+    <Button variant={'primary'} theme={theme}>
+      Hi
+    </Button>
+  );
 };
 
 export default App;
