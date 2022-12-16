@@ -2,6 +2,7 @@ import clsx from 'clsx';
 import { CSSProperties, MouseEventHandler, PropsWithChildren } from 'react';
 import { Theme } from '../../Theme/theme.types';
 import {
+  IconButton,
   PrimaryDarkButton,
   PrimaryLightButton,
   SecondaryDarkButton,
@@ -18,6 +19,7 @@ export const buttonVariants = [
   'secondary-dark',
   'button-text-light',
   'button-text-dark',
+  'icon-button',
 ] as const;
 
 type ButtonVariant = typeof buttonVariants[number];
@@ -63,6 +65,8 @@ const Button = ({
         <TextLightButton {...props}>{children}</TextLightButton>
       ) : variant === 'button-text-dark' ? (
         <TextDarkButton {...props}>{children}</TextDarkButton>
+      ) : variant === 'icon-button' ? (
+        <IconButton {...props}>{children}</IconButton>
       ) : (
         <PrimaryLightButton {...props}>{children}</PrimaryLightButton>
       )}
