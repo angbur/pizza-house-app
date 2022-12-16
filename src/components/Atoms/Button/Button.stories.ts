@@ -1,21 +1,18 @@
 import { Meta, Story } from '@storybook/react';
-import Button, { ButtonProps } from './Button';
 import { getInitialTheme } from '../../Theme/initialTheme';
+import Button, { ButtonProps, buttonSizes, buttonVariants } from './Button';
 
 export default {
   component: Button,
   title: 'Atoms/Button',
   argTypes: {
-    variant: {
-      options: ['primary', 'secondary', 'button-text'],
-      control: { type: 'radio' },
-    },
+    variant: buttonVariants,
     size: {
-      options: ['sm', 'md', 'lg'],
+      options: buttonSizes,
       control: { type: 'radio' },
     },
     children: {
-      defaultValue: 'Click me',
+      defaultValue: 'Press me',
     },
   },
 } as Meta;
@@ -24,5 +21,35 @@ const Template: Story<ButtonProps> = (args) => Button({ theme: getInitialTheme()
 
 export const Base = Template.bind({});
 Base.args = {
-  variant: 'primary',
+  variant: 'primary-light',
+};
+
+export const PrimaryLight = Template.bind({});
+PrimaryLight.args = {
+  variant: 'primary-light',
+};
+
+export const PrimaryDark = Template.bind({});
+PrimaryDark.args = {
+  variant: 'primary-dark',
+};
+
+export const SecondaryLight = Template.bind({});
+SecondaryLight.args = {
+  variant: 'secondary-light',
+};
+
+export const SecondaryDark = Template.bind({});
+SecondaryDark.args = {
+  variant: 'secondary-dark',
+};
+
+export const ButtonTextLight = Template.bind({});
+ButtonTextLight.args = {
+  variant: 'button-text-light',
+};
+
+export const ButtonTextDark = Template.bind({});
+ButtonTextDark.args = {
+  variant: 'button-text-dark',
 };

@@ -1,13 +1,15 @@
-import { useContext } from 'react';
-import Button from './components/Atoms/Button/Button';
+import { Fragment, useContext } from 'react';
+import Header from './components/Organisms/Header';
 import { ThemeContext } from './components/Theme/ThemeContext';
+import GlobalStyle from './global';
 
 const App = () => {
   const theme = useContext(ThemeContext);
   return (
-    <Button variant={'primary'} theme={theme}>
-      Hi
-    </Button>
+    <Fragment>
+      <GlobalStyle />
+      <Header theme={theme} />
+    </Fragment>
   );
 };
 
