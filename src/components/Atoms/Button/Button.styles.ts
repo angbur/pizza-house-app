@@ -5,7 +5,6 @@ const BaseButton = styled.button`
   font-weight: 600;
   letter-spacing: 1px;
   line-height: 1.4;
-  margin: 1em;
   border-radius: 8px;
   cursor: pointer;
   background: none;
@@ -85,4 +84,9 @@ export const TextDarkButton = styled(BaseTextButton)`
   &::after {
     background-color: ${(props) => props.theme?.palette.secondary};
   }
+`;
+
+export const IconButton = styled(BaseButton)`
+  color: ${(props) => props.theme?.palette.secondary};
+  scale: 200%;
 `;
