@@ -11,21 +11,12 @@ const properties = {
     'contrastColor',
   ],
   typographyNames: [
-    'h1',
-    'h2',
-    'h3',
-    'h4',
-    'h5',
-    'h6',
-    'page-title',
-    'body1',
-    'body2',
+    'mainTitle',
+    'sectionTitle',
+    'cardTitle',
+    'itemTitle',
     'paragraph',
-    'button',
-    'caption',
-    'subtitle1',
-    'subtitle2',
-  ],
+    'caption'],
   typographyProperties: ['fontFamily', 'fontSize', 'fontWeight', 'lineHeight', 'letterSpacing'],
   breakpoints: ['xs', 'sm', 'md', 'lg', 'xl'],
 } as const;
@@ -41,12 +32,12 @@ type PaletteType = Getters<ColorVariants, HexColor>;
 
 type BreakpointsType = Getters<typeof properties.breakpoints[number], number>;
 
-export type TypographyVariant = typeof properties.typographyNames[number];
+type TypographyVariant = typeof properties.typographyNames[number];
 type TypographyProps = Getters<typeof properties.typographyProperties[number], string>;
 type TypographyType = Getters<TypographyVariant, TypographyProps>;
 
 export type Theme = {
   palette: Partial<PaletteType>;
-  typography?: TypographyType;
+  typography: TypographyType;
   breakpoints?: BreakpointsType;
 };
