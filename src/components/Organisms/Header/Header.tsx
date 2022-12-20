@@ -21,20 +21,20 @@ const Header = ({ theme }: HeaderProps) => {
         </div>
         <HeaderActions className='header_actions'>
           <Button
-            variant={'primary-light'}
+            variant={'primaryLight'}
             className={'header_actions_button--desktop'}
             theme={theme}
           >
             Sign in
           </Button>
           <Button
-            variant={'button-text-dark'}
+            variant={'buttonTextDark'}
             className={'header_actions_button--desktop'}
             theme={theme}
           >
             Sign up
           </Button>
-          <Button variant={'icon-button'} className={'header_actions_button--mobile'} theme={theme}>
+          <Button variant={'iconButton'} className={'header_actions_button--mobile'} theme={theme}>
             <img src={LoginIcon} />
           </Button>
         </HeaderActions>

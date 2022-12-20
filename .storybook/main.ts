@@ -1,13 +1,12 @@
 import type { StorybookConfig } from '@storybook/core-common';
-
 const config: StorybookConfig = {
-  stories: [ '../src/components/**/*.stories.@(mdx|ts|tsx)'],
-  addons: [
-    "@storybook/addon-links",
-    "@storybook/addon-essentials",
-    "@storybook/addon-interactions",
-    "@storybook/preset-create-react-app",
-  ],
+  stories: ['../src/components/**/*.stories.@(mdx|ts|tsx)'],
+  addons: ["@storybook/addon-links", "@storybook/addon-essentials", "@storybook/addon-interactions", "@storybook/preset-create-react-app", {
+    name: '@storybook/addon-docs',
+    options: {
+      configureJSX: true
+    }
+  }],
   typescript: {
     check: true,
     checkOptions: {},
@@ -15,15 +14,16 @@ const config: StorybookConfig = {
     reactDocgenTypescriptOptions: {
       compilerOptions: {
         allowSyntheticDefaultImports: false,
-        esModuleInterop: false,
-      },
+        esModuleInterop: false
+      }
     }
   },
   core: {
     builder: "@storybook/builder-webpack5"
   },
   features: {
-    postcss: false,
-  }
+    postcss: false
+  },
+  framework: "@storybook/react"
 };
 module.exports = config;
