@@ -1,4 +1,3 @@
-import { getInitialTheme } from './../../Theme/initialTheme';
 import { Meta, StoryObj } from '@storybook/react';
 import Button, { buttonSizes, buttonVariants } from './Button';
 
@@ -15,9 +14,6 @@ const meta = {
     children: {
       defaultValue: 'Press me',
     },
-    theme: {
-      defaultValue: getInitialTheme()
-    }
   },
 } satisfies Meta<typeof Button>;
 
@@ -27,30 +23,30 @@ type Story = StoryObj<typeof meta>;
 
 export const PrimaryLight: Story = {
   args: {
-    variant: 'primaryLight',
+    variant: 'primary-light',
   },
 };
 
 export const PrimaryDark: Story = {
   args: {
-    variant: 'primaryDark',
+    variant: 'primary-dark',
   },
 };
 
 export const SecondaryLight: Story = {
   args: {
-    variant: 'secondaryLight',
+    variant: 'secondary-light',
   },
 };
 
 export const ButtonTextLight: Story = {
   args: {
-    variant: 'buttonTextLight',
+    variant: 'button-text-light',
   },
 };
 
 export const ButtonTextDark: Story = {
   args: {
-    variant: 'buttonTextDark',
+    variant: 'button-text-dark',
   },
 };

@@ -8,8 +8,8 @@ const meta = {
   tags: ['docsPage'],
   argTypes: {
     theme: {
-      defaultValue: getInitialTheme()
-    }
+      defaultValue: getInitialTheme(),
+    },
   },
 } satisfies Meta<typeof Header>;
 

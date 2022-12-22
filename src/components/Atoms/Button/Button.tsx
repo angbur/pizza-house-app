@@ -1,7 +1,6 @@
 import clsx from 'clsx';
-import { CSSProperties, MouseEventHandler, PropsWithChildren, ReactNode } from 'react';
-import { Theme } from '../../Theme/theme.types';
-import Typography from '../Typography/Typography';
+import { CSSProperties, MouseEventHandler, PropsWithChildren, useContext } from 'react';
+import { ThemeContext } from '../../Theme/ThemeContext';
 import {
   IconButton,
   PrimaryDarkButton,
@@ -14,13 +13,13 @@ import {
 import setButtonSize from './setButtonSize';
 
 export const buttonVariants = [
-  'primaryLight',
-  'primaryDark',
-  'secondaryLight',
-  'secondaryDark',
-  'buttonTextLight',
-  'buttonTextDark',
-  'iconButton',
+  'primary-light',
+  'primary-dark',
+  'secondary-light',
+  'secondary-dark',
+  'button-text-light',
+  'button-text-dark',
+  'icon-button',
 ] as const;
 
 type ButtonVariant = typeof buttonVariants[number];
@@ -31,21 +30,21 @@ export type ButtonProps = {
   variant?: ButtonVariant;
   size?: ButtonSize;
   className?: string;
-  theme?: Theme;
   style?: CSSProperties;
-  children?: typeof Typography | ReactNode;
   onClick?: MouseEventHandler<HTMLButtonElement>;
 };
 
 const Button = ({
-  variant = 'primaryLight',
+  variant = 'primary-light',
   size = 'lg',
   className,
   style,
-  theme,
   children,
   onClick,
 }: PropsWithChildren<ButtonProps>) => {
+
+  const theme = useContext(ThemeContext);
+
   const props = {
     className: clsx(variant, `btn-${size}`, className, 'button'),
     onClick: onClick,
@@ -55,19 +54,19 @@ const Button = ({
 
   return (
     <>
-      {variant === 'primaryLight' ? (
+      {variant === 'primary-light' ? (
         <PrimaryLightButton {...props}>{children}</PrimaryLightButton>
-      ) : variant === 'primaryDark' ? (
+      ) : variant === 'primary-dark' ? (
         <PrimaryDarkButton {...props}>{children}</PrimaryDarkButton>
-      ) : variant === 'secondaryLight' ? (
+      ) : variant === 'secondary-light' ? (
         <SecondaryLightButton {...props}>{children}</SecondaryLightButton>
-      ) : variant === 'secondaryDark' ? (
+      ) : variant === 'secondary-dark' ? (
         <SecondaryDarkButton {...props}>{children}</SecondaryDarkButton>
-      ) : variant === 'buttonTextLight' ? (
+      ) : variant === 'button-text-light' ? (
         <TextLightButton {...props}>{children}</TextLightButton>
-      ) : variant === 'buttonTextDark' ? (
+      ) : variant === 'button-text-dark' ? (
         <TextDarkButton {...props}>{children}</TextDarkButton>
-      ) : variant === 'iconButton' ? (
+      ) : variant === 'icon-button' ? (
         <IconButton {...props}>{children}</IconButton>
       ) : (
         <PrimaryLightButton {...props}>{children}</PrimaryLightButton>

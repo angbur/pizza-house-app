@@ -1,16 +1,14 @@
 import clsx from 'clsx';
-import { PropsWithChildren } from 'react';
+import { PropsWithChildren, useContext } from 'react';
 import { CSSProperties } from 'styled-components';
-import { ColorVariants } from '../../Theme/theme.types';
-
-const variants = ['mainTitle', 'sectionTitle','cardTitle', 'itemTitle', 'paragraph', 'caption'] as const;
-type TypographyVariant = typeof variants[number];
+import { ColorVariants, TypographyVariant } from '../../Theme/theme.types';
+import { ThemeContext } from '../../Theme/ThemeContext';
 
 const variantToElement = {
-  'mainTitle': 'h1',
-  'sectionTitle': 'h2',
-  'cardTitle': 'h3',
-  'itemTitle': 'h5',
+  'main-title': 'h1',
+  'section-title': 'h2',
+  'card-title': 'h3',
+  'item-title': 'h5',
   'paragraph': 'p',
   'caption': 'p',
 } as const;
@@ -23,15 +21,27 @@ export type TypographyProps = {
 };
 
 const Typography = ({
-    variant,
-    className,
-    style,
-    color,
-    children
+  variant,
+  className,
+  style,
+  color,
+  children,
 }: PropsWithChildren<TypographyProps>) => {
+  const theme = useContext(ThemeContext);
   const Element = variantToElement[variant ? variant : 'paragraph'];
 
-  return <Element className={clsx(variant, className)} style={theme.typography[variant]}>{children}</Element>
+  const colorStyles: CSSProperties = {
+    color: theme.palette[color],
+  };
+
+  return (
+    <Element
+      className={clsx(variant, className)}
+      style={{ ...theme.typography[variant ? variant : 'paragraph'], ...colorStyles, ...style }}
+    >
+      {children}
+    </Element>
+  );
 };
 
 export default Typography;

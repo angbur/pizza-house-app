@@ -1,23 +1,19 @@
-import { Fragment, useContext } from 'react';
-import Footer from '../components/Organisms/Footer/Footer';
-import Header from '../components/Organisms/Header/Header';
-import Sidebar from '../components/Organisms/Sidebar/Sidebar';
+import { Routes, Route, Outlet } from 'react-router-dom';
+import { Fragment } from 'react';
 import Main from '../components/Pages/Main/Main';
-import { ThemeContext } from '../components/Theme/ThemeContext';
+import Header from '../components/Organisms/Header/Header';
 import GlobalStyle from '../global.styles';
-import { Container } from './App.styles';
 
 const App = () => {
-  const theme = useContext(ThemeContext);
   return (
     <Fragment>
-      <GlobalStyle theme={theme} />
-      <Header theme={theme} />
-      <Container className='container'>
-        <Sidebar />
-        <Main />
-      </Container>
-      <Footer />
+      <GlobalStyle />
+      <Header />
+      <Outlet />
+      <Routes>
+        <Route path='/' element={<Main />} />
+        <Route path='*' element={<Main />} />
+      </Routes>
     </Fragment>
   );
 };

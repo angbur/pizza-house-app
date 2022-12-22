@@ -5,7 +5,9 @@ const Main = () => {
   return (
     <main>
       <Box className='box'>
-        <Typography variant='mainTitle' color={'primary'}>Hello</Typography>
+        <Typography variant='main-title' color={'primary'}>
+          Hello
+        </Typography>
       </Box>
     </main>
   );

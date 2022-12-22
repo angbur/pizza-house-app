@@ -10,48 +10,48 @@ const initialTheme: Theme = {
     light: '#FCFBFB',
   },
   typography: {
-    mainTitle: {
+    'main-title': {
       fontFamily: 'Klepon Ijo',
       fontSize: '3rem',
       fontWeight: '400',
       lineHeight: '1.6',
       letterSpacing: '1px',
     },
-    sectionTitle: {
+    'section-title': {
       fontFamily: 'Source Sans Pro',
       fontWeight: '300',
       lineHeight: '1.3',
       letterSpacing: '1px',
       fontSize: '2.25rem',
     },
-    cardTitle: {
+    'card-title': {
       fontFamily: 'Klepon Ijo',
       lineHeight: '1.2',
       letterSpacing: '2px',
       fontSize: '2rem',
       fontWeight: '400',
     },
-    itemTitle: {
+    'item-title': {
       fontFamily: 'Source Sans Pro',
       fontWeight: '600',
       fontSize: '1rem',
       lineHeight: '1.4',
       letterSpacing: '0',
     },
-    paragraph: {
+    'paragraph': {
       fontFamily: 'Source Sans Pro',
       fontWeight: '400',
       fontSize: '1rem',
       lineHeight: '1.6',
       letterSpacing: '0',
     },
-    caption: {
+    'caption': {
       fontFamily: 'Source Sans Pro',
       fontWeight: '400',
       fontSize: '0.75rem',
       lineHeight: '1.6',
       letterSpacing: '0',
-    }
+    },
   },
 };
 
