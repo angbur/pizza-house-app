@@ -8,8 +8,8 @@ export const Navbar = styled.div`
   padding: 0;
   margin: 0;
   height: 138px;
-  position: fixed;
-  width: 100%;
+  width: 100vw;
+  border-bottom: 2px solid ${getInitialTheme().palette.light};
   background: ${getInitialTheme().palette.light};
   box-shadow: 0px 2px 4px -1px rgb(0 0 0 / 20%), 0px 4px 5px 0px rgb(0 0 0 / 14%),
     0px 1px 10px 0px rgb(0 0 0 / 12%);
@@ -36,7 +36,7 @@ export const HeaderActions = styled.div`
   display: flex;,
   justify-content: center;
   align-items: center;
-  gap: 1rem;
+  gap: 2rem;
   margin-right: 2rem;
   justify-content: flex-end;
   @media (max-width: 768px) {

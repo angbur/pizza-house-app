@@ -1,27 +1,30 @@
 import { createGlobalStyle } from 'styled-components';
-import { normalize } from 'polished';
 import { getInitialTheme } from './components/Theme/initialTheme';
 
 const GlobalStyle = createGlobalStyle`
-${normalize()}
-    html {
+    body, html, #root {
         box-sizing: border-box;
         font-size: 16px;
-    }
-    body {
+        box-sizing: border-box;
+        height: 100%;
         margin: 0;
         padding: 0;
         outline: 0;
         background: ${getInitialTheme().palette.secondary};
+        color: ${getInitialTheme().palette.light};
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
+        font-family: 'Source Sans Pro', sans-serif;
+        font-weight: 400;
+    }
+    #root {
+        display: block;
     }
     main {
-        width: 90%;
-        margin: 0 auto;
+        display: block;
     }
-   *, *:before, *:after {
-    box-sizing: inherit;
+    *, *:before, *:after {
+        box-sizing: inherit;
     }
     a {
     cursor: pointer;

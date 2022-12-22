@@ -1,4 +1,4 @@
-const properties = {
+export const themeProperties = {
   colorNames: [
     'primary',
     'primaryDark',
@@ -11,39 +11,34 @@ const properties = {
     'contrastColor',
   ],
   typographyNames: [
-    'h1',
-    'h2',
-    'h3',
-    'h4',
-    'h5',
-    'h6',
-    'body1',
-    'body2',
+    'main-title',
+    'section-title',
+    'card-title',
+    'item-title',
     'paragraph',
-    'button',
     'caption',
-    'subtitle1',
-    'subtitle2',
   ],
-  typographyProperties: ['fontFamily', 'fontSize', 'fontWeight', 'lineHeight'],
+  typographyProperties: ['fontFamily', 'fontSize', 'fontWeight', 'lineHeight', 'letterSpacing'],
   breakpoints: ['xs', 'sm', 'md', 'lg', 'xl'],
 } as const;
 
-type Getters<T extends string, K> = {
+export type Getters<T extends string, K> = {
   [k in T]?: K;
 };
 
 export type HexColor = `#${string}`;
 
-type PaletteType = Getters<typeof properties.colorNames[number], HexColor>;
+export type ColorVariants = typeof themeProperties.colorNames[number];
+type PaletteType = Getters<ColorVariants, HexColor>;
 
-type BreakpointsType = Getters<typeof properties.breakpoints[number], number>;
+type BreakpointsType = Getters<typeof themeProperties.breakpoints[number], number>;
 
-type TypographyProps = Getters<typeof properties.typographyProperties[number], string>;
-type TypographyType = Getters<typeof properties.typographyNames[number], TypographyProps>;
+export type TypographyVariant = typeof themeProperties.typographyNames[number];
+type TypographyProps = Getters<typeof themeProperties.typographyProperties[number], string>;
+type TypographyType = Getters<TypographyVariant, TypographyProps>;
 
 export type Theme = {
   palette: Partial<PaletteType>;
-  typography?: TypographyType;
+  typography: TypographyType;
   breakpoints?: BreakpointsType;
 };

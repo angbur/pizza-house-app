@@ -3,9 +3,7 @@ import { Box } from './Main.styles';
 const Main = () => {
   return (
     <main>
-      <Box className='box'>
-       
-      </Box>
+      <Box className='box'></Box>
     </main>
   );
 };
