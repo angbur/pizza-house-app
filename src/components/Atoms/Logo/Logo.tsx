@@ -32,7 +32,7 @@ const Logo = ({ variant = 'full', className, background, style }: LogoProps) => 
   };
 
   return (
-    <LogoBox className={clsx(variant, className, 'logo')} style={{...backgroundStyles, ...style}}>
+    <LogoBox className={clsx(variant, className, 'logo')} style={{ ...backgroundStyles, ...style }}>
       <img src={LogoSVG} />
     </LogoBox>
   );

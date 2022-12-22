@@ -10,7 +10,14 @@ export const themeProperties = {
     'background',
     'contrastColor',
   ],
-  typographyNames: ['main-title', 'section-title', 'card-title', 'item-title', 'paragraph', 'caption'],
+  typographyNames: [
+    'main-title',
+    'section-title',
+    'card-title',
+    'item-title',
+    'paragraph',
+    'caption',
+  ],
   typographyProperties: ['fontFamily', 'fontSize', 'fontWeight', 'lineHeight', 'letterSpacing'],
   breakpoints: ['xs', 'sm', 'md', 'lg', 'xl'],
 } as const;

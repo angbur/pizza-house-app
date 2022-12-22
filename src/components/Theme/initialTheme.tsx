@@ -38,14 +38,14 @@ const initialTheme: Theme = {
       lineHeight: '1.4',
       letterSpacing: '0',
     },
-    'paragraph': {
+    paragraph: {
       fontFamily: 'Source Sans Pro',
       fontWeight: '400',
       fontSize: '1rem',
       lineHeight: '1.6',
       letterSpacing: '0',
     },
-    'caption': {
+    caption: {
       fontFamily: 'Source Sans Pro',
       fontWeight: '400',
       fontSize: '0.75rem',

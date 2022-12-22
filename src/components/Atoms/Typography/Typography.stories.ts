@@ -20,6 +20,6 @@ export const MainTitle: Story = {
   args: {
     variant: 'main-title',
     color: 'primary',
-    children: 'Hello in my world'
+    children: 'Hello in my world',
   },
 };

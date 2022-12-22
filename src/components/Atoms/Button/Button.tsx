@@ -1,6 +1,7 @@
 import clsx from 'clsx';
-import { CSSProperties, MouseEventHandler, PropsWithChildren, useContext } from 'react';
+import { CSSProperties, MouseEventHandler, PropsWithChildren, ReactNode, useContext } from 'react';
 import { ThemeContext } from '../../Theme/ThemeContext';
+import Typography from '../Typography/Typography';
 import {
   IconButton,
   PrimaryDarkButton,
@@ -31,6 +32,7 @@ export type ButtonProps = {
   size?: ButtonSize;
   className?: string;
   style?: CSSProperties;
+  children?: typeof Typography | ReactNode;
   onClick?: MouseEventHandler<HTMLButtonElement>;
 };
 
@@ -42,7 +44,6 @@ const Button = ({
   children,
   onClick,
 }: PropsWithChildren<ButtonProps>) => {
-
   const theme = useContext(ThemeContext);
 
   const props = {

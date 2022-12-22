@@ -9,8 +9,8 @@ const variantToElement = {
   'section-title': 'h2',
   'card-title': 'h3',
   'item-title': 'h5',
-  'paragraph': 'p',
-  'caption': 'p',
+  paragraph: 'p',
+  caption: 'p',
 } as const;
 
 export type TypographyProps = {
