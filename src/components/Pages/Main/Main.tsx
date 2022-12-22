@@ -1,4 +1,4 @@
-import Typography from '../../Atoms/Typography/Typography';
+import Typography from 'components/Atoms/Typography/Typography';
 import { Box } from './Main.styles';
 
 const Main = () => {

@@ -1,9 +1,9 @@
 import clsx from 'clsx';
 import { useContext } from 'react';
 import styled, { CSSProperties } from 'styled-components';
-import LogoSVG from '../../../assets/image/logo.svg';
-import { ColorVariants } from '../../Theme/theme.types';
-import { ThemeContext } from '../../Theme/ThemeContext';
+import LogoSVG from 'assets/image/logo.svg';
+import { ColorVariants } from 'components/Theme/theme.types';
+import { ThemeContext } from 'components/Theme/ThemeContext';
 
 const logo = ['full', 'signet'] as const;
 type LogoVariant = typeof logo[number];

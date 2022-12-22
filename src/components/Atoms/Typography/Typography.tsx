@@ -1,8 +1,8 @@
 import clsx from 'clsx';
 import { PropsWithChildren, useContext } from 'react';
 import { CSSProperties } from 'styled-components';
-import { ColorVariants, TypographyVariant } from '../../Theme/theme.types';
-import { ThemeContext } from '../../Theme/ThemeContext';
+import { ColorVariants, TypographyVariant } from 'components/Theme/theme.types';
+import { ThemeContext } from 'components/Theme/ThemeContext';
 
 const variantToElement = {
   'main-title': 'h1',

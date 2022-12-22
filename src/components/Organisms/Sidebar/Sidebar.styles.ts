@@ -1,4 +1,4 @@
-import { getInitialTheme } from './../../Theme/initialTheme';
+import { getInitialTheme } from 'components/Theme/initialTheme';
 import styled from 'styled-components';
 
 export const SidebarNav = styled.div`

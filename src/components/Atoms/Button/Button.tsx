@@ -1,7 +1,7 @@
 import clsx from 'clsx';
 import { CSSProperties, MouseEventHandler, PropsWithChildren, ReactNode, useContext } from 'react';
-import { ThemeContext } from '../../Theme/ThemeContext';
-import Typography from '../Typography/Typography';
+import { ThemeContext } from 'components/Theme/ThemeContext';
+import Typography from 'components/Atoms/Typography/Typography';
 import {
   IconButton,
   PrimaryDarkButton,

@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from '@storybook/react';
-import { themeProperties } from '../../Theme/theme.types';
+import { themeProperties } from 'components/Theme/theme.types';
 import Typography from './Typography';
 
 const meta = {

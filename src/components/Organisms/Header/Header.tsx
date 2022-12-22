@@ -1,8 +1,8 @@
-import Button from '../../Atoms/Button/Button';
-import Logo from '../../Atoms/Logo/Logo';
+import Button from 'components/Atoms/Button/Button';
+import Logo from 'components/Atoms/Logo/Logo';
 import { HeaderActions, Navbar } from './Header.styles';
-import Title from '../../../assets/image/quote.svg';
-import LoginIcon from '../../../assets/icon/user.svg';
+import Title from 'assets/image/quote.svg';
+import LoginIcon from 'assets/icon/user.svg';
 
 const Header = () => {
   return (
