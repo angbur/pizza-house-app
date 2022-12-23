@@ -36,7 +36,7 @@ const initialTheme: Theme = {
       fontWeight: '600',
       fontSize: '1rem',
       lineHeight: '1.4',
-      letterSpacing: '0',
+      letterSpacing: '1px',
     },
     paragraph: {
       fontFamily: 'Source Sans Pro',

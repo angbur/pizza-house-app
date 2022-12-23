@@ -1,6 +1,5 @@
 import clsx from 'clsx';
-import { PropsWithChildren, useContext } from 'react';
-import { CSSProperties } from 'styled-components';
+import { CSSProperties, PropsWithChildren, useContext } from 'react';
 import { ColorVariants, TypographyVariant } from 'components/Theme/theme.types';
 import { ThemeContext } from 'components/Theme/ThemeContext';
 
@@ -9,8 +8,8 @@ const variantToElement = {
   'section-title': 'h2',
   'card-title': 'h3',
   'item-title': 'h5',
-  paragraph: 'p',
-  caption: 'p',
+  'paragraph': 'p',
+  'caption': 'p',
 } as const;
 
 export type TypographyProps = {

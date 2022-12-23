@@ -25,7 +25,7 @@ export const buttonVariants = [
 
 type ButtonVariant = typeof buttonVariants[number];
 export const buttonSizes = ['sm', 'md', 'lg'] as const;
-type ButtonSize = typeof buttonSizes[number];
+export type ButtonSize = typeof buttonSizes[number];
 
 export type ButtonProps = {
   variant?: ButtonVariant;
@@ -49,7 +49,7 @@ const Button = ({
   const props = {
     className: clsx(variant, `btn-${size}`, className, 'button'),
     onClick: onClick,
-    style: setButtonSize({ size, style }),
+    style: { ...setButtonSize(size), ...style },
     theme: theme,
   };
 

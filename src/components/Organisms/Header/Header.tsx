@@ -3,11 +3,15 @@ import Logo from 'components/Atoms/Logo/Logo';
 import { HeaderActions, Navbar } from './Header.styles';
 import Title from 'assets/image/quote.svg';
 import LoginIcon from 'assets/icon/user.svg';
+import { ThemeContext } from 'components/Theme/ThemeContext';
+import { useContext } from 'react';
 
 const Header = () => {
+  const theme = useContext(ThemeContext);
+
   return (
     <header>
-      <Navbar className='header'>
+      <Navbar className='header' theme={theme}>
         <div className='header_logo'>
           <Logo background='secondary' />
         </div>

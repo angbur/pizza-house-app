@@ -1,4 +1,3 @@
-import { getInitialTheme } from 'components/Theme/initialTheme';
 import styled from 'styled-components';
 
 export const Navbar = styled.div`
@@ -9,8 +8,8 @@ export const Navbar = styled.div`
   margin: 0;
   height: 138px;
   width: 100vw;
-  border-bottom: 2px solid ${getInitialTheme().palette.light};
-  background: ${getInitialTheme().palette.light};
+  border-bottom: 2px solid ${(props) => props.theme.palette.light};
+  background: ${(props) => props.theme.palette.light};
   box-shadow: 0px 2px 4px -1px rgb(0 0 0 / 20%), 0px 4px 5px 0px rgb(0 0 0 / 14%),
     0px 1px 10px 0px rgb(0 0 0 / 12%);
   & .header_logo {
