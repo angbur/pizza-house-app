@@ -1,7 +1,7 @@
 import { CSSProperties } from 'react';
-import { ButtonProps } from './Button';
+import { ButtonSize } from './Button';
 
-const setButtonSize = ({ size, style }: ButtonProps): CSSProperties => {
+const setButtonSize = (size: ButtonSize): CSSProperties => {
   let scale = 1;
 
   if (size === 'md') scale = 0.9;
@@ -12,10 +12,7 @@ const setButtonSize = ({ size, style }: ButtonProps): CSSProperties => {
     fontSize: `${(scale + 0.05) * 1}rem`,
   };
 
-  return {
-    ...padding,
-    ...style,
-  };
+  return padding;
 };
 
 export default setButtonSize;
