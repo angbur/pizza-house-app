@@ -8,8 +8,8 @@ const variantToElement = {
   'section-title': 'h2',
   'card-title': 'h3',
   'item-title': 'h5',
-  'paragraph': 'p',
-  'caption': 'p',
+  paragraph: 'p',
+  caption: 'p',
 } as const;
 
 export type TypographyProps = {
@@ -27,16 +27,16 @@ const Typography = ({
   children,
 }: PropsWithChildren<TypographyProps>) => {
   const theme = useContext(ThemeContext);
-  const Element = variantToElement[variant ? variant : 'paragraph'];
+  const Element = variantToElement[variant ?? 'paragraph'];
 
   const colorStyles: CSSProperties = {
     color: theme.palette[color],
   };
 
-  return (
+  return ( 
     <Element
       className={clsx(variant, className)}
-      style={{ ...theme.typography[variant ? variant : 'paragraph'], ...colorStyles, ...style }}
+      style={{ ...theme.typography[variant ?? 'paragraph'], ...colorStyles, ...style }}
     >
       {children}
     </Element>

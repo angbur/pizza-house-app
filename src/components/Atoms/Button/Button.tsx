@@ -32,7 +32,7 @@ export type ButtonProps = {
   size?: ButtonSize;
   className?: string;
   style?: CSSProperties;
-  children?: typeof Typography | ReactNode;
+  children?: PropsWithChildren;
   onClick?: MouseEventHandler<HTMLButtonElement>;
 };
 
