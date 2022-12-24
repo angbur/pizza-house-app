@@ -1,7 +1,7 @@
-import Icon, { IconName } from 'components/Atoms/Icon/Icon';
-import { CSSProperties } from 'react';
+import { CSSProperties, PropsWithChildren } from 'react';
 import styled from 'styled-components';
-import Typography from '../../Atoms/Typography/Typography';
+import Typography from 'components/Atoms/Typography/Typography';
+import Icon, { IconName } from 'components/Atoms/Icon/Icon';
 
 export type ListIconItemProps = {
   label: string;
@@ -12,20 +12,25 @@ export type ListIconItemProps = {
   style?: CSSProperties;
 };
 
-const IconItem = styled.div`
+const IconItemBox = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 10px;
 `;
-const ListIconItem = ({ label, icon, style }: ListIconItemProps) => (
-  <IconItem>
-    <Icon name={icon.name} size={icon.size} />
-    <Typography variant={'item-title'} color='light' style={{...{textTransform: 'uppercase'}, ...style}}>
+
+const ListIconItem = ({ label, icon, style }: PropsWithChildren<ListIconItemProps>) => (
+  <IconItemBox>
+    {Icon(icon)}
+    <Typography
+      variant={'item-title'}
+      color='light'
+      style={{ ...{ textTransform: 'uppercase' }, ...style }}
+    >
       {label}
     </Typography>
-  </IconItem>
+  </IconItemBox>
 );
 
 export default ListIconItem;

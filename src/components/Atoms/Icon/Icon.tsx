@@ -1,4 +1,6 @@
 import { ColorVariants } from 'components/Theme/theme.types';
+import { ThemeContext } from 'components/Theme/ThemeContext';
+import { CSSProperties, useContext } from 'react';
 
 const icons = [
   'user',
@@ -32,11 +34,17 @@ export type IconName = typeof icons[number];
 
 type IconProps = {
   name: IconName;
-  size: number
+  size: number;
   color?: ColorVariants;
-};;
-const Icon = ({ name, size, color }: IconProps) => (
-  <img src={require(`assets/icon/${name}.svg`)} height={size} />
-);
+};
+const Icon2 = ({ name, size, color = 'light' }: IconProps) => {
+  const theme = useContext(ThemeContext);
 
-export default Icon;
+  const colorStyles: CSSProperties = {
+    color: theme.palette[color],
+  };
+
+  return <img src={require(`assets/icon/${name}.svg`)} height={size} style={colorStyles} />;
+};
+
+export default Icon2;
