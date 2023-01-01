@@ -9,6 +9,7 @@ export type ListIconItemProps = {
     name: IconName;
     size: number;
   };
+  isActive: boolean;
   style?: CSSProperties;
 };
 
@@ -18,19 +19,28 @@ const IconItemBox = styled.div`
   justify-content: center;
   align-items: center;
   gap: 10px;
+  padding: 1.25rem 0;
+  cursor: pointer;
 `;
 
-const ListIconItem = ({ label, icon, style }: PropsWithChildren<ListIconItemProps>) => (
-  <IconItemBox>
-    {Icon(icon)}
-    <Typography
-      variant={'item-title'}
-      color='light'
-      style={{ ...{ textTransform: 'uppercase' }, ...style }}
-    >
-      {label}
-    </Typography>
-  </IconItemBox>
+const ListIconItem = ({
+  label,
+  icon,
+  style,
+  isActive = false,
+}: PropsWithChildren<ListIconItemProps>) => (
+  <li>
+    <IconItemBox>
+      {Icon({ ...icon, isActive })}
+      <Typography
+        variant={'item-title'}
+        color='light'
+        style={{ ...{ textTransform: 'uppercase' }, ...style }}
+      >
+        {label}
+      </Typography>
+    </IconItemBox>
+  </li>
 );
 
 export default ListIconItem;

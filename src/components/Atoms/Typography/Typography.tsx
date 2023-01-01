@@ -33,7 +33,7 @@ const Typography = ({
     color: theme.palette[color],
   };
 
-  return ( 
+  return (
     <Element
       className={clsx(variant, className)}
       style={{ ...theme.typography[variant ?? 'paragraph'], ...colorStyles, ...style }}

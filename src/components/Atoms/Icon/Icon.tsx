@@ -1,7 +1,3 @@
-import { ColorVariants } from 'components/Theme/theme.types';
-import { ThemeContext } from 'components/Theme/ThemeContext';
-import { CSSProperties, useContext } from 'react';
-
 const icons = [
   'user',
   'menu',
@@ -35,16 +31,14 @@ export type IconName = typeof icons[number];
 type IconProps = {
   name: IconName;
   size: number;
-  color?: ColorVariants;
+  isActive?: boolean;
 };
-const Icon2 = ({ name, size, color = 'light' }: IconProps) => {
-  const theme = useContext(ThemeContext);
-
-  const colorStyles: CSSProperties = {
-    color: theme.palette[color],
-  };
-
-  return <img src={require(`assets/icon/${name}.svg`)} height={size} style={colorStyles} />;
+const Icon = ({ name, size, isActive = false }: IconProps) => {
+  return isActive ? (
+    <img src={require(`assets/icon/${name}-active.svg`)} height={size} />
+  ) : (
+    <img src={require(`assets/icon/${name}.svg`)} height={size} />
+  );
 };
 
-export default Icon2;
+export default Icon;
