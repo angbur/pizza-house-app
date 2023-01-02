@@ -28,6 +28,8 @@ const SidebarItem = styled.div<SidebarItemProps>`
   padding: 1.25rem 0;
   cursor: pointer;
   background: ${(props) => (props.isActive ? props.theme.palette.light : 'none')};
+  border-top: 1px solid ${(props) => props.theme.palette.secondary};
+  border-bottom: 1px solid ${(props) => props.theme.palette.secondary};
   & > h5.item-title {
     color: ${(props) =>
       props.isActive ? props.theme.palette.secondary : props.theme.palette.light};

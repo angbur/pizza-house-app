@@ -14,6 +14,7 @@ export const themeProperties = {
     'main-title',
     'section-title',
     'card-title',
+    'card-subtitle',
     'item-title',
     'paragraph',
     'caption',

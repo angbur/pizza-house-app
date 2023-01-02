@@ -1,0 +1,48 @@
+{
+    "name": "Tipsy Tomato",
+    "ingredients":["tomato sauce", "tomatoes", "olives", "mozzarella", "cheese", "parsley", "basil"],
+    "price": 20,
+    "categories": ["vegetarian"]
+},
+{
+    "name": "Pinza Mare",
+    "ingredients": ["shrimps", "red fish", "olives", "white sauce", "oregano", "basil"],
+    "price": 26,
+    "categories": ["seafood"]
+},
+{
+    "name": "The Crispy Crust",
+    "ingredients": ["tomato sauce", "salami", "oregano", "olives", "cheese", "basil"],
+    "price": 30,
+    "categories": ["meaty"]
+},
+{
+    "name": "Feeling Saucy",
+    "ingredients": ["tomato sauce", "pineapple", "corn", "olives", "onion", "arugula"],
+    "price": 28,
+    "categories": ["vegetarian"]
+},
+{
+    "name": "Mellow",
+    "ingredients": ["mushrooms", "onion", "basil", "parsley", "tomato sauce"],
+    "price": 24,
+    "categories": ["vegetarian"]
+},
+{
+    "name": "Heirloom",
+    "ingredients": ["mushrooms", "onion", "basil", "parsley", "white sauce", "olives"],
+    "price": 24,
+    "categories": ["vegetarian"]
+},
+{
+    "name": "Lighthouse",
+    "ingredients": ["white sauce", "cheese", "pepper", "chili", "parsley", "basil"],
+    "price": 24,
+    "categories": ["vegetarian", "spicy"]
+},
+{
+    "name": "Lighthouse",
+    "ingredients": ["tomato sauce", "bacon", "olives", "cheese", "parsley", "basil"],
+    "price": 24,
+    "categories": ["meaty"]
+}

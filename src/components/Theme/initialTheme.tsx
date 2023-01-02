@@ -31,6 +31,12 @@ const initialTheme: Theme = {
       fontSize: '2rem',
       fontWeight: '400',
     },
+    'card-subtitle': {
+      fontFamily: 'Source Sans Pro',
+      fontWeight: '400',
+      lineHeight: '1.6',
+      fontSize: '0.9rem',
+    },
     'item-title': {
       fontFamily: 'Source Sans Pro',
       fontWeight: '600',
