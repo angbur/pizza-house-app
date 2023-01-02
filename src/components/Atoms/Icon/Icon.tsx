@@ -31,7 +31,7 @@ export type IconName = typeof icons[number];
 type IconProps = {
   name: IconName;
   size: number;
-  isActive?: boolean;
+  isActive: boolean;
 };
 const Icon = ({ name, size, isActive = false }: IconProps) => {
   return isActive ? (

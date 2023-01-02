@@ -14,7 +14,7 @@ const variantToElement = {
 
 export type TypographyProps = {
   variant?: TypographyVariant;
-  color: ColorVariants;
+  color?: ColorVariants;
   className?: string;
   style?: CSSProperties;
 };
@@ -30,7 +30,7 @@ const Typography = ({
   const Element = variantToElement[variant ?? 'paragraph'];
 
   const colorStyles: CSSProperties = {
-    color: theme.palette[color],
+    color: color ? theme.palette[color] : 'none',
   };
 
   return (

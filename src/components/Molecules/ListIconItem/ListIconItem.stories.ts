@@ -18,6 +18,6 @@ export const MainIconItem: Story = {
       name: 'order',
       size: 32,
     },
-    isActive: false,
+    linkTo: '',
   },
 };
