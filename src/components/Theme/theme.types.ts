@@ -18,6 +18,7 @@ export const themeProperties = {
     'item-title',
     'paragraph',
     'caption',
+    'price-tag',
   ],
   typographyProperties: ['fontFamily', 'fontSize', 'fontWeight', 'lineHeight', 'letterSpacing'],
   breakpoints: ['xs', 'sm', 'md', 'lg', 'xl'],

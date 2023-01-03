@@ -1,6 +1,8 @@
 import Card from 'components/Organisms/Card/Card';
 import { useGetPizzasListQuery } from 'services/pizza';
 import styled from 'styled-components';
+import { Pizza } from 'types/Pizza';
+import { sortByName } from './sortByName';
 
 const Box = styled.div`
   display: flex;
@@ -20,18 +22,17 @@ const MenuContainer = styled.div`
 
 const Main = () => {
   const { data, error, isLoading } = useGetPizzasListQuery();
+
   return (
     <Box className='box'>
-    <main>
-     
-     <MenuContainer>
-      {data?.pizzaList.map(el =>
-            <Card key={`pizza-${el._id}`} pizza = {el}/>
-            )}
-     </MenuContainer>
-       
-    </main>
-      </Box>
+      <main>
+        <MenuContainer>
+          {data?.pizzaList.map((el) => (
+            <Card key={`pizza-${el._id}`} pizza={el} />
+          ))}
+        </MenuContainer>
+      </main>
+    </Box>
   );
 };
 export default Main;

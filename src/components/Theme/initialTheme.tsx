@@ -58,6 +58,11 @@ const initialTheme: Theme = {
       lineHeight: '1.6',
       letterSpacing: '0',
     },
+    'price-tag': {
+      fontFamily: 'Klepon Ijo',
+      fontSize: '3rem',
+      letterSpacing: '0',
+    },
   },
 };
 

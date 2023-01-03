@@ -11,6 +11,7 @@ const variantToElement = {
   'item-title': 'h5',
   paragraph: 'p',
   caption: 'p',
+  'price-tag': 'p',
 } as const;
 
 export type TypographyProps = {

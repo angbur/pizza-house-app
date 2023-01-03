@@ -11,7 +11,7 @@ export const pizzaApi = createApi({
     },
   }),
   endpoints: (builder) => ({
-    getPizzasList: builder.query<{pizzaList: Pizza[]}, void>({
+    getPizzasList: builder.query<{ pizzaList: Pizza[] }, void>({
       query: () => 'pizza',
     }),
   }),
