@@ -3,13 +3,14 @@ import styled from 'styled-components';
 const BaseButton = styled.button`
   text-transform: uppercase;
   font-weight: 600;
-  letter-spacing: 1px;
+  font-family: 'Source Sans Pro';
   line-height: 1.4;
   border-radius: 8px;
   cursor: pointer;
   background: none;
   border: none;
   transition: 3ms;
+  letter-spacing: 1px;
 `;
 
 export const PrimaryLightButton = styled(BaseButton)`
@@ -42,11 +43,16 @@ export const SecondaryLightButton = styled(BaseButton)`
 `;
 
 export const SecondaryDarkButton = styled(BaseButton)`
-  border: 2px solid ${(props) => props.theme?.palette.secondary};
+  background: ${(props) => props.theme?.palette.light};
+  border: 2px solid ${(props) => props.theme?.palette.light};
   color: ${(props) => props.theme?.palette.secondary};
   &:hover {
     background: ${(props) => props.theme?.palette.primary};
-    border: 2px solid ${(props) => props.theme?.palette.primary};
+    border-color: ${(props) => props.theme?.palette.primary};
+  }
+  & > img {
+    position: relative;
+    top: 3px;
   }
 `;
 

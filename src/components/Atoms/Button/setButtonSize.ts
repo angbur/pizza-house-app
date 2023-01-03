@@ -7,12 +7,12 @@ const setButtonSize = (size: ButtonSize): CSSProperties => {
   if (size === 'md') scale = 0.9;
   if (size === 'sm') scale = 0.8;
 
-  const padding: CSSProperties = {
+  const style: CSSProperties = {
     padding: `${scale * 0.625}rem ${scale * 1.25}rem`,
     fontSize: `${(scale + 0.05) * 1}rem`,
   };
 
-  return padding;
+  return style;
 };
 
 export default setButtonSize;

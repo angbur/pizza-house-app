@@ -31,6 +31,12 @@ const initialTheme: Theme = {
       fontSize: '2rem',
       fontWeight: '400',
     },
+    'card-subtitle': {
+      fontFamily: 'Source Sans Pro',
+      fontWeight: '400',
+      lineHeight: '1.6',
+      fontSize: '0.9rem',
+    },
     'item-title': {
       fontFamily: 'Source Sans Pro',
       fontWeight: '600',
@@ -50,6 +56,11 @@ const initialTheme: Theme = {
       fontWeight: '400',
       fontSize: '0.75rem',
       lineHeight: '1.6',
+      letterSpacing: '0',
+    },
+    'price-tag': {
+      fontFamily: 'Klepon Ijo',
+      fontSize: '3rem',
       letterSpacing: '0',
     },
   },

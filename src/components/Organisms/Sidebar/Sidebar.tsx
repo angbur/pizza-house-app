@@ -6,6 +6,7 @@ import styled from 'styled-components';
 const SidebarNav = styled.div`
   width: 114px;
   position: sticky;
+  height: 100%;
   border-right: 1px solid ${(props) => props.theme.palette.light};
 `;
 

@@ -7,7 +7,6 @@ export const Navbar = styled.div`
   padding: 0;
   margin: 0;
   height: 138px;
-  width: 100vw;
   border-bottom: 2px solid ${(props) => props.theme.palette.light};
   background: ${(props) => props.theme.palette.light};
   box-shadow: 0px 2px 4px -1px rgb(0 0 0 / 20%), 0px 4px 5px 0px rgb(0 0 0 / 14%),

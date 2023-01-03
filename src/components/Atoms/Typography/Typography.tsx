@@ -7,9 +7,11 @@ const variantToElement = {
   'main-title': 'h1',
   'section-title': 'h2',
   'card-title': 'h3',
+  'card-subtitle': 'h4',
   'item-title': 'h5',
   paragraph: 'p',
   caption: 'p',
+  'price-tag': 'p',
 } as const;
 
 export type TypographyProps = {
