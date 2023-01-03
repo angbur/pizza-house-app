@@ -9,12 +9,15 @@ const StyledInput = styled.input`
   font-size: 1rem;
   font-weight: 400;
   width: 40px;
-  height: 46px;
+  height: 42px;
   text-align: center;
   &:focus-visible {
     outline: none;
   }
   border-radius: 0;
+  border: none;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
 `;
 
 const StyledDiv = styled.div`
@@ -42,11 +45,6 @@ const QuantityPanel = styled.div`
       background: ${(props) => props.theme?.palette.primary};
     }
   }
-  & > input {
-    border: none;
-    border-left: 1px solid ${(props) => props.theme?.palette.secondary};
-    border-right: 1px solid ${(props) => props.theme?.palette.secondary};
-  }
   & > button:first-child {
     border-bottom: 1px solid ${(props) => props.theme?.palette.secondary};
   }
@@ -56,13 +54,14 @@ type ButtonWithInputProps = {
   value: number;
   onIncrement?: MouseEventHandler<HTMLButtonElement>;
   onDecrement?: MouseEventHandler<HTMLButtonElement>;
+  onClick?: MouseEventHandler<HTMLButtonElement>;
 };
 
-const ButtonWithInput = ({ value, onIncrement, onDecrement }: ButtonWithInputProps) => {
+const ButtonWithInput = ({ value, onIncrement, onDecrement, onClick}: ButtonWithInputProps) => {
   const theme = useContext(ThemeContext);
   return (
     <StyledDiv>
-      <Button variant='secondary-dark' size={'sm'}>
+      <Button variant='secondary-dark' size={'sm'} onClick={onClick}>
         {Icon({ name: 'basket', size: 17, isActive: false })}
         Add to order
       </Button>

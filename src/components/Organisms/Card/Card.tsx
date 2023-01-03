@@ -1,8 +1,10 @@
 import PriceTag from 'components/Atoms/PriceTag/PriceTag';
 import Typography from 'components/Atoms/Typography/Typography';
 import ButtonWithInput from 'components/Molecules/ButtonWithInput/ButtonWithInput';
+import { addToOrder } from 'components/Pages/Order/orderSlice';
 import { ThemeContext } from 'components/Theme/ThemeContext';
-import { useContext } from 'react';
+import { useAppDispatch } from 'hooks';
+import { useContext, useState } from 'react';
 import styled from 'styled-components';
 import { Pizza } from 'types/Pizza';
 
@@ -48,6 +50,16 @@ const CardActions = styled.div`
 
 const Card = ({ pizza }: CardProps) => {
   const theme = useContext(ThemeContext);
+  const [quantity, setQuantity] = useState<number>(1);
+  const dispatch = useAppDispatch();
+
+  const addQuantity = () => quantity > 0 && quantity < 20 ? setQuantity(prev=>prev+1) : null;
+  const substractQuantity = () => quantity > 1 && quantity < 21 ? setQuantity(prev=>prev-1) : null;
+  const handleAddToOrder = () => {
+    const {categories, _id, ...rest} = pizza;
+    dispatch(addToOrder({item: rest, quantity: quantity}));
+  };
+
   return (
     <PizzaCard theme={theme}>
       <img
@@ -75,8 +87,8 @@ const Card = ({ pizza }: CardProps) => {
         </Typography>
       </CardContent>
       <CardActions>
-        <ButtonWithInput value={1} />
-        <PriceTag price={pizza.price} size='sm' />
+        <ButtonWithInput value={quantity} onIncrement={addQuantity} onDecrement={substractQuantity} onClick={handleAddToOrder}/>
+        <PriceTag price={pizza.price*quantity} size='sm' />
       </CardActions>
     </PizzaCard>
   );
