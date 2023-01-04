@@ -57,7 +57,7 @@ type ButtonWithInputProps = {
   onClick?: MouseEventHandler<HTMLButtonElement>;
 };
 
-const ButtonWithInput = ({ value, onIncrement, onDecrement, onClick}: ButtonWithInputProps) => {
+const ButtonWithInput = ({ value, onIncrement, onDecrement, onClick }: ButtonWithInputProps) => {
   const theme = useContext(ThemeContext);
   return (
     <StyledDiv>

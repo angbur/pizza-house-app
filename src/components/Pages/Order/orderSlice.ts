@@ -1,6 +1,7 @@
 import { OrderItem } from 'types/Order';
 import { createSlice, nanoid, PayloadAction } from '@reduxjs/toolkit';
 import { RootState } from 'store';
+import { toast } from 'react-toastify';
 
 type RequireOnly<T, P extends keyof T> = Pick<T, P> & Partial<Omit<T, P>>;
 
@@ -23,14 +24,13 @@ const orderSlice = createSlice({
   initialState,
   reducers: {
     addToOrder: (state, action: PayloadAction<DraftItem>) => {
-        const item = createItem(action.payload);
-        state.entities.unshift(item);
+      const item = createItem(action.payload);
+      state.entities.unshift(item);
+      toast.success('Added to order!');
     },
     removeFromOrder: (state, action: PayloadAction<OrderItem['_id']>) => {
-        const index = state.entities.findIndex(
-            (item) => item._id === action.payload,
-          );
-          state.entities.splice(index, 1);
+      const index = state.entities.findIndex((item) => item._id === action.payload);
+      state.entities.splice(index, 1);
     },
   },
 });

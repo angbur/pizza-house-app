@@ -11,6 +11,11 @@ const BaseButton = styled.button`
   border: none;
   transition: 3ms;
   letter-spacing: 1px;
+  transition: 0.2s all;
+  &:active {
+    transform: scale(0.98);
+    box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
+}
 `;
 
 export const PrimaryLightButton = styled(BaseButton)`

@@ -53,11 +53,13 @@ const Card = ({ pizza }: CardProps) => {
   const [quantity, setQuantity] = useState<number>(1);
   const dispatch = useAppDispatch();
 
-  const addQuantity = () => quantity > 0 && quantity < 20 ? setQuantity(prev=>prev+1) : null;
-  const substractQuantity = () => quantity > 1 && quantity < 21 ? setQuantity(prev=>prev-1) : null;
+  const addQuantity = () =>
+    quantity > 0 && quantity < 20 ? setQuantity((prev) => prev + 1) : null;
+  const substractQuantity = () =>
+    quantity > 1 && quantity < 21 ? setQuantity((prev) => prev - 1) : null;
   const handleAddToOrder = () => {
-    const {categories, _id, ...rest} = pizza;
-    dispatch(addToOrder({item: rest, quantity: quantity}));
+    const { categories, _id, ...rest } = pizza;
+    dispatch(addToOrder({ item: rest, quantity: quantity }));
   };
 
   return (
@@ -87,8 +89,13 @@ const Card = ({ pizza }: CardProps) => {
         </Typography>
       </CardContent>
       <CardActions>
-        <ButtonWithInput value={quantity} onIncrement={addQuantity} onDecrement={substractQuantity} onClick={handleAddToOrder}/>
-        <PriceTag price={pizza.price*quantity} size='sm' />
+        <ButtonWithInput
+          value={quantity}
+          onIncrement={addQuantity}
+          onDecrement={substractQuantity}
+          onClick={handleAddToOrder}
+        />
+        <PriceTag price={pizza.price * quantity} size='sm' />
       </CardActions>
     </PizzaCard>
   );

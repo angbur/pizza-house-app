@@ -26,7 +26,7 @@ describe('orderSlice', () => {
     const action = addToOrder(item);
     const newState = orderReducer(initialState, action);
 
-    expect(newState.entities).toEqual([ item,...initialState.entities,]);
+    expect(newState.entities).toEqual([item, ...initialState.entities]);
   });
 
   it(`should remove an item from order when the ${removeFromOrder}`, () => {

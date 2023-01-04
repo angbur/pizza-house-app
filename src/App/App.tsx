@@ -9,6 +9,8 @@ import MakePizzaPage from 'components/Pages/MakePizza/MakePizzaPage';
 import OrderPage from 'components/Pages/Order/OrderPage';
 import HistoryPage from 'components/Pages/History/HistoryPage';
 import ContactPage from 'components/Pages/Contact/ContactPage';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Container = styled.div`
   display: flex;
@@ -19,6 +21,18 @@ const App = () => (
     <GlobalStyle />
     <Header />
     <Container>
+      <ToastContainer
+        position='top-right'
+        autoClose={5000}
+        hideProgressBar
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme='colored'
+      />
       <Sidebar />
       <Routes>
         <Route path='/' element={<Main />} />
