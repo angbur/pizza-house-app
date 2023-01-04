@@ -5,6 +5,7 @@ import Title from 'assets/image/quote.svg';
 import LoginIcon from 'assets/icon/user.svg';
 import { ThemeContext } from 'components/Theme/ThemeContext';
 import { useContext } from 'react';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
   const theme = useContext(ThemeContext);
@@ -12,9 +13,9 @@ const Header = () => {
   return (
     <header>
       <Navbar className='header' theme={theme}>
-        <div className='header_logo'>
+        <Link to={'/'} className='header_logo'>
           <Logo background='secondary' />
-        </div>
+        </Link>
         <div className='header_title'>
           <img src={Title} />
         </div>

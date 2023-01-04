@@ -11,6 +11,8 @@ import HistoryPage from 'components/Pages/History/HistoryPage';
 import ContactPage from 'components/Pages/Contact/ContactPage';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import OrderForm from 'components/Pages/Order/components/OrderForm/OrderForm';
+import OrderSummary from 'components/Pages/Order/components/OrderSummary/OrderSummary';
 
 const Container = styled.div`
   display: flex;
@@ -38,6 +40,8 @@ const App = () => (
         <Route path='/' element={<Main />} />
         <Route path='/make-pizza' element={<MakePizzaPage />} />
         <Route path='/order' element={<OrderPage />} />
+        <Route path='/order/form' element={<OrderForm />} />
+        <Route path='/order/summary' element={<OrderSummary />} />
         <Route path='/history' element={<HistoryPage />} />
         <Route path='/contact' element={<ContactPage />} />
         <Route path='*' element={<Main />} />

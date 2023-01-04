@@ -9,7 +9,7 @@ export const AppTitle = styled.h1`
 export const PageTitle = styled.h2`
   font-family: 'Source Sans Pro', sans-serif;
   font-weight: 300;
-  line-height: 1.3;
+  line-height: 1.6;
   letter-spacing: 1px;
   font-size: 2.25rem;
 `;

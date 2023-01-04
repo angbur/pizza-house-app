@@ -52,9 +52,9 @@ const initialTheme: Theme = {
       letterSpacing: '0',
     },
     caption: {
-      fontFamily: 'Source Sans Pro',
+      fontFamily: 'Klepon Ijo',
       fontWeight: '400',
-      fontSize: '0.75rem',
+      fontSize: '2rem',
       lineHeight: '1.6',
       letterSpacing: '0',
     },
