@@ -3,6 +3,7 @@ import PriceTag from 'components/Atoms/PriceTag/PriceTag';
 import Typography from 'components/Atoms/Typography/Typography';
 import OrderListItem from 'components/Organisms/OrderListItem/OrderListItem';
 import { useAppDispatch, useAppSelector } from 'hooks';
+import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 import { OrderItem } from 'types/Order';
 import { removeAllOrder, selectListOfOrderItems, selectSumOfOrder } from '../../orderSlice';
@@ -20,12 +21,17 @@ const StyledDiv = styled.div`
 `;
 
 const OrderList = () => {
+  const navigate = useNavigate();
   const dispatch = useAppDispatch();
   const orderList = useAppSelector(selectListOfOrderItems);
   const sumOfOrder = useAppSelector(selectSumOfOrder);
 
   const handleRemoveAll = () => {
     dispatch(removeAllOrder());
+  };
+
+  const handleNavigate = () => {
+    navigate('form');
   };
 
   return orderList.length === 0 ? (
@@ -49,7 +55,7 @@ const OrderList = () => {
         <Button variant='button-text-light' onClick={handleRemoveAll}>
           Remove all
         </Button>
-        <Button variant='primary-light'>Order</Button>
+        <Button variant='primary-light' onClick={handleNavigate}>Order</Button>
       </StyledDiv>
     </>
   );
