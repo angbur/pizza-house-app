@@ -47,7 +47,7 @@ const initialTheme: Theme = {
     'dialog-title': {
       fontFamily: 'Source Sans Pro',
       fontWeight: '600',
-      fontSize: '2rem',
+      fontSize: '1.6rem',
       lineHeight: '1.6',
       letterSpacing: '1px',
     },

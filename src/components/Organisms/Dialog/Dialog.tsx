@@ -1,10 +1,12 @@
+import Button from 'components/Atoms/Button/Button';
 import Typography from 'components/Atoms/Typography/Typography';
 import { ThemeContext } from 'components/Theme/ThemeContext';
 import { useAppDispatch, useAppSelector } from 'hooks';
 import { useContext } from 'react';
 import styled from 'styled-components';
-import { DialogDetail, getDialogElement } from './dialog.utils';
-import { closeDialog, FormType, selectDialogState } from './dialogSlice';
+import { getDialogElement } from './dialog.utils';
+import { closeDialog, selectDialogState } from './dialogSlice';
+import CloseIcon from 'assets/icon/cancel-cross.svg';
 
 const Modal = styled.div`
   position: fixed;
@@ -42,6 +44,17 @@ const ModalContent = styled.div<ModalProps>`
   border-radius: 4px;
   width: 400px;
   display: ${(props) => (props.isOpen ? 'block' : 'none')};
+    & > .dialog-header {
+      display: flex;
+      justify-content: center;
+      border-bottom: 1px solid ${(props) => props.theme?.palette.primary};
+      padding: 1.625rem;
+      & > button {
+        position: absolute;
+        top: 14px;
+        right: 14px;
+      }
+    }
 `;
 
 const Dialog = () => {
@@ -63,7 +76,10 @@ const Dialog = () => {
         {dialogDetail && (
           <>
             <div className={'dialog-header'}>
-              <Typography variant='dialog-title' color='secondary'>
+              <Button variant={'icon-button'} className={'header_actions_button--mobile'} onClick={handleClose} style={{...{padding: 0}}}>
+                <img src={CloseIcon} height={'12px'} alt={''}/>
+              </Button>
+              <Typography variant='dialog-title' color='secondary' style={{ ...{ textTransform: 'uppercase' } }}>
                 {dialogDetail.title}
               </Typography>
             </div>
