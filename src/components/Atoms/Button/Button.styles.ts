@@ -15,7 +15,7 @@ const BaseButton = styled.button`
   &:active {
     transform: scale(0.98);
     box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
-}
+  }
 `;
 
 export const PrimaryLightButton = styled(BaseButton)`

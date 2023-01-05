@@ -58,7 +58,7 @@ const Card = ({ pizza }: CardProps) => {
   const substractQuantity = () =>
     quantity > 1 && quantity < 21 ? setQuantity((prev) => prev - 1) : null;
   const handleAddToOrder = () => {
-    const { categories, _id, ...rest } = pizza;
+    const { categories, ...rest } = pizza;
     dispatch(addToOrder({ item: rest, quantity: quantity }));
   };
 
