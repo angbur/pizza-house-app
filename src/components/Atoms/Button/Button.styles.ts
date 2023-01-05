@@ -107,5 +107,5 @@ export const IconButton = styled(BaseButton)`
   &:active {
     transform: none;
     box-shadow: none;
-  };
+  }
 `;

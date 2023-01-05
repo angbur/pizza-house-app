@@ -44,17 +44,17 @@ const ModalContent = styled.div<ModalProps>`
   border-radius: 4px;
   width: 400px;
   display: ${(props) => (props.isOpen ? 'block' : 'none')};
-    & > .dialog-header {
-      display: flex;
-      justify-content: center;
-      border-bottom: 1px solid ${(props) => props.theme?.palette.primary};
-      padding: 1.625rem;
-      & > button {
-        position: absolute;
-        top: 14px;
-        right: 14px;
-      }
+  & > .dialog-header {
+    display: flex;
+    justify-content: center;
+    border-bottom: 1px solid ${(props) => props.theme?.palette.primary};
+    padding: 1.625rem;
+    & > button {
+      position: absolute;
+      top: 14px;
+      right: 14px;
     }
+  }
 `;
 
 const Dialog = () => {
@@ -76,10 +76,19 @@ const Dialog = () => {
         {dialogDetail && (
           <>
             <div className={'dialog-header'}>
-              <Button variant={'icon-button'} className={'header_actions_button--mobile'} onClick={handleClose} style={{...{padding: 0}}}>
-                <img src={CloseIcon} height={'12px'} alt={''}/>
+              <Button
+                variant={'icon-button'}
+                className={'header_actions_button--mobile'}
+                onClick={handleClose}
+                style={{ ...{ padding: 0 } }}
+              >
+                <img src={CloseIcon} height={'12px'} alt={''} />
               </Button>
-              <Typography variant='dialog-title' color='secondary' style={{ ...{ textTransform: 'uppercase' } }}>
+              <Typography
+                variant='dialog-title'
+                color='secondary'
+                style={{ ...{ textTransform: 'uppercase' } }}
+              >
                 {dialogDetail.title}
               </Typography>
             </div>
