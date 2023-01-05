@@ -16,6 +16,7 @@ export const themeProperties = {
     'card-title',
     'card-subtitle',
     'item-title',
+    'dialog-title',
     'paragraph',
     'caption',
     'price-tag',

@@ -81,6 +81,10 @@ const BaseTextButton = styled(BaseButton)`
       transform-origin: bottom left;
     }
   }
+  &:active {
+    transform: none;
+    box-shadow: none;
+  }
 `;
 
 export const TextLightButton = styled(BaseTextButton)`

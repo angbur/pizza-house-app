@@ -9,6 +9,7 @@ const variantToElement = {
   'card-title': 'h3',
   'card-subtitle': 'h4',
   'item-title': 'h5',
+  'dialog-title': 'h2',
   paragraph: 'p',
   caption: 'p',
   'price-tag': 'p',

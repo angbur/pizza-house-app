@@ -9,10 +9,11 @@ import MakePizzaPage from 'components/Pages/MakePizza/MakePizzaPage';
 import OrderPage from 'components/Pages/Order/OrderPage';
 import HistoryPage from 'components/Pages/History/HistoryPage';
 import ContactPage from 'components/Pages/Contact/ContactPage';
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
 import OrderForm from 'components/Pages/Order/components/OrderForm/OrderForm';
 import OrderSummary from 'components/Pages/Order/components/OrderSummary/OrderSummary';
+import Dialog from 'components/Organisms/Dialog/Dialog';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Container = styled.div`
   display: flex;
@@ -21,6 +22,7 @@ const Container = styled.div`
 const App = () => (
   <Fragment>
     <GlobalStyle />
+    <Dialog />
     <Header />
     <Container>
       <ToastContainer
