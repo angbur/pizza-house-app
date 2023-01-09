@@ -51,8 +51,8 @@ const ModalContent = styled.div<ModalProps>`
     padding: 1.625rem;
     & > button {
       position: absolute;
-      top: 14px;
-      right: 14px;
+      top: 16px;
+      right: 16px;
     }
   }
 `;

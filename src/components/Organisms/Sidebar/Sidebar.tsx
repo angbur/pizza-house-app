@@ -8,6 +8,9 @@ const SidebarNav = styled.div`
   position: sticky;
   height: 100%;
   border-right: 1px solid ${(props) => props.theme.palette.light};
+  & > ul {
+    list-style:none ;
+  }
 `;
 
 const Sidebar = () => {

@@ -37,9 +37,21 @@ const Register = (): ReactNode => {
       <form>
         <Container>
           <InputWithLabel
-            label={'Name'}
+            label={'Login'}
             type={'text'}
-            placeholder={'Your name'}
+            placeholder={'Your login'}
+            color={'secondary'}
+          />
+          <InputWithLabel
+            label={'First name'}
+            type={'text'}
+            placeholder={'Your first name'}
+            color={'secondary'}
+          />
+          <InputWithLabel
+            label={'Last name'}
+            type={'text'}
+            placeholder={'Your last name'}
             color={'secondary'}
           />
           <InputWithLabel
