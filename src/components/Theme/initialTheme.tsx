@@ -44,6 +44,13 @@ const initialTheme: Theme = {
       lineHeight: '1.4',
       letterSpacing: '1px',
     },
+    'dialog-title': {
+      fontFamily: 'Source Sans Pro',
+      fontWeight: '600',
+      fontSize: '1.6rem',
+      lineHeight: '1.6',
+      letterSpacing: '1px',
+    },
     paragraph: {
       fontFamily: 'Source Sans Pro',
       fontWeight: '400',

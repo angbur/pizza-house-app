@@ -81,6 +81,10 @@ const BaseTextButton = styled(BaseButton)`
       transform-origin: bottom left;
     }
   }
+  &:active {
+    transform: none;
+    box-shadow: none;
+  }
 `;
 
 export const TextLightButton = styled(BaseTextButton)`
@@ -100,4 +104,8 @@ export const TextDarkButton = styled(BaseTextButton)`
 export const IconButton = styled(BaseButton)`
   color: ${(props) => props.theme?.palette.secondary};
   scale: 200%;
+  &:active {
+    transform: none;
+    box-shadow: none;
+  }
 `;

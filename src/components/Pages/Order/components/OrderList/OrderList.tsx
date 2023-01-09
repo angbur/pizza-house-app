@@ -55,7 +55,9 @@ const OrderList = () => {
         <Button variant='button-text-light' onClick={handleRemoveAll}>
           Remove all
         </Button>
-        <Button variant='primary-light' onClick={handleNavigate}>Order</Button>
+        <Button variant='primary-light' onClick={handleNavigate}>
+          Order
+        </Button>
       </StyledDiv>
     </>
   );

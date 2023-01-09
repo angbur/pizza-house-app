@@ -6,9 +6,20 @@ import LoginIcon from 'assets/icon/user.svg';
 import { ThemeContext } from 'components/Theme/ThemeContext';
 import { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { useAppDispatch } from 'hooks';
+import { FormType, openDialog } from '../Dialog/dialogSlice';
 
 const Header = () => {
+  const dispatch = useAppDispatch();
   const theme = useContext(ThemeContext);
+
+  const handleSignIn = () => {
+    dispatch(openDialog(FormType.login));
+  };
+
+  const handleSignUp = () => {
+    dispatch(openDialog(FormType.register));
+  };
 
   return (
     <header>
@@ -20,10 +31,18 @@ const Header = () => {
           <img src={Title} />
         </div>
         <HeaderActions className='header_actions'>
-          <Button variant={'primary-light'} className={'header_actions_button--desktop'}>
+          <Button
+            variant={'primary-light'}
+            className={'header_actions_button--desktop'}
+            onClick={handleSignIn}
+          >
             Sign in
           </Button>
-          <Button variant={'button-text-dark'} className={'header_actions_button--desktop'}>
+          <Button
+            variant={'button-text-dark'}
+            className={'header_actions_button--desktop'}
+            onClick={handleSignUp}
+          >
             Sign up
           </Button>
           <Button variant={'icon-button'} className={'header_actions_button--mobile'}>
