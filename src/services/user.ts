@@ -1,5 +1,3 @@
-import { selectToken } from './../store/userSlice';
-import { useAppSelector } from './../hooks';
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 
 export type LoginRequest = {
@@ -7,24 +5,36 @@ export type LoginRequest = {
   password: string;
 };
 
-export type LoginResponse = {
-  user: string;
-  token: string;
-  status?: string;
-  error?: string;
+type Data = {
+  message: string;
 };
 
-export type RegisterRequest = {
-  firstName: string;
-  lastName: string;
-  login: string;
-  email: string;
-  password: string;
+export type LoginResponse = {
+  userId?: string;
+  login?: string;
+  token?: string;
+  status?: string;
+  error?: string;
+  isSuccess: boolean;
+  data: Data;
 };
 
 export type RegisterResponse = {
-  status?: string;
-  error?: string;
+  status: string;
+  isSuccess: boolean;
+  data: Data;
+};
+
+export type LoginResponseData = {
+  data: LoginResponse;
+};
+
+export type RequestData = {
+  firstName?: string;
+  lastName?: string;
+  login: string;
+  email?: string;
+  password: string;
 };
 
 export const userApi = createApi({
@@ -41,14 +51,14 @@ export const userApi = createApi({
     },
   }),
   endpoints: (builder) => ({
-    login: builder.mutation<LoginResponse, LoginRequest>({
+    login: builder.mutation<LoginResponse, Pick<RequestData, 'login' | 'password'>>({
       query: (credentials) => ({
         url: 'login',
         method: 'POST',
         body: credentials,
       }),
     }),
-    register: builder.mutation<RegisterResponse, RegisterRequest>({
+    register: builder.mutation<RegisterResponse, RequestData>({
       query: (credentials) => ({
         url: 'register',
         method: 'POST',

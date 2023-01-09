@@ -1,6 +1,7 @@
 import InputWithLabel from 'components/Atoms/InputWithLabel/InputWithLabel';
 import { ReactNode } from 'react';
 import styled from 'styled-components';
+import { ComponentProps } from '../dialog.utils';
 
 const Container = styled.div`
   display: flex;
@@ -11,23 +12,26 @@ const Container = styled.div`
   gap: 1rem;
 `;
 
-const Login = (): ReactNode => {
-
+const Login = ({ handleChange }: ComponentProps): ReactNode => {
   return (
     <>
       <form>
         <Container>
           <InputWithLabel
-            label={'Email'}
-            type={'email'}
-            placeholder={'Your email'}
+            label={'Login'}
+            type={'text'}
+            name={'login'}
+            placeholder={'Your login'}
             color={'secondary'}
+            onChange={handleChange}
           />
           <InputWithLabel
             label={'Password'}
             type={'password'}
+            name={'password'}
             placeholder={'Password'}
             color={'secondary'}
+            onChange={handleChange}
           />
         </Container>
       </form>

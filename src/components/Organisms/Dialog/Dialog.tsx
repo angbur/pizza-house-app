@@ -7,7 +7,14 @@ import styled from 'styled-components';
 import { getDialogElement } from './dialog.utils';
 import { closeDialog, FormType, openDialog, selectDialogState } from './dialogSlice';
 import CloseIcon from 'assets/icon/cancel-cross.svg';
-import { useRegisterMutation } from 'services/user';
+import {
+  RequestData,
+  useRegisterMutation,
+  useLoginMutation,
+  LoginResponse,
+  LoginResponseData,
+} from 'services/user';
+import { toast } from 'react-toastify';
 
 const Modal = styled.div`
   position: fixed;
@@ -71,13 +78,15 @@ const Dialog = () => {
   const dispatch = useAppDispatch();
   const theme = useContext(ThemeContext);
   const { isOpen, formType } = useAppSelector(selectDialogState);
-  const [data, setData] = useState({
+  const [data, setData] = useState<RequestData>({
     firstName: '',
     lastName: '',
     login: '',
     email: '',
-    password: ''});
-    const [register, { isLoading }] = useRegisterMutation();
+    password: '',
+  });
+  const [register] = useRegisterMutation();
+  const [login] = useLoginMutation();
 
   if (!formType) return null;
   const dialogDetail = getDialogElement(formType);
@@ -96,22 +105,36 @@ const Dialog = () => {
     dispatch(openDialog(FormType.login));
   };
 
-  const handleSubmitRegister = () => {
-   register(data)
+  const handleSubmitRegister = async () => {
+    try {
+      const user = await register(data).unwrap();
+      if (user.isSuccess) {
+        toast.success('Registration was successful!');
+        dispatch(closeDialog);
+      }
+    } catch (err) {
+      toast.error('Error');
+    }
   };
 
-  const handleSubmitLogin = () => {
-    null
+  const handleSubmitLogin = async () => {
+    try {
+      const { firstName, lastName, email, ...rest } = data;
+      const user = await login({ ...rest }).unwrap();
+      if (user.isSuccess) {
+        toast.success('You are logged in!');
+        dispatch(closeDialog);
+      }
+    } catch (err) {
+      toast.error('Error');
+    }
   };
 
-  const handleChange = ({
-    target: { name, value },
-  }: React.ChangeEvent<HTMLInputElement>) => {
-    setData(
-      {
-        ...data,
-        [name.trim()]: value
-      })
+  const handleChange = ({ target: { name, value } }: React.ChangeEvent<HTMLInputElement>) => {
+    setData({
+      ...data,
+      [name.trim()]: value,
+    });
   };
 
   return (
@@ -137,35 +160,46 @@ const Dialog = () => {
                 {dialogDetail.title}
               </Typography>
             </div>
-            <div>{dialogDetail.component && dialogDetail.component({handleChange: handleChange})}</div>
+            <div>
+              {dialogDetail.component && dialogDetail.component({ handleChange: handleChange })}
+            </div>
             <ModalActions>
-          
-            { formType === 'register' ? (
-              <>
-                <Button variant='primary-light' size='md' type='submit' onClick={handleSubmitRegister}>
-                  Create Account
-                </Button>
-                  <Typography variant='paragraph' color='secondary'>
-                  If you already have an account just
-                  <Button variant='button-text-light' size='sm' onClick={handleRegister}>
-                    SIGN IN
+              {formType === 'register' ? (
+                <>
+                  <Button
+                    variant='primary-light'
+                    size='md'
+                    type='submit'
+                    onClick={handleSubmitRegister}
+                  >
+                    Create Account
                   </Button>
-                </Typography>
-              </>
-            ) : formType === 'login' ? (
-              <>
-                 <Button variant='primary-light' size='md' type='submit' onClick={handleSubmitLogin}>
-                  Log In
-                </Button>
                   <Typography variant='paragraph' color='secondary'>
-                    If you do not have an account 
-                  <Button variant='button-text-light' size='sm' onClick={formType === 'register' ? handleRegister : handleLogin}>
-                    SIGN UP
+                    If you already have an account just
+                    <Button variant='button-text-light' size='sm' onClick={handleRegister}>
+                      SIGN IN
+                    </Button>
+                  </Typography>
+                </>
+              ) : formType === 'login' ? (
+                <>
+                  <Button
+                    variant='primary-light'
+                    size='md'
+                    type='submit'
+                    onClick={handleSubmitLogin}
+                  >
+                    Log In
                   </Button>
-                </Typography>
-              </>
-            ) : null}
-          </ModalActions>
+                  <Typography variant='paragraph' color='secondary'>
+                    If you do not have an account
+                    <Button variant='button-text-light' size='sm' onClick={handleLogin}>
+                      SIGN UP
+                    </Button>
+                  </Typography>
+                </>
+              ) : null}
+            </ModalActions>
           </>
         )}
       </ModalContent>

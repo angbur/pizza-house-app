@@ -56,7 +56,7 @@ const OrderList = () => {
           Remove all
         </Button>
         <Button variant='primary-light' onClick={handleNavigate}>
-          Order
+          Go to order form
         </Button>
       </StyledDiv>
     </>

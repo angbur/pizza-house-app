@@ -12,8 +12,7 @@ const Container = styled.div`
   gap: 1rem;
 `;
 
-const Register = ({handleChange}: ComponentProps ): ReactNode => {
-    
+const Register = ({ handleChange }: ComponentProps): ReactNode => {
   return (
     <>
       <form>

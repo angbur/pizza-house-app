@@ -14,7 +14,7 @@ export type ComponentProps = {
 
 export type DialogDetail = {
   title: string;
-  component: ({handleChange}:ComponentProps) => ReactNode;
+  component: ({ handleChange }: ComponentProps) => ReactNode;
   width: DialogWidth;
 };
 
