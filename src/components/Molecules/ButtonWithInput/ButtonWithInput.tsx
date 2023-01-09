@@ -1,7 +1,7 @@
 import Button from 'components/Atoms/Button/Button';
 import Icon from 'components/Atoms/Icon/Icon';
 import QuantityChangeButton from 'components/Atoms/QuantityChangeButton/QuantityChangeButton';
-import { MouseEventHandler } from 'react';
+import { ChangeEventHandler, MouseEventHandler } from 'react';
 import styled from 'styled-components';
 
 const StyledInput = styled.input`
@@ -33,8 +33,8 @@ const StyledDiv = styled.div`
     -moz-appearance: none;
     -os-appearance: none;
   }
-  & >input[type=number] {
-    -moz-appearance:textfield;
+  & > input[type='number'] {
+    -moz-appearance: textfield;
   }
 `;
 
@@ -43,16 +43,23 @@ type ButtonWithInputProps = {
   onIncrement?: MouseEventHandler<HTMLButtonElement>;
   onDecrement?: MouseEventHandler<HTMLButtonElement>;
   onClick?: MouseEventHandler<HTMLButtonElement>;
+  onChange?: ChangeEventHandler<HTMLInputElement>;
 };
 
-const ButtonWithInput = ({ value, onIncrement, onDecrement, onClick }: ButtonWithInputProps) => {
+const ButtonWithInput = ({
+  value,
+  onIncrement,
+  onDecrement,
+  onClick,
+  onChange,
+}: ButtonWithInputProps) => {
   return (
     <StyledDiv>
       <Button variant='secondary-dark' size={'sm'} onClick={onClick}>
         {Icon({ name: 'basket', size: 17, isActive: false })}
         Add to order
       </Button>
-      <StyledInput type='number' value={value} />
+      <StyledInput type='number' value={value} onChange={onChange} />
       <QuantityChangeButton onIncrement={onIncrement} onDecrement={onDecrement} />
     </StyledDiv>
   );

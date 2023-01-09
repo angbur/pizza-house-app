@@ -8,6 +8,7 @@ const initialTheme: Theme = {
     secondary: '#151515',
     tertiary: '#4A4747',
     light: '#FCFBFB',
+    danger: '#e74c3c',
   },
   typography: {
     'main-title': {

@@ -9,7 +9,7 @@ const SidebarNav = styled.div`
   height: 100%;
   border-right: 1px solid ${(props) => props.theme.palette.light};
   & > ul {
-    list-style:none ;
+    list-style: none;
   }
 `;
 

@@ -5,6 +5,7 @@ import { addToOrder } from 'components/Pages/Order/orderSlice';
 import { ThemeContext } from 'components/Theme/ThemeContext';
 import { useAppDispatch } from 'hooks';
 import { useContext, useState } from 'react';
+import { toast } from 'react-toastify';
 import styled from 'styled-components';
 import { Pizza } from 'types/Pizza';
 
@@ -62,6 +63,17 @@ const Card = ({ pizza }: CardProps) => {
     dispatch(addToOrder({ item: rest, quantity: quantity }));
   };
 
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>): void => {
+    if (parseInt(event.target.value) > 20) {
+      setQuantity(20);
+      toast.error('You can order up to 20');
+    } else if (parseInt(event.target.value) < 1) {
+      setQuantity(1);
+    } else {
+      setQuantity(parseInt(event.target.value));
+    }
+  };
+
   return (
     <PizzaCard theme={theme}>
       <img
@@ -94,6 +106,7 @@ const Card = ({ pizza }: CardProps) => {
           onIncrement={addQuantity}
           onDecrement={substractQuantity}
           onClick={handleAddToOrder}
+          onChange={handleChange}
         />
         <PriceTag price={pizza.price * quantity} size='sm' />
       </CardActions>

@@ -1,5 +1,11 @@
 import clsx from 'clsx';
-import { CSSProperties, MouseEventHandler, PropsWithChildren, useContext } from 'react';
+import {
+  ComponentPropsWithoutRef,
+  CSSProperties,
+  MouseEventHandler,
+  PropsWithChildren,
+  useContext,
+} from 'react';
 import { ThemeContext } from 'components/Theme/ThemeContext';
 import {
   IconButton,
@@ -42,7 +48,7 @@ const Button = ({
   style,
   children,
   onClick,
-}: PropsWithChildren<ButtonProps>) => {
+}: PropsWithChildren<ButtonProps> & ComponentPropsWithoutRef<'button'>) => {
   const theme = useContext(ThemeContext);
 
   const props = {
