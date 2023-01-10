@@ -9,6 +9,7 @@ export const themeProperties = {
     'accent',
     'background',
     'contrastColor',
+    'danger',
   ],
   typographyNames: [
     'main-title',

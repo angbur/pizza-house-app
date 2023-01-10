@@ -1,4 +1,4 @@
-import { ReactNode } from 'react';
+import { ChangeEventHandler, ReactNode } from 'react';
 import Login from './components/Login';
 import LoginSuccess from './components/LoginSuccess';
 import OrderDetail from './components/OrderDetail';
@@ -8,9 +8,13 @@ import { FormType } from './dialogSlice';
 
 type DialogWidth = 'sm' | 'md' | 'lg';
 
+export type ComponentProps = {
+  handleChange?: ChangeEventHandler<HTMLInputElement>;
+};
+
 export type DialogDetail = {
   title: string;
-  component: () => ReactNode;
+  component: ({ handleChange }: ComponentProps) => ReactNode;
   width: DialogWidth;
 };
 

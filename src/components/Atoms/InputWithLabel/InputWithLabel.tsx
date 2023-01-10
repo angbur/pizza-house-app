@@ -2,11 +2,13 @@ import { ColorVariants } from 'components/Theme/theme.types';
 import { ThemeContext } from 'components/Theme/ThemeContext';
 import { ComponentPropsWithoutRef, CSSProperties, useContext } from 'react';
 import styled from 'styled-components';
+import Typography from '../Typography/Typography';
 
 const Box = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  justify-content: center;
   gap: 0.625rem;
   & > input {
     background: ${(props) => props.theme?.palette.light};
@@ -18,11 +20,15 @@ const Box = styled.div`
     border-radius: 8px;
     width: 300px;
   }
+  & > p {
+    max-width: 300px;
+  }
 `;
 
 type LabelProps = {
   label: string;
   color: ColorVariants;
+  helperText?: string;
 };
 
 const InputWithLabel = (props: ComponentPropsWithoutRef<'input'> & LabelProps) => {
@@ -37,7 +43,16 @@ const InputWithLabel = (props: ComponentPropsWithoutRef<'input'> & LabelProps) =
       <label htmlFor={props.id} style={{ ...colorStyles }}>
         {props.label}
       </label>
-      <input id={props.id} placeholder={props.placeholder} type={props.type} />
+      <input
+        id={props.id}
+        placeholder={props.placeholder}
+        type={props.type}
+        name={props.name}
+        onChange={props.onChange}
+      />
+      <Typography variant='paragraph' color='danger'>
+        {props.helperText && props.helperText}
+      </Typography>
     </Box>
   );
 };
