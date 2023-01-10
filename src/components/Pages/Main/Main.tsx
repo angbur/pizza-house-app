@@ -1,8 +1,7 @@
 import Card from 'components/Organisms/Card/Card';
-import { useGetPizzasListQuery } from 'services/pizza';
 import styled from 'styled-components';
 import { Pizza } from 'types/Pizza';
-import { sortByName } from './sortByName';
+import { useSortedPizzaList } from './sortByName';
 
 const Box = styled.div`
   display: flex;
@@ -21,13 +20,13 @@ const MenuContainer = styled.div`
 `;
 
 const Main = () => {
-  const { data, error, isLoading } = useGetPizzasListQuery();
+  const data: Pizza[] = useSortedPizzaList();
 
   return (
     <Box className='box'>
       <main>
         <MenuContainer>
-          {data?.pizzaList.map((el) => (
+          {data.map((el) => (
             <Card key={`pizza-${el._id}`} pizza={el} />
           ))}
         </MenuContainer>
