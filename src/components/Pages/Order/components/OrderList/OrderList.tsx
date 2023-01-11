@@ -1,9 +1,11 @@
 import Button from 'components/Atoms/Button/Button';
 import PriceTag from 'components/Atoms/PriceTag/PriceTag';
 import Typography from 'components/Atoms/Typography/Typography';
+import { FormType, openDialog } from 'components/Organisms/Dialog/dialogSlice';
 import OrderListItem from 'components/Organisms/OrderListItem/OrderListItem';
 import { useAppDispatch, useAppSelector } from 'hooks';
 import { useNavigate } from 'react-router-dom';
+import { selectIsLoggedIn } from 'store/userSlice';
 import styled from 'styled-components';
 import { OrderItem } from 'types/Order';
 import { removeAllOrder, selectListOfOrderItems, selectSumOfOrder } from '../../orderSlice';
@@ -25,12 +27,14 @@ const OrderList = () => {
   const dispatch = useAppDispatch();
   const orderList = useAppSelector(selectListOfOrderItems);
   const sumOfOrder = useAppSelector(selectSumOfOrder);
+  const isLoggedIn = useAppSelector(selectIsLoggedIn);
 
   const handleRemoveAll = () => {
     dispatch(removeAllOrder());
   };
 
   const handleNavigate = () => {
+    if (!isLoggedIn) dispatch(openDialog(FormType.login));
     navigate('form');
   };
 

@@ -1,6 +1,8 @@
 import ListIconItem from 'components/Molecules/ListIconItem/ListIconItem';
 import { ThemeContext } from 'components/Theme/ThemeContext';
+import { useAppSelector } from 'hooks';
 import { useContext } from 'react';
+import { selectIsLoggedIn } from 'store/userSlice';
 import styled from 'styled-components';
 
 const SidebarNav = styled.div`
@@ -18,6 +20,7 @@ const SidebarNav = styled.div`
 
 const Sidebar = () => {
   const theme = useContext(ThemeContext);
+  const isLoggedIn = useAppSelector(selectIsLoggedIn);
   return (
     <nav>
       <SidebarNav className={'sidebar'} theme={theme}>
@@ -29,11 +32,13 @@ const Sidebar = () => {
             linkTo={'make-pizza'}
           />
           <ListIconItem icon={{ name: 'order', size: 26 }} label={'order'} linkTo={'order'} />
-          <ListIconItem
+          {isLoggedIn && (
+            <ListIconItem
             icon={{ name: 'list-icon', size: 20 }}
             label={'history'}
             linkTo={'history'}
           />
+          )}
           <ListIconItem icon={{ name: 'email', size: 20 }} label={'contact'} linkTo={'contact'} />
         </ul>
       </SidebarNav>

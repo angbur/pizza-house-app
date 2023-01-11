@@ -79,7 +79,7 @@ const Dialog = () => {
     password: '',
   });
   const [register] = useRegisterMutation();
-  const [login, {isSuccess}] = useLoginMutation();
+  const [login] = useLoginMutation();
 
   if (!formType) return null;
   const dialogDetail = getDialogElement(formType);
@@ -103,7 +103,7 @@ const Dialog = () => {
       const user = await register(data).unwrap();
       dispatch(closeDialog());
     } catch (err) {
-      null;
+      console.log(err);
     }
   };
 
@@ -113,7 +113,7 @@ const Dialog = () => {
       const user = await login({ ...rest }).unwrap();
       dispatch(closeDialog());
     } catch (err) {
-      null;
+      console.log(err);
     }
   };
 
