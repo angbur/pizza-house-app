@@ -29,9 +29,9 @@ const QuantityChangeButton = ({ onDecrement, onIncrement }: QuantityButtonProps)
   const theme = useContext(ThemeContext);
   return (
     <QuantityPanel theme={theme}>
-      <button onClick={onIncrement}>{Icon({ name: 'arrow-up', size: 13, isActive: false })}</button>
+      <button onClick={onIncrement}>{Icon({ name: 'arrow-up', size: 14, isActive: true })}</button>
       <button onClick={onDecrement}>
-        {Icon({ name: 'arrow-down', size: 13, isActive: false })}
+        {Icon({ name: 'arrow-down', size: 14, isActive: true })}
       </button>
     </QuantityPanel>
   );

@@ -8,7 +8,7 @@ const setButtonSize = (size: ButtonSize): CSSProperties => {
   if (size === 'sm') scale = 0.8;
 
   const style: CSSProperties = {
-    padding: `${scale * 0.625}rem ${scale * 1.25}rem`,
+    padding: `${scale * 0.63}rem ${scale * 1.25}rem`,
     fontSize: `${(scale + 0.05) * 1}rem`,
   };
 

@@ -1,17 +1,24 @@
 import { useGetPizzasListQuery } from 'services/pizza';
 import { Pizza } from 'types/Pizza';
 
-export const useSortedPizzaList = (): Pizza[] => {
+export type SortParams = 'name' | 'price asc' | 'price desc';
+
+export const useSortedPizzaList = (param: SortParams): Pizza[] => {
   const { data, error, isLoading } = useGetPizzasListQuery();
   let result: Pizza[] = [];
 
   if (isPizzaList(data?.pizzaList) && data) {
     result = [...data.pizzaList];
   }
-  return result.sort((a, b) => compareFn(a, b));
+  return result.sort((a, b) => {
+    if (param === 'name') return compareByName(a, b);
+    if (param === 'price desc') return a.price - b.price;
+    if (param === 'price asc') return b.price - a.price;
+    return compareByName(a, b);
+  });
 };
 
-const compareFn = (a: Pizza, b: Pizza) => {
+const compareByName = (a: Pizza, b: Pizza) => {
   const nameA = a.name.toUpperCase();
   const nameB = b.name.toUpperCase();
   if (nameA < nameB) {

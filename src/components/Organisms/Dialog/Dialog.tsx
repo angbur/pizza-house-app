@@ -7,13 +7,7 @@ import styled from 'styled-components';
 import { getDialogElement } from './dialog.utils';
 import { closeDialog, FormType, openDialog, selectDialogState } from './dialogSlice';
 import CloseIcon from 'assets/icon/cancel-cross.svg';
-import {
-  RequestData,
-  useRegisterMutation,
-  useLoginMutation,
-  LoginResponse,
-  LoginResponseData,
-} from 'services/user';
+import { RequestData, useRegisterMutation, useLoginMutation } from 'services/user';
 import { toast } from 'react-toastify';
 
 const Modal = styled.div`

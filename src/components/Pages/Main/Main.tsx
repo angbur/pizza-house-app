@@ -1,7 +1,9 @@
 import Card from 'components/Organisms/Card/Card';
+import SortingPanel from 'components/Organisms/SortingPanel/SortingPanel';
+import { useState } from 'react';
 import styled from 'styled-components';
 import { Pizza } from 'types/Pizza';
-import { useSortedPizzaList } from './sortByName';
+import { SortParams, useSortedPizzaList } from '../../Organisms/SortingPanel/useSortedPizzaList';
 
 const Box = styled.div`
   display: flex;
@@ -20,11 +22,17 @@ const MenuContainer = styled.div`
 `;
 
 const Main = () => {
-  const data: Pizza[] = useSortedPizzaList();
+  const [sortParam, setSortParam] = useState<SortParams>('name');
+  const data: Pizza[] = useSortedPizzaList(sortParam);
+
+  const handleClick = (param: SortParams) => {
+    setSortParam(param);
+  };
 
   return (
     <Box className='box'>
       <main>
+        <SortingPanel onClick={handleClick} />
         <MenuContainer>
           {data.map((el) => (
             <Card key={`pizza-${el._id}`} pizza={el} />

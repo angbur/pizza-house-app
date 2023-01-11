@@ -9,7 +9,7 @@ const StyledInput = styled.input`
   font-size: 1rem;
   font-weight: 400;
   width: 40px;
-  height: 42px;
+  height: 43px;
   text-align: center;
   &:focus-visible {
     outline: none;
