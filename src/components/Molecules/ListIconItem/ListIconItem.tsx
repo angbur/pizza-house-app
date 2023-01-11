@@ -31,6 +31,7 @@ const SidebarItem = styled.div<SidebarItemProps>`
   border-top: 1px solid ${(props) => props.theme.palette.secondary};
   border-bottom: 1px solid ${(props) => props.theme.palette.secondary};
   & > h5.item-title {
+    text-align: center;
     color: ${(props) =>
       props.isActive ? props.theme.palette.secondary : props.theme.palette.light};
   }
@@ -57,7 +58,7 @@ const ListIconItem = ({ label, icon, linkTo }: PropsWithChildren<ListIconItemPro
     <li>
       <NavLink to={linkTo} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
         {({ isActive }) => (
-          <SidebarItem theme={theme} isActive={isActive}>
+          <SidebarItem theme={theme} isActive={isActive} className={'icon-item'}>
             {Icon({ ...icon, isActive: isActive ? true : isHover })}
             <Typography variant={'item-title'} style={{ ...{ textTransform: 'uppercase' } }}>
               {label}

@@ -1,7 +1,8 @@
 import { Routes, Route } from 'react-router-dom';
 import { Fragment } from 'react';
-import Main from '../components/Pages/Main/Main';
-import Header from '../components/Organisms/Header/Header';
+import Main from 'components/Pages/Main/Main';
+import Header from 'components/Organisms/Header/Header';
+import Footer from 'components/Organisms/Footer/Footer';
 import GlobalStyle from '../global.styles';
 import Sidebar from 'components/Organisms/Sidebar/Sidebar';
 import styled from 'styled-components';
@@ -14,9 +15,12 @@ import OrderSummary from 'components/Pages/Order/components/OrderSummary/OrderSu
 import Dialog from 'components/Organisms/Dialog/Dialog';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import ProfilePage from 'components/Pages/Profile/ProfilePage';
+import ScrollToTop from './ScrollToTop';
 
 const Container = styled.div`
   display: flex;
+  min-height: 100vh;
 `;
 
 const App = () => (
@@ -38,6 +42,7 @@ const App = () => (
         theme='colored'
       />
       <Sidebar />
+      <ScrollToTop />
       <Routes>
         <Route path='/' element={<Main />} />
         <Route path='/make-pizza' element={<MakePizzaPage />} />
@@ -46,9 +51,11 @@ const App = () => (
         <Route path='/order/summary' element={<OrderSummary />} />
         <Route path='/history' element={<HistoryPage />} />
         <Route path='/contact' element={<ContactPage />} />
+        <Route path='/profile' element={<ProfilePage />} />
         <Route path='*' element={<Main />} />
       </Routes>
     </Container>
+    <Footer />
   </Fragment>
 );
 export default App;

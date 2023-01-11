@@ -90,21 +90,21 @@ const Dialog = () => {
   };
 
   const handleRegister = () => {
-    dispatch(closeDialog);
-    dispatch(openDialog(FormType.register));
+    dispatch(closeDialog());
+    dispatch(openDialog(FormType.login));
   };
 
   const handleLogin = () => {
-    dispatch(closeDialog);
-    dispatch(openDialog(FormType.login));
+    dispatch(closeDialog());
+    dispatch(openDialog(FormType.register));
   };
 
   const handleSubmitRegister = async () => {
     try {
       const user = await register(data).unwrap();
       if (user.isSuccess) {
+        dispatch(closeDialog());
         toast.success('Registration was successful!');
-        dispatch(closeDialog);
       }
     } catch (err) {
       toast.error('Error');
@@ -117,7 +117,7 @@ const Dialog = () => {
       const user = await login({ ...rest }).unwrap();
       if (user.isSuccess) {
         toast.success('You are logged in!');
-        dispatch(closeDialog);
+        dispatch(closeDialog());
       }
     } catch (err) {
       toast.error('Error');

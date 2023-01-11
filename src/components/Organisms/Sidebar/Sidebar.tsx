@@ -11,6 +11,9 @@ const SidebarNav = styled.div`
   & > ul {
     list-style: none;
   }
+  @media (max-width: 845px) {
+    display: none;
+  }
 `;
 
 const Sidebar = () => {
