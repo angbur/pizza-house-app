@@ -13,6 +13,7 @@ import {
   PrimaryLightButton,
   SecondaryDarkButton,
   SecondaryLightButton,
+  TextButtonWithoutHover,
   TextDarkButton,
   TextLightButton,
 } from './Button.styles';
@@ -25,6 +26,7 @@ export const buttonVariants = [
   'secondary-dark',
   'button-text-light',
   'button-text-dark',
+  'button-text-without-hover',
   'icon-button',
 ] as const;
 
@@ -74,6 +76,8 @@ const Button = ({
         <TextDarkButton {...props}>{children}</TextDarkButton>
       ) : variant === 'icon-button' ? (
         <IconButton {...props}>{children}</IconButton>
+      ) : variant === 'button-text-without-hover' ? (
+        <TextButtonWithoutHover {...props}>{children}</TextButtonWithoutHover>
       ) : (
         <PrimaryLightButton {...props}>{children}</PrimaryLightButton>
       )}

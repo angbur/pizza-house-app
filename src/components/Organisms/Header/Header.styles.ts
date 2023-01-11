@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 export const Navbar = styled.div`
@@ -46,10 +47,44 @@ export const HeaderActions = styled.div`
       display: none;
     }
   }
-  & button.header_actions_button--mobile {
-    display: none;
-    @media (max-width: 460px) {
-      display: block;
-    }
+`;
+
+export const StyledLink = styled(Link)`
+  & img {
+    position: relative;
+    top: 2px;
+    margin-right: 0.5rem;
+  }
+`;
+
+export const DropdownContainerMobile = styled.div`
+  display: none;
+  @media (max-width: 460px) {
+    display: block;
+  }
+`;
+
+export const DropdownContainer = styled.div`
+  position: relative;
+  display: inline-block;
+`;
+
+export const DropdownContent = styled.div`
+  position: absolute;
+  right: 10px;
+  background-color: #fff;
+  min-width: 180px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  padding: 1rem;
+  & > a {
+    padding: 1rem;
+    text-decoration: none;
+    display: block;
+  }
+  & img {
+    position: relative;
+    top: 2px;
+    margin-right: 0 10px;
   }
 `;

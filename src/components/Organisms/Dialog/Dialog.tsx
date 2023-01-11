@@ -7,7 +7,7 @@ import styled, { CSSProperties } from 'styled-components';
 import { DialogWidth, getDialogElement } from './dialog.utils';
 import { closeDialog, FormType, openDialog, selectDialogState } from './dialogSlice';
 import CloseIcon from 'assets/icon/cancel-cross.svg';
-import { RequestData, useRegisterMutation, useLoginMutation } from 'services/user';
+import { RequestData, useRegisterMutation, useLoginMutation, LoginResponse } from 'services/user';
 import { toast } from 'react-toastify';
 
 const Modal = styled.div`
@@ -79,7 +79,7 @@ const Dialog = () => {
     password: '',
   });
   const [register] = useRegisterMutation();
-  const [login] = useLoginMutation();
+  const [login, {isSuccess}] = useLoginMutation();
 
   if (!formType) return null;
   const dialogDetail = getDialogElement(formType);
@@ -101,25 +101,19 @@ const Dialog = () => {
   const handleSubmitRegister = async () => {
     try {
       const user = await register(data).unwrap();
-      if (user.isSuccess) {
-        dispatch(closeDialog());
-        toast.success('Registration was successful!');
-      }
+      dispatch(closeDialog());
     } catch (err) {
-      toast.error('Error');
+      null;
     }
   };
 
   const handleSubmitLogin = async () => {
+    const { firstName, lastName, email, ...rest } = data;
     try {
-      const { firstName, lastName, email, ...rest } = data;
       const user = await login({ ...rest }).unwrap();
-      if (user.isSuccess) {
-        toast.success('You are logged in!');
-        dispatch(closeDialog());
-      }
+      dispatch(closeDialog());
     } catch (err) {
-      toast.error('Error');
+      null;
     }
   };
 

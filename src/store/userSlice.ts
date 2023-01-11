@@ -30,6 +30,7 @@ const userSlice = createSlice({
       state.userId = undefined;
       state.login = undefined;
       state.token = undefined;
+      state.status = undefined;
       toast.success('Logged out!');
     },
   },
@@ -39,6 +40,7 @@ const userSlice = createSlice({
       state.token = payload.token;
       state.userId = payload.userId;
       state.login = payload.login;
+      state.status = payload.status;
     });
   },
 });
@@ -47,12 +49,12 @@ export const { logout } = userSlice.actions;
 
 export const selectName = (state: RootState) => state.user.user;
 
-export const isLoggedIn = (state: RootState) => state.user.loggedIn;
+export const selectIsLoggedIn = (state: RootState) => state.user.loggedIn;
 
 export const selectResponseStatus = (state: RootState) => state.user.status;
 
 export const selectResponseError = (state: RootState) => state.user.error;
 
-export const selectLoggedInUser = (state: RootState) => state.user.user;
+export const selectLogin = (state: RootState) => state.user.login;
 
 export default userSlice.reducer;

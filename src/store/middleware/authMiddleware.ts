@@ -1,11 +1,13 @@
 import { PayloadAction } from '@reduxjs/toolkit';
 import { NextFunction } from 'connect';
-import { toast } from 'react-toastify';
 import { RootState } from '../store';
+import { toast } from 'react-toastify';
 
 const authMiddleware = (store: RootState) => (next: NextFunction) => (action: PayloadAction) => {
-  const userState = store.getState().user.status;
-  if (userState === '201') toast.success('Registration was successful!');
+  if (action.type?.startsWith('userApi/')) {
+    const userState = store.getState().user;
+    if (userState.loggedIn) toast.success('You are logged in!');
+  }
   return next(action);
 };
 

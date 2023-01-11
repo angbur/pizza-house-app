@@ -61,6 +61,13 @@ export const SecondaryDarkButton = styled(BaseButton)`
   }
 `;
 
+export const TextButtonWithoutHover = styled(BaseButton)`
+  color: ${(props) => props.theme?.palette.secondary};
+  &:active {
+    box-shadow: none;
+  }
+`;
+
 const BaseTextButton = styled(BaseButton)`
   position: relative;
   display: inline-block;

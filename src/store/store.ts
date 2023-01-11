@@ -5,6 +5,7 @@ import userReducer from './userSlice';
 import { pizzaApi } from 'services/pizza';
 import { userApi } from 'services/user';
 import orderMiddleware from './middleware/orderMiddleware';
+import authMiddleware from './middleware/authMiddleware';
 
 export const store: Store = configureStore({
   reducer: {
@@ -15,7 +16,7 @@ export const store: Store = configureStore({
     [userApi.reducerPath]: userApi.reducer,
   },
   middleware: (getDefaultMiddleware) =>
-    getDefaultMiddleware().concat(pizzaApi.middleware, orderMiddleware),
+    getDefaultMiddleware().concat(pizzaApi.middleware, orderMiddleware, authMiddleware),
 });
 
 export type RootState = ReturnType<typeof store.getState>;
