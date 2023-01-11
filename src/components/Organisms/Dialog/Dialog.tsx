@@ -3,8 +3,8 @@ import Typography from 'components/Atoms/Typography/Typography';
 import { ThemeContext } from 'components/Theme/ThemeContext';
 import { useAppDispatch, useAppSelector } from 'hooks';
 import { useContext, useState } from 'react';
-import styled from 'styled-components';
-import { getDialogElement } from './dialog.utils';
+import styled, { CSSProperties } from 'styled-components';
+import { DialogWidth, getDialogElement } from './dialog.utils';
 import { closeDialog, FormType, openDialog, selectDialogState } from './dialogSlice';
 import CloseIcon from 'assets/icon/cancel-cross.svg';
 import { RequestData, useRegisterMutation, useLoginMutation } from 'services/user';
@@ -44,7 +44,6 @@ const ModalContent = styled.div<ModalProps>`
   background: ${(props) => props.theme?.palette.light};
   box-shadow: 0 1px 5px rgba(0, 0, 0, 0.7);
   border-radius: 4px;
-  width: 400px;
   display: ${(props) => (props.isOpen ? 'block' : 'none')};
   & > .dialog-header {
     display: flex;
@@ -131,10 +130,26 @@ const Dialog = () => {
     });
   };
 
+  const setWidth = (width: DialogWidth): CSSProperties => {
+    let scale = 1;
+
+    if (width === 'md') scale = 1.1;
+    if (width === 'lg') scale = 1.4;
+
+    const style: CSSProperties = {
+      width: `${400 * scale}px`,
+    };
+    return style;
+  };
+
   return (
     <Modal>
       <Overlay onClick={handleClose} />
-      <ModalContent theme={theme} isOpen={isOpen}>
+      <ModalContent
+        theme={theme}
+        isOpen={isOpen}
+        style={setWidth(dialogDetail?.width as DialogWidth)}
+      >
         {dialogDetail && (
           <>
             <div className={'dialog-header'}>

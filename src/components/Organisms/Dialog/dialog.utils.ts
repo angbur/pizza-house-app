@@ -6,7 +6,7 @@ import Register from './components/Register';
 import RegisterSuccess from './components/RegisterSuccess';
 import { FormType } from './dialogSlice';
 
-type DialogWidth = 'sm' | 'md' | 'lg';
+export type DialogWidth = 'sm' | 'md' | 'lg';
 
 export type ComponentProps = {
   handleChange?: ChangeEventHandler<HTMLInputElement>;
@@ -27,7 +27,7 @@ export const getDialogElement = (formType: FormType) => {
       {
         title: 'Sign Up',
         component: Register,
-        width: 'sm',
+        width: 'md',
       },
     ],
     [
