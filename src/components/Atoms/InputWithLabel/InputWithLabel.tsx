@@ -49,6 +49,7 @@ const InputWithLabel = (props: ComponentPropsWithoutRef<'input'> & LabelProps) =
         type={props.type}
         name={props.name}
         onChange={props.onChange}
+        value={props.value}
       />
       <Typography variant='paragraph' color='danger'>
         {props.helperText && props.helperText}

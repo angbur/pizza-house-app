@@ -41,13 +41,15 @@ const userSlice = createSlice({
       state.userId = payload.userId;
       state.login = payload.login;
       state.status = payload.status;
+      toast.success('You are logged in!');
+      localStorage.setItem('token', state.token as string);
     });
   },
 });
 
 export const { logout } = userSlice.actions;
 
-export const selectName = (state: RootState) => state.user.user;
+export const selectUserId = (state: RootState) => state.user.userId;
 
 export const selectIsLoggedIn = (state: RootState) => state.user.loggedIn;
 

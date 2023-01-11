@@ -17,14 +17,21 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import ProfilePage from 'components/Pages/Profile/ProfilePage';
 import ScrollToTop from './ScrollToTop';
+import { useAppSelector } from 'hooks';
+import { selectIsLoggedIn } from 'store/userSlice';
+import { useUserData } from 'components/Pages/Order/components/OrderForm/useUserData';
 
 const Container = styled.div`
   display: flex;
   min-height: 100vh;
 `;
 
-const App = () => (
-  <Fragment>
+const App = () => {
+  const isLoggedIn = useAppSelector(selectIsLoggedIn);
+  const user = useUserData();
+
+  return (
+    <Fragment>
     <GlobalStyle />
     <Dialog />
     <Header />
@@ -47,7 +54,7 @@ const App = () => (
         <Route path='/' element={<Main />} />
         <Route path='/make-pizza' element={<MakePizzaPage />} />
         <Route path='/order' element={<OrderPage />} />
-        <Route path='/order/form' element={<OrderForm />} />
+        <Route path='/order/form' element={isLoggedIn && <OrderForm user={user}/>} />
         <Route path='/order/summary' element={<OrderSummary />} />
         <Route path='/history' element={<HistoryPage />} />
         <Route path='/contact' element={<ContactPage />} />
@@ -57,5 +64,6 @@ const App = () => (
     </Container>
     <Footer />
   </Fragment>
-);
+  )
+}
 export default App;

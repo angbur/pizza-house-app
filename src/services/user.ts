@@ -1,4 +1,5 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
+import { store } from 'store/store';
 
 export type LoginRequest = {
   login: string;
@@ -37,13 +38,19 @@ export type RequestData = {
   password: string;
 };
 
+export type User = Omit<RequestData, 'password'> & { _id: string };
+
+type UserResponse = {
+  data: User;
+};
+
 export const userApi = createApi({
   reducerPath: 'userApi',
   baseQuery: fetchBaseQuery({
-    baseUrl: 'http://localhost:3000/user/',
+    baseUrl: 'http://localhost:3000/user',
     prepareHeaders: (headers) => {
       headers.set('Access-Control-Allow-Origin', '*');
-      const token = '';
+      const token = localStorage.getItem('token');
       if (token) {
         headers.set('Authorization', `Bearer ${token}`);
       }
@@ -65,7 +72,11 @@ export const userApi = createApi({
         body: credentials,
       }),
     }),
+    getUserById: builder.query({
+      query: (id: string) => ({ url: `/${id}` }),
+      transformResponse: (response: UserResponse) => response.data,
+    }),
   }),
 });
 
-export const { useLoginMutation, useRegisterMutation } = userApi;
+export const { useLoginMutation, useRegisterMutation, useGetUserByIdQuery } = userApi;

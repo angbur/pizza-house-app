@@ -34,10 +34,10 @@ const Sidebar = () => {
           <ListIconItem icon={{ name: 'order', size: 26 }} label={'order'} linkTo={'order'} />
           {isLoggedIn && (
             <ListIconItem
-            icon={{ name: 'list-icon', size: 20 }}
-            label={'history'}
-            linkTo={'history'}
-          />
+              icon={{ name: 'list-icon', size: 20 }}
+              label={'history'}
+              linkTo={'history'}
+            />
           )}
           <ListIconItem icon={{ name: 'email', size: 20 }} label={'contact'} linkTo={'contact'} />
         </ul>

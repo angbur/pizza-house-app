@@ -35,7 +35,7 @@ const OrderList = () => {
 
   const handleNavigate = () => {
     if (!isLoggedIn) dispatch(openDialog(FormType.login));
-    navigate('form');
+    if (isLoggedIn) navigate('form');
   };
 
   return orderList.length === 0 ? (

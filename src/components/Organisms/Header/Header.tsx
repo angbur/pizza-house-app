@@ -43,7 +43,7 @@ const Header = () => {
 
   const handleNavigate = () => {
     navigate('/profile');
-    setDropDown((prev) => !prev);
+    setDropDown(false);
   };
 
   return (

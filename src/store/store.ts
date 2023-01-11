@@ -16,7 +16,12 @@ export const store: Store = configureStore({
     [userApi.reducerPath]: userApi.reducer,
   },
   middleware: (getDefaultMiddleware) =>
-    getDefaultMiddleware().concat(pizzaApi.middleware, orderMiddleware, authMiddleware, userApi.middleware),
+    getDefaultMiddleware().concat(
+      pizzaApi.middleware,
+      orderMiddleware,
+      authMiddleware,
+      userApi.middleware,
+    ),
 });
 
 export type RootState = ReturnType<typeof store.getState>;

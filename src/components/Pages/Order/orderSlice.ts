@@ -2,6 +2,7 @@ import { OrderItem } from 'types/Order';
 import { createSlice, nanoid, PayloadAction } from '@reduxjs/toolkit';
 import { RootState } from 'store/store';
 import { toast } from 'react-toastify';
+import { logout } from 'store/userSlice';
 
 type RequireOnly<T, P extends keyof T> = Pick<T, P> & Partial<Omit<T, P>>;
 
@@ -57,6 +58,11 @@ const orderSlice = createSlice({
       state.entities = [];
       toast.success('The order has been deleted!');
     },
+  },
+  extraReducers: (builder) => {
+    builder.addCase(logout, (state) => {
+      state.entities = [];
+    });
   },
 });
 
