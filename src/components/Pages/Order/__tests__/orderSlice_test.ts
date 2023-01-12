@@ -2,7 +2,6 @@ import orderReducer, {
   createItem,
   addToOrder,
   removeFromOrder,
-  DraftItem,
   removeAllOrder,
 } from './../orderSlice';
 

@@ -1,5 +1,4 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
-import { store } from 'store/store';
 
 export type LoginRequest = {
   login: string;

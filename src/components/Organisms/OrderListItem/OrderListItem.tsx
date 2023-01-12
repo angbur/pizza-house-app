@@ -52,7 +52,7 @@ const PriceDiv = styled.div`
   }
 `;
 
-type OrderListItemProps = {
+export type OrderListItemProps = {
   item: OrderItem;
 };
 

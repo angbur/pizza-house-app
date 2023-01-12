@@ -30,7 +30,7 @@ export const buttonVariants = [
   'icon-button',
 ] as const;
 
-type ButtonVariant = typeof buttonVariants[number];
+export type ButtonVariant = typeof buttonVariants[number];
 export const buttonSizes = ['sm', 'md', 'lg'] as const;
 export type ButtonSize = typeof buttonSizes[number];
 
