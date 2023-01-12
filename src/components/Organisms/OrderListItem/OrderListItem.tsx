@@ -17,7 +17,7 @@ const StyledListItem = styled.li`
   align-items: center;
   gap: 0.625rem;
   padding: 1rem 2rem;
-  max-width: 80vw;
+  max-width: 800px;
   & > .quantity-container {
     position: relative;
     top: 4px;

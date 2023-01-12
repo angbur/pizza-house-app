@@ -18,9 +18,9 @@ export const store: Store = configureStore({
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware().concat(
       pizzaApi.middleware,
+      userApi.middleware,
       orderMiddleware,
       authMiddleware,
-      userApi.middleware,
     ),
 });
 

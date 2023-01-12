@@ -4,8 +4,10 @@ import { RootState } from '../store';
 
 const orderMiddleware = (store: RootState) => (next: NextFunction) => (action: PayloadAction) => {
   if (action.type?.startsWith('order/')) {
-    const orderState = store.getState().order;
-    localStorage.setItem('order', JSON.stringify(orderState));
+    setTimeout(() => {
+      const orderState = store.getState().order;
+      localStorage.setItem('order', JSON.stringify(orderState));
+    }, 300);
   }
   return next(action);
 };

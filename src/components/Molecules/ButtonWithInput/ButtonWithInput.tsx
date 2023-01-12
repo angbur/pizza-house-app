@@ -26,6 +26,9 @@ const StyledDiv = styled.div`
   align-items: center;
   & > button {
     border-radius: 8px 0 0 8px;
+    & > img {
+      margin-right: 10px;
+    }
   }
   & > input[type='number']::-webkit-inner-spin-button,
   & > input[type='number']::-webkit-outer-spin-button {

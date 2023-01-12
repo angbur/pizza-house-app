@@ -1,14 +1,10 @@
-import Button from 'components/Atoms/Button/Button';
 import PriceTag from 'components/Atoms/PriceTag/PriceTag';
 import Typography from 'components/Atoms/Typography/Typography';
-import { FormType, openDialog } from 'components/Organisms/Dialog/dialogSlice';
 import OrderListItem from 'components/Organisms/OrderListItem/OrderListItem';
-import { useAppDispatch, useAppSelector } from 'hooks';
-import { useNavigate } from 'react-router-dom';
-import { selectIsLoggedIn } from 'store/userSlice';
+import { useAppSelector } from 'hooks';
 import styled from 'styled-components';
 import { OrderItem } from 'types/Order';
-import { removeAllOrder, selectListOfOrderItems, selectSumOfOrder } from '../../orderSlice';
+import { selectListOfOrderItems, selectSumOfOrder } from '../../orderSlice';
 
 const StyledList = styled.ul`
   display: flex;
@@ -22,28 +18,23 @@ const StyledDiv = styled.div`
   margin: 2rem;
 `;
 
+const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`;
+
 const OrderList = () => {
-  const navigate = useNavigate();
-  const dispatch = useAppDispatch();
   const orderList = useAppSelector(selectListOfOrderItems);
   const sumOfOrder = useAppSelector(selectSumOfOrder);
-  const isLoggedIn = useAppSelector(selectIsLoggedIn);
-
-  const handleRemoveAll = () => {
-    dispatch(removeAllOrder());
-  };
-
-  const handleNavigate = () => {
-    if (!isLoggedIn) dispatch(openDialog(FormType.login));
-    if (isLoggedIn) navigate('form');
-  };
 
   return orderList.length === 0 ? (
     <Typography variant='paragraph' color='light'>
       You have not ordered anything yet.
     </Typography>
   ) : (
-    <>
+    <Container>
       <StyledList>
         {orderList.map((el: OrderItem) => (
           <OrderListItem key={`listItem-${el._id}`} item={el} />
@@ -55,15 +46,7 @@ const OrderList = () => {
         </Typography>
         <PriceTag price={sumOfOrder} size='lg' />
       </StyledDiv>
-      <StyledDiv>
-        <Button variant='button-text-light' onClick={handleRemoveAll}>
-          Remove all
-        </Button>
-        <Button variant='primary-light' onClick={handleNavigate}>
-          Go to order form
-        </Button>
-      </StyledDiv>
-    </>
+    </Container>
   );
 };
 

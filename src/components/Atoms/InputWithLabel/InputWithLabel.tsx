@@ -29,13 +29,18 @@ type LabelProps = {
   label: string;
   color: ColorVariants;
   helperText?: string;
+  error?: boolean;
 };
 
 const InputWithLabel = (props: ComponentPropsWithoutRef<'input'> & LabelProps) => {
   const theme = useContext(ThemeContext);
 
   const colorStyles: CSSProperties = {
-    color: theme.palette[props.color],
+    color: theme.palette[props.error ? 'danger' : props.color],
+  };
+
+  const inputStyles: CSSProperties = {
+    color: props.error ? theme.palette.danger : theme.palette.secondary,
   };
 
   return (
@@ -50,6 +55,7 @@ const InputWithLabel = (props: ComponentPropsWithoutRef<'input'> & LabelProps) =
         name={props.name}
         onChange={props.onChange}
         value={props.value}
+        style={{ ...inputStyles }}
       />
       <Typography variant='paragraph' color='danger'>
         {props.helperText && props.helperText}

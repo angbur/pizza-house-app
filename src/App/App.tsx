@@ -32,38 +32,37 @@ const App = () => {
 
   return (
     <Fragment>
-    <GlobalStyle />
-    <Dialog />
-    <Header />
-    <Container>
-      <ToastContainer
-        position='top-right'
-        autoClose={5000}
-        hideProgressBar
-        newestOnTop={false}
-        closeOnClick
-        rtl={false}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover
-        theme='colored'
-      />
-      <Sidebar />
-      <ScrollToTop />
-      <Routes>
-        <Route path='/' element={<Main />} />
-        <Route path='/make-pizza' element={<MakePizzaPage />} />
-        <Route path='/order' element={<OrderPage />} />
-        <Route path='/order/form' element={isLoggedIn && <OrderForm user={user}/>} />
-        <Route path='/order/summary' element={<OrderSummary />} />
-        <Route path='/history' element={<HistoryPage />} />
-        <Route path='/contact' element={<ContactPage />} />
-        <Route path='/profile' element={<ProfilePage />} />
-        <Route path='*' element={<Main />} />
-      </Routes>
-    </Container>
-    <Footer />
-  </Fragment>
-  )
-}
+      <GlobalStyle />
+      <Dialog />
+      <Header />
+      <Container>
+        <ToastContainer
+          position='top-right'
+          autoClose={5000}
+          hideProgressBar
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+          theme='colored'
+        />
+        <Sidebar />
+        <ScrollToTop />
+        <Routes>
+          <Route path='/' element={<Main />} />
+          <Route path='/make-pizza' element={<MakePizzaPage />} />
+          <Route path='/order' element={<OrderPage />} />
+          <Route path='/order/form' element={isLoggedIn && <OrderForm user={user} />} />
+          <Route path='/history' element={<HistoryPage />} />
+          <Route path='/contact' element={<ContactPage />} />
+          <Route path='/profile' element={<ProfilePage />} />
+          <Route path='*' element={<Main />} />
+        </Routes>
+      </Container>
+      <Footer />
+    </Fragment>
+  );
+};
 export default App;

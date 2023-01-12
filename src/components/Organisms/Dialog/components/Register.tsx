@@ -25,6 +25,7 @@ const Register = ({ handleChange }: ComponentProps): ReactNode => {
             placeholder={'Your login'}
             color={'secondary'}
             onChange={handleChange}
+            helperText={'Minimum 4 letters, at least one capital letter and one number'}
           />
           <InputWithLabel
             label={'First name'}
