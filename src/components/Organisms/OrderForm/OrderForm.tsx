@@ -1,12 +1,19 @@
 import Button from 'components/Atoms/Button/Button';
 import InputWithLabel from 'components/Atoms/InputWithLabel/InputWithLabel';
 import Typography from 'components/Atoms/Typography/Typography';
-import { useAppDispatch } from 'hooks';
+import { useAppDispatch, useAppSelector } from 'hooks';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
+import { useCreateOrderMutation } from 'services/order';
+import { selectUserId } from 'store/userSlice';
 import styled from 'styled-components';
-import { removeAllOrder } from '../../orderSlice';
+import { OrderItem } from 'types/Order';
+import {
+  removeAllOrder,
+  selectListOfOrderItems,
+  selectSumOfOrder,
+} from '../../Pages/Order/orderSlice';
 import OrderList from '../OrderList/OrderList';
 import OrderSummary from '../OrderSummary/OrderSummary';
 import { ImportedUserData } from './useUserData';
@@ -68,6 +75,9 @@ type OrderFormProps = {
 const OrderForm = ({ user }: OrderFormProps) => {
   const navigate = useNavigate();
   const dispatch = useAppDispatch();
+  const userId: string = useAppSelector(selectUserId);
+  const orderList: OrderItem[] = useAppSelector(selectListOfOrderItems);
+  const sum: number = useAppSelector(selectSumOfOrder);
   const [isValidable, setValidation] = useState<boolean>(false);
   const [formData, setData] = useState<OrderForm>({
     firstName: user.firstName,
@@ -79,6 +89,7 @@ const OrderForm = ({ user }: OrderFormProps) => {
     houseNumber: '',
     phone: '',
   });
+  const [createOrder, { isSuccess }] = useCreateOrderMutation();
 
   const handleBack = () => {
     navigate('/order');
@@ -108,8 +119,33 @@ const OrderForm = ({ user }: OrderFormProps) => {
     navigate('/');
   };
 
-  const handleOrder = () => {
-    null;
+  const handleEdit = () => {
+    setValidation((prev) => !prev);
+  };
+
+  const handleOrder = async () => {
+    const order: Omit<OrderItem, '_id'>[] = [];
+
+    for (const element of orderList) {
+      const { _id, ...rest } = element;
+      order.push({ ...rest });
+    }
+
+    const requestData = {
+      user: userId,
+      order: order,
+      deliveryAddress: formData,
+      total: sum,
+    };
+
+    try {
+      const order = await createOrder(requestData).unwrap();
+      dispatch(removeAllOrder());
+      toast.success('Order sent!');
+      navigate('/');
+    } catch (err) {
+      console.log(err);
+    }
   };
 
   return (
@@ -223,7 +259,7 @@ const OrderForm = ({ user }: OrderFormProps) => {
       ) : (
         <>
           <SummaryContainer>
-            <OrderSummary data={formData} />
+            <OrderSummary data={formData} onClick={handleEdit} />
             <OrderList />
           </SummaryContainer>
           <StyledDiv>

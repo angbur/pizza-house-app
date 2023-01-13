@@ -10,7 +10,7 @@ import MakePizzaPage from 'components/Pages/MakePizza/MakePizzaPage';
 import OrderPage from 'components/Pages/Order/OrderPage';
 import HistoryPage from 'components/Pages/History/HistoryPage';
 import ContactPage from 'components/Pages/Contact/ContactPage';
-import OrderForm from 'components/Pages/Order/components/OrderForm/OrderForm';
+import OrderForm from 'components/Organisms/OrderForm/OrderForm';
 import Dialog from 'components/Organisms/Dialog/Dialog';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -18,7 +18,7 @@ import ProfilePage from 'components/Pages/Profile/ProfilePage';
 import ScrollToTop from './ScrollToTop';
 import { useAppSelector } from 'hooks';
 import { selectIsLoggedIn } from 'store/userSlice';
-import { useUserData } from 'components/Pages/Order/components/OrderForm/useUserData';
+import { useUserData } from 'components/Organisms/OrderForm/useUserData';
 
 const Container = styled.div`
   display: flex;

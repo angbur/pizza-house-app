@@ -4,7 +4,7 @@ import OrderListItem from 'components/Organisms/OrderListItem/OrderListItem';
 import { useAppSelector } from 'hooks';
 import styled from 'styled-components';
 import { OrderItem } from 'types/Order';
-import { selectListOfOrderItems, selectSumOfOrder } from '../../orderSlice';
+import { selectListOfOrderItems, selectSumOfOrder } from '../../Pages/Order/orderSlice';
 
 const StyledList = styled.ul`
   display: flex;

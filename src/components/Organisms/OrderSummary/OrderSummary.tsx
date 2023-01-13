@@ -1,5 +1,6 @@
 import Button from 'components/Atoms/Button/Button';
 import Typography from 'components/Atoms/Typography/Typography';
+import { MouseEventHandler } from 'react';
 import styled from 'styled-components';
 import OrderForm from '../OrderForm/OrderForm';
 
@@ -19,9 +20,10 @@ const Container = styled.div`
 
 type OrderSummaryProps = {
   data: OrderForm;
+  onClick: MouseEventHandler<HTMLButtonElement>;
 };
 
-const OrderSummary = ({ data }: OrderSummaryProps) => {
+const OrderSummary = ({ data, onClick }: OrderSummaryProps) => {
   return (
     <>
       <Container>
@@ -43,7 +45,9 @@ const OrderSummary = ({ data }: OrderSummaryProps) => {
         <Typography variant={'paragraph'} color={'light'}>
           {data.postalCode.concat(' ', data.city)}
         </Typography>
-        <Button variant={'secondary-light'}>Edit</Button>
+        <Button variant={'secondary-light'} onClick={onClick}>
+          Edit
+        </Button>
       </Container>
     </>
   );

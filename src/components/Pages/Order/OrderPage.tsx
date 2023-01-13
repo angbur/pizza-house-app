@@ -5,7 +5,7 @@ import { useAppDispatch, useAppSelector } from 'hooks';
 import { useNavigate } from 'react-router-dom';
 import { selectIsLoggedIn } from 'store/userSlice';
 import styled from 'styled-components';
-import OrderList from './components/OrderList/OrderList';
+import OrderList from '../../Organisms/OrderList/OrderList';
 import { removeAllOrder, selectListOfOrderItems } from './orderSlice';
 
 const Container = styled.section`

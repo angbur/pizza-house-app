@@ -19,7 +19,6 @@ const Wrapper = () => {
 };
 
 describe('Order List Item', () => {
-
   test('should renders order list item correctly', () => {
     const tree = renderer.create(<Wrapper />).toJSON();
     expect(tree).toMatchInlineSnapshot(`
