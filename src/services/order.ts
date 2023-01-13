@@ -4,7 +4,7 @@ import OrderForm from 'components/Organisms/OrderForm/OrderForm';
 import { OrderItem } from 'types/Order';
 
 export type Response = {
-  orderId: string;
+  message: string;
 };
 
 export type OrderDetailRequest = {
@@ -20,7 +20,7 @@ export type OrderDetail = OrderDetailRequest & {
 };
 
 type OrderDetailResponse = {
-  data: OrderDetail;
+  data: OrderDetail[];
 };
 
 export const orderApi = createApi({
@@ -44,11 +44,11 @@ export const orderApi = createApi({
         body: credentials,
       }),
     }),
-    getOrderById: builder.query({
-      query: (id: string) => ({ url: `/${id}` }),
+    getOrdersByUserId: builder.query({
+      query: (id: string) => ({ url: `user/${id}` }),
       transformResponse: (response: OrderDetailResponse) => response.data,
     }),
   }),
 });
 
-export const { useCreateOrderMutation, useGetOrderByIdQuery } = orderApi;
+export const { useCreateOrderMutation, useGetOrdersByUserIdQuery } = orderApi;

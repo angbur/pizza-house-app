@@ -145,7 +145,7 @@ describe('App', () => {
           </div>
         </header>,
         <div
-          className="sc-jfTVlA kta-dFp"
+          className="sc-jfvxQR gymayP"
         >
           <div
             className="Toastify"
