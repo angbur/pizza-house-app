@@ -1,7 +1,8 @@
 import PriceTag from 'components/Atoms/PriceTag/PriceTag';
 import Typography from 'components/Atoms/Typography/Typography';
 import ButtonWithInput from 'components/Molecules/ButtonWithInput/ButtonWithInput';
-import { addToOrder } from 'components/Pages/Order/orderSlice';
+import ButtonWithInputMobile from 'components/Molecules/ButtonWithInputMobile/ButtonWithInputMobile';
+import { addToOrder, removeFromOrder } from 'components/Pages/Order/orderSlice';
 import { ThemeContext } from 'components/Theme/ThemeContext';
 import { useAppDispatch } from 'hooks';
 import { useContext, useState } from 'react';
@@ -28,8 +29,19 @@ const PizzaCard = styled.div`
   &:hover {
     border-color: ${(props) => props.theme.palette.light};
   }
-  & > img {
+  & > img.pizza-img {
     margin: 1rem;
+  }
+  @media (max-width: 390px) {
+    width: auto;
+    height: auto;
+    & img.pizza-img {
+      max-width: 200px;
+      padding: 1rem;
+    }
+    & h4 {
+      padding: 1rem;
+    }
   }
 `;
 
@@ -59,6 +71,7 @@ const Card = ({ pizza }: CardProps) => {
   const substractQuantity = () =>
     quantity > 1 && quantity < 21 ? setQuantity((prev) => prev - 1) : null;
   const handleAddToOrder = () => {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const { categories, ...rest } = pizza;
     dispatch(addToOrder({ item: rest, quantity: quantity }));
   };
@@ -74,12 +87,15 @@ const Card = ({ pizza }: CardProps) => {
     }
   };
 
+  const handleRemove = () => dispatch(removeFromOrder(pizza._id));
+
   return (
     <PizzaCard theme={theme}>
       <img
         src={require(`assets/image/pizza-${pizza._id}.svg`)}
         height={'192px'}
         alt={`Picture of ${pizza.name} pizza`}
+        className={'pizza-img'}
       />
       <PriceTag price={pizza.price} />
       <Typography
@@ -107,6 +123,13 @@ const Card = ({ pizza }: CardProps) => {
           onDecrement={substractQuantity}
           onClick={handleAddToOrder}
           onChange={handleChange}
+        />
+        <ButtonWithInputMobile
+          value={quantity}
+          onClick={handleRemove}
+          onIncrement={addQuantity}
+          onDecrement={substractQuantity}
+          withRemove={false}
         />
         <PriceTag price={pizza.price * quantity} size='sm' />
       </CardActions>

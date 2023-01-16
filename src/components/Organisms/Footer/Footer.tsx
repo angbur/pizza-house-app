@@ -18,6 +18,10 @@ const FooterContainer = styled.footer`
   @media (max-width: 994px) {
     gap: 1rem;
     padding: 0;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
   }
 `;
 
@@ -44,7 +48,6 @@ const MobileFooter = styled.div`
   align-items: center;
   list-style: none;
   width: 100vw;
-  gap: 10px;
 `;
 
 const ListItem = styled.div`
@@ -125,12 +128,12 @@ const Footer = () => {
             <ListIconItem icon={{ name: 'menu', size: 32 }} label={'menu'} linkTo={'/'} />
           </ListItem>
           <ListItem>
-            <ListIconItem icon={{ name: 'order', size: 26 }} label={'order'} linkTo={'order'} />
+            <ListIconItem icon={{ name: 'order', size: 32 }} label={'order'} linkTo={'order'} />
           </ListItem>
           <ListItem>
             <ListIconItem
               icon={{ name: 'pizza-circle', size: 32 }}
-              label={'make pizza'}
+              label={'make'}
               linkTo={'make-pizza'}
             />
           </ListItem>

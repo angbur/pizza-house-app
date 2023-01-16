@@ -4,6 +4,7 @@ import { Pizza } from 'types/Pizza';
 export type SortParams = 'name' | 'price asc' | 'price desc';
 
 export const useSortedPizzaList = (param: SortParams): Pizza[] => {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const { data, error, isLoading } = useGetPizzasListQuery();
   let result: Pizza[] = [];
 

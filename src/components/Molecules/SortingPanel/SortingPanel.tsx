@@ -11,6 +11,15 @@ const Panel = styled.div`
   justify-content: flex-start;
   flex-wrap: wrap;
   margin: 2.5rem 0;
+  @media (max-width: 520px) {
+    gap: 1rem;
+    & h5 {
+      font-size: 0.625rem;
+    }
+  }
+  @media (max-width: 466px) {
+    display: none;
+  }
 `;
 
 type SortingPanelProps = {

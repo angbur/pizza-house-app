@@ -16,6 +16,9 @@ const Container = styled.div`
   & .title {
     margin-bottom: 1rem;
   }
+  @media (max-width: 766px) {
+    justify-content: center;
+  }
 `;
 
 type OrderSummaryProps = {
