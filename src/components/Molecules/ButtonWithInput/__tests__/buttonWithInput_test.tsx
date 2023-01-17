@@ -13,76 +13,8 @@ const Wrapper = () => {
 };
 
 describe('Button with input', () => {
-  it('should renders button with input correctly', () => {
+  test('should renders button with input correctly', () => {
     const tree = renderer.create(<Wrapper />).toJSON();
-    expect(tree).toMatchInlineSnapshot(`
-      <div
-        className="sc-ipEyDJ fNXnrH"
-      >
-        <button
-          className="sc-bcXHqe sc-eDvSVe feNVH cAJNIx secondary-dark btn-sm button"
-          style={
-            Object {
-              "fontSize": "0.8500000000000001rem",
-              "padding": "0.52rem 1rem",
-            }
-          }
-        >
-          <img
-            height={17}
-            src={
-              Object {
-                "ReactComponent": Object {
-                  "$$typeof": Symbol(react.forward_ref),
-                  "render": [Function],
-                },
-                "__esModule": true,
-                "default": "basket.svg",
-              }
-            }
-          />
-          Add to order
-        </button>
-        <input
-          className="sc-kDvujY dYXGJW"
-          type="number"
-          value={1}
-        />
-        <div
-          className="sc-jrcTuL ggyCiw"
-        >
-          <button>
-            <img
-              height={14}
-              src={
-                Object {
-                  "ReactComponent": Object {
-                    "$$typeof": Symbol(react.forward_ref),
-                    "render": [Function],
-                  },
-                  "__esModule": true,
-                  "default": "arrow-up-active.svg",
-                }
-              }
-            />
-          </button>
-          <button>
-            <img
-              height={14}
-              src={
-                Object {
-                  "ReactComponent": Object {
-                    "$$typeof": Symbol(react.forward_ref),
-                    "render": [Function],
-                  },
-                  "__esModule": true,
-                  "default": "arrow-down-active.svg",
-                }
-              }
-            />
-          </button>
-        </div>
-      </div>
-    `);
+    expect(tree).toMatchSnapshot();
   });
 });

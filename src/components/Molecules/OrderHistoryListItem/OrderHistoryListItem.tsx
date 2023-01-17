@@ -43,8 +43,6 @@ const OrderHistoryListItem = ({ element }: OrderHistoryListItemProps) => {
   const theme = useContext(ThemeContext);
   const dispatch = useAppDispatch();
 
-  console.log(element);
-
   const getDescription = (arr: Omit<OrderItem, '_id'>[]) => {
     let result = '';
 

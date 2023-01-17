@@ -9,20 +9,6 @@ const Wrapper = () => {
 describe('Icon', () => {
   it('should renders correctly icon', () => {
     const tree = renderer.create(<Wrapper />).toJSON();
-    expect(tree).toMatchInlineSnapshot(`
-      <img
-        height={20}
-        src={
-          Object {
-            "ReactComponent": Object {
-              "$$typeof": Symbol(react.forward_ref),
-              "render": [Function],
-            },
-            "__esModule": true,
-            "default": "menu-burger.svg",
-          }
-        }
-      />
-    `);
+    expect(tree).toMatchSnapshot();
   });
 });

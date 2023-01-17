@@ -115,6 +115,7 @@ describe('Header', () => {
                 <li>
                   <button
                     className="sc-bcXHqe sc-jSUZER feNVH dkmCUq button-text-without-hover btn-lg button"
+                    onClick={[Function]}
                     style={
                       Object {
                         "fontSize": "1.05rem",
@@ -128,6 +129,7 @@ describe('Header', () => {
                 <li>
                   <button
                     className="sc-bcXHqe sc-jSUZER feNVH dkmCUq button-text-without-hover btn-lg button"
+                    onClick={[Function]}
                     style={
                       Object {
                         "fontSize": "1.05rem",

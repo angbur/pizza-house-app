@@ -10,46 +10,7 @@ const Wrapper = () => {
   );
 };
 
-it('renders correctly quantity change button', () => {
+test('renders correctly quantity change button', () => {
   const tree = renderer.create(<Wrapper />).toJSON();
-  expect(tree).toMatchInlineSnapshot(`
-    <div
-      className="sc-bcXHqe eqesaf"
-    >
-      <button
-        onClick={[MockFunction]}
-      >
-        <img
-          height={14}
-          src={
-            Object {
-              "ReactComponent": Object {
-                "$$typeof": Symbol(react.forward_ref),
-                "render": [Function],
-              },
-              "__esModule": true,
-              "default": "arrow-up-active.svg",
-            }
-          }
-        />
-      </button>
-      <button
-        onClick={[MockFunction]}
-      >
-        <img
-          height={14}
-          src={
-            Object {
-              "ReactComponent": Object {
-                "$$typeof": Symbol(react.forward_ref),
-                "render": [Function],
-              },
-              "__esModule": true,
-              "default": "arrow-down-active.svg",
-            }
-          }
-        />
-      </button>
-    </div>
-  `);
+  expect(tree).toMatchSnapshot();
 });

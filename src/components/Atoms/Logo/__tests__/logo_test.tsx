@@ -12,18 +12,5 @@ const Wrapper = () => {
 
 it('renders correctly logo', () => {
   const tree = renderer.create(<Wrapper />).toJSON();
-  expect(tree).toMatchInlineSnapshot(`
-    <div
-      className="sc-bcXHqe hnPJle full logo"
-      style={
-        Object {
-          "background": "#151515",
-        }
-      }
-    >
-      <img
-        src="logo.svg"
-      />
-    </div>
-  `);
+  expect(tree).toMatchSnapshot();
 });

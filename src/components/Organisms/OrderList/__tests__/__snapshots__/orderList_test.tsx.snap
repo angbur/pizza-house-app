@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Order List should renders order list correctly 1`] = `
+<p
+  className="paragraph"
+  style={
+    Object {
+      "color": "#FCFBFB",
+      "fontFamily": "Source Sans Pro",
+      "fontSize": "1rem",
+      "fontWeight": "400",
+      "letterSpacing": "0",
+      "lineHeight": "1.6",
+    }
+  }
+>
+  You have not ordered anything yet.
+</p>
+`;
