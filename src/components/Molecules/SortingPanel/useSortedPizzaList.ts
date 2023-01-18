@@ -1,4 +1,4 @@
-import { useGetPizzasListQuery } from 'services/pizza';
+import { useGetPizzasListQuery } from 'services/pizza/pizza';
 import { Pizza } from 'types/Pizza';
 
 export type SortParams = 'name' | 'price asc' | 'price desc';

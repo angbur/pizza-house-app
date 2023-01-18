@@ -1,13 +1,13 @@
 import renderer from 'react-test-renderer';
 import ThemeProvider from 'components/Theme/ThemeContext';
 import { Provider } from 'react-redux';
-import { store } from 'store/store';
+import { setupStore } from 'store/store';
 import Login from '../Login';
 
 const Wrapper = () => {
   return (
     <ThemeProvider>
-      <Provider store={store}>
+      <Provider store={setupStore()}>
         <Login />
       </Provider>
     </ThemeProvider>

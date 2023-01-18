@@ -1,13 +1,13 @@
 import renderer from 'react-test-renderer';
 import ThemeProvider from 'components/Theme/ThemeContext';
-import { store } from 'store/store';
+import { setupStore } from 'store/store';
 import { Provider } from 'react-redux';
 import OrderList from '../OrderList';
 
 const Wrapper = () => {
   return (
     <ThemeProvider>
-      <Provider store={store}>
+      <Provider store={setupStore()}>
         <OrderList />
       </Provider>
     </ThemeProvider>

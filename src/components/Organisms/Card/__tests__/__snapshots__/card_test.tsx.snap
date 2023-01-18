@@ -5,7 +5,7 @@ exports[`Card should renders card correctly 1`] = `
   className="sc-bqWxrE bhcwCd"
 >
   <img
-    alt="Picture of Pinza Mare pizza"
+    alt="Picture of Tipsy Tomato pizza"
     className="pizza-img"
     height="192px"
     src={
@@ -15,7 +15,7 @@ exports[`Card should renders card correctly 1`] = `
           "render": [Function],
         },
         "__esModule": true,
-        "default": "pizza-63b2d3b592b7f0f1c7c567b8.svg",
+        "default": "pizza-63b2d3a292b7f0f1c7c567b6.svg",
       }
     }
   />
@@ -30,7 +30,7 @@ exports[`Card should renders card correctly 1`] = `
       }
     }
   >
-    26$
+    20$
   </p>
   <h3
     className="card-title"
@@ -46,7 +46,7 @@ exports[`Card should renders card correctly 1`] = `
       }
     }
   >
-    Pinza Mare
+    Tipsy Tomato
   </h3>
   <div
     className="sc-ksBlkl btdDBw"
@@ -65,12 +65,12 @@ exports[`Card should renders card correctly 1`] = `
     >
       <span>
          
-        shrimps
+        tomato sauce
         , 
       </span>
       <span>
          
-        red fish
+        tomatoes
         , 
       </span>
       <span>
@@ -80,12 +80,17 @@ exports[`Card should renders card correctly 1`] = `
       </span>
       <span>
          
-        white sauce
+        mozzarella
         , 
       </span>
       <span>
          
-        oregano
+        cheese
+        , 
+      </span>
+      <span>
+         
+        parsley
         , 
       </span>
       <span>
@@ -254,7 +259,7 @@ exports[`Card should renders card correctly 1`] = `
         }
       }
     >
-      26$
+      20$
     </p>
   </div>
 </div>

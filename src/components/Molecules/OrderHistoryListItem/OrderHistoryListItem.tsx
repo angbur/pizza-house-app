@@ -5,7 +5,7 @@ import { FormType, openDialog } from 'components/Organisms/Dialog/dialogSlice';
 import { ThemeContext } from 'components/Theme/ThemeContext';
 import { useAppDispatch } from 'hooks';
 import { useContext } from 'react';
-import { OrderDetail } from 'services/order';
+import { OrderDetail } from 'services/order/order';
 import styled from 'styled-components';
 import { OrderItem } from 'types/Order';
 

@@ -1,6 +1,6 @@
 import renderer from 'react-test-renderer';
 import ThemeProvider from 'components/Theme/ThemeContext';
-import { store } from 'store/store';
+import { setupStore } from 'store/store';
 import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
 import ListIconItem from '../ListIconItem';
@@ -10,7 +10,7 @@ const Wrapper = () => {
   return (
     <ThemeProvider>
       <BrowserRouter>
-        <Provider store={store}>
+        <Provider store={setupStore()}>
           <ListIconItem icon={{ name: 'order', size: 26 }} label={'order'} linkTo={'order'} />
         </Provider>
       </BrowserRouter>

@@ -5,8 +5,8 @@ import { useAppDispatch, useAppSelector } from 'hooks';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
-import { useCreateOrderMutation } from 'services/order';
-import { selectUserId } from 'store/userSlice';
+import { useCreateOrderMutation } from 'services/order/order';
+import { selectUserId } from 'store/user/userSlice';
 import styled from 'styled-components';
 import { OrderItem } from 'types/Order';
 import {
@@ -89,7 +89,7 @@ type OrderFormProps = {
 const OrderForm = ({ user }: OrderFormProps) => {
   const navigate = useNavigate();
   const dispatch = useAppDispatch();
-  const userId: string = useAppSelector(selectUserId);
+  const userId: string | undefined = useAppSelector(selectUserId);
   const orderList: OrderItem[] = useAppSelector(selectListOfOrderItems);
   const sum: number = useAppSelector(selectSumOfOrder);
   const [isValidable, setValidation] = useState<boolean>(false);
@@ -147,7 +147,7 @@ const OrderForm = ({ user }: OrderFormProps) => {
     }
 
     const requestData = {
-      user: userId,
+      user: userId as string,
       order: order,
       deliveryAddress: formData,
       total: sum,

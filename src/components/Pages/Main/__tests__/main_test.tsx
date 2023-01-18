@@ -1,22 +1,12 @@
-import renderer from 'react-test-renderer';
-import ThemeProvider from 'components/Theme/ThemeContext';
-import { store } from 'store/store';
-import { Provider } from 'react-redux';
 import Main from '../Main';
-
-const Wrapper = () => {
-  return (
-    <ThemeProvider>
-      <Provider store={store}>
-        <Main />
-      </Provider>
-    </ThemeProvider>
-  );
-};
+import { renderWithProviders } from 'test/test-utils';
 
 describe('Main Page', () => {
-  test('should renders main page correctly', () => {
-    const tree = renderer.create(<Wrapper />).toJSON();
-    expect(tree).toMatchSnapshot();
+  it('should renders main page correctly', async () => {
+    const main = await renderWithProviders(<Main />, {
+      preloadedState: {},
+    }).container;
+
+    expect(main).toMatchSnapshot();
   });
 });

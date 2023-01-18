@@ -1,4 +1,4 @@
-import { LoginResponse } from 'services/user';
+import { LoginResponse } from 'services/user/user';
 import { PayloadAction } from '@reduxjs/toolkit';
 import { NextFunction } from 'connect';
 import { toast } from 'react-toastify';

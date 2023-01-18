@@ -7,7 +7,7 @@ import styled, { CSSProperties } from 'styled-components';
 import { DialogWidth, getDialogElement } from './dialog.utils';
 import { closeDialog, FormType, openDialog, selectDialogState } from './dialogSlice';
 import CloseIcon from 'assets/icon/cancel-cross.svg';
-import { RequestData, useRegisterMutation, useLoginMutation } from 'services/user';
+import { RequestData, useRegisterMutation, useLoginMutation } from 'services/user/user';
 
 const Modal = styled.div`
   position: fixed;

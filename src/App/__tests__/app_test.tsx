@@ -1,6 +1,6 @@
 import renderer from 'react-test-renderer';
 import ThemeProvider from 'components/Theme/ThemeContext';
-import { store } from 'store/store';
+import { setupStore } from 'store/store';
 import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import App from 'App/App';
@@ -9,7 +9,7 @@ const Wrapper = () => {
   return (
     <ThemeProvider>
       <BrowserRouter>
-        <Provider store={store}>
+        <Provider store={setupStore()}>
           <App />
         </Provider>
       </BrowserRouter>

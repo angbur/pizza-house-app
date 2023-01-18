@@ -2,7 +2,7 @@ import ListIconItem from 'components/Molecules/ListIconItem/ListIconItem';
 import { ThemeContext } from 'components/Theme/ThemeContext';
 import { useAppSelector } from 'hooks';
 import { useContext } from 'react';
-import { selectIsLoggedIn } from 'store/userSlice';
+import { selectIsLoggedIn } from 'store/user/userSlice';
 import styled from 'styled-components';
 
 const SidebarNav = styled.div`
