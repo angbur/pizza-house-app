@@ -1,7 +1,7 @@
 import { useAppSelector } from 'hooks';
 import { useState, useEffect } from 'react';
-import { useGetUserByIdQuery } from 'services/user';
-import { selectUserId } from 'store/userSlice';
+import { useGetUserByIdQuery } from 'services/user/user';
+import { selectUserId } from 'store/user/userSlice';
 
 export type ImportedUserData = {
   firstName: string;
@@ -10,8 +10,8 @@ export type ImportedUserData = {
 };
 
 export const useUserData = (): ImportedUserData => {
-  const userId = useAppSelector(selectUserId);
-  const user = useGetUserByIdQuery(userId);
+  const userId: string | undefined = useAppSelector(selectUserId);
+  const user = useGetUserByIdQuery(userId as string);
   const [formData, setData] = useState<ImportedUserData>({
     firstName: '',
     lastName: '',

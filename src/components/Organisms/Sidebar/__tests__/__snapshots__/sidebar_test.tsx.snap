@@ -1,0 +1,218 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Sidebar should renders Sidebar correctly for a logged in user 1`] = `
+<div>
+  <nav>
+    <div
+      class="sc-gswNZR fXfFKY sidebar"
+    >
+      <ul>
+        <li>
+          <a
+            aria-current="page"
+            class="active"
+            href="/"
+          >
+            <div
+              class="sc-bcXHqe WDvVZ icon-item"
+            >
+              <img
+                height="32"
+                src="[object Object]"
+              />
+              <h5
+                class="item-title"
+                style="font-family: Source Sans Pro; font-weight: 600; font-size: 1rem; line-height: 1.4; letter-spacing: 1px; text-transform: uppercase;"
+              >
+                menu
+              </h5>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a
+            class=""
+            href="/make-pizza"
+          >
+            <div
+              class="sc-bcXHqe gIzvfo icon-item"
+            >
+              <img
+                height="32"
+                src="[object Object]"
+              />
+              <h5
+                class="item-title"
+                style="font-family: Source Sans Pro; font-weight: 600; font-size: 1rem; line-height: 1.4; letter-spacing: 1px; text-transform: uppercase;"
+              >
+                make pizza
+              </h5>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a
+            class=""
+            href="/order"
+          >
+            <div
+              class="sc-bcXHqe gIzvfo icon-item"
+            >
+              <img
+                height="26"
+                src="[object Object]"
+              />
+              <h5
+                class="item-title"
+                style="font-family: Source Sans Pro; font-weight: 600; font-size: 1rem; line-height: 1.4; letter-spacing: 1px; text-transform: uppercase;"
+              >
+                order
+              </h5>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a
+            class=""
+            href="/history"
+          >
+            <div
+              class="sc-bcXHqe gIzvfo icon-item"
+            >
+              <img
+                height="20"
+                src="[object Object]"
+              />
+              <h5
+                class="item-title"
+                style="font-family: Source Sans Pro; font-weight: 600; font-size: 1rem; line-height: 1.4; letter-spacing: 1px; text-transform: uppercase;"
+              >
+                history
+              </h5>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a
+            class=""
+            href="/contact"
+          >
+            <div
+              class="sc-bcXHqe gIzvfo icon-item"
+            >
+              <img
+                height="20"
+                src="[object Object]"
+              />
+              <h5
+                class="item-title"
+                style="font-family: Source Sans Pro; font-weight: 600; font-size: 1rem; line-height: 1.4; letter-spacing: 1px; text-transform: uppercase;"
+              >
+                contact
+              </h5>
+            </div>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</div>
+`;
+
+exports[`Sidebar should renders Sidebar correctly for a non-logged in user 1`] = `
+<div>
+  <nav>
+    <div
+      class="sc-gswNZR fXfFKY sidebar"
+    >
+      <ul>
+        <li>
+          <a
+            aria-current="page"
+            class="active"
+            href="/"
+          >
+            <div
+              class="sc-bcXHqe WDvVZ icon-item"
+            >
+              <img
+                height="32"
+                src="[object Object]"
+              />
+              <h5
+                class="item-title"
+                style="font-family: Source Sans Pro; font-weight: 600; font-size: 1rem; line-height: 1.4; letter-spacing: 1px; text-transform: uppercase;"
+              >
+                menu
+              </h5>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a
+            class=""
+            href="/make-pizza"
+          >
+            <div
+              class="sc-bcXHqe gIzvfo icon-item"
+            >
+              <img
+                height="32"
+                src="[object Object]"
+              />
+              <h5
+                class="item-title"
+                style="font-family: Source Sans Pro; font-weight: 600; font-size: 1rem; line-height: 1.4; letter-spacing: 1px; text-transform: uppercase;"
+              >
+                make pizza
+              </h5>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a
+            class=""
+            href="/order"
+          >
+            <div
+              class="sc-bcXHqe gIzvfo icon-item"
+            >
+              <img
+                height="26"
+                src="[object Object]"
+              />
+              <h5
+                class="item-title"
+                style="font-family: Source Sans Pro; font-weight: 600; font-size: 1rem; line-height: 1.4; letter-spacing: 1px; text-transform: uppercase;"
+              >
+                order
+              </h5>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a
+            class=""
+            href="/contact"
+          >
+            <div
+              class="sc-bcXHqe gIzvfo icon-item"
+            >
+              <img
+                height="20"
+                src="[object Object]"
+              />
+              <h5
+                class="item-title"
+                style="font-family: Source Sans Pro; font-weight: 600; font-size: 1rem; line-height: 1.4; letter-spacing: 1px; text-transform: uppercase;"
+              >
+                contact
+              </h5>
+            </div>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</div>
+`;

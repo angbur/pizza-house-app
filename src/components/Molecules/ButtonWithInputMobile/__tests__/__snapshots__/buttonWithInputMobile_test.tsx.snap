@@ -1,0 +1,103 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button with input for mobile should renders button with input correctly 1`] = `
+<div
+  className="sc-kDvujY kpWPsJ quantity-button-mobile"
+>
+  <button
+    className="sc-bcXHqe sc-gswNZR feNVH gHullA primary-light btn-md button"
+    style={
+      Object {
+        "border": "none",
+        "borderRadius": "0",
+        "fontSize": "0.9500000000000001rem",
+        "maxHeight": "80px",
+        "maxWidth": "80px",
+        "padding": "0.5850000000000001rem 1.125rem",
+      }
+    }
+  >
+    <img
+      height={20}
+      src={
+        Object {
+          "ReactComponent": Object {
+            "$$typeof": Symbol(react.forward_ref),
+            "render": [Function],
+          },
+          "__esModule": true,
+          "default": "plus.svg",
+        }
+      }
+    />
+  </button>
+  <input
+    className="sc-jrcTuL eyDxOv"
+    style={
+      Object {
+        "border": "none",
+        "borderRadius": "0",
+        "maxHeight": "80px",
+        "maxWidth": "80px",
+      }
+    }
+    type="number"
+    value={1}
+  />
+  <button
+    className="sc-bcXHqe sc-gswNZR feNVH gHullA primary-light btn-md button"
+    style={
+      Object {
+        "border": "none",
+        "borderRadius": "0",
+        "fontSize": "0.9500000000000001rem",
+        "maxHeight": "80px",
+        "maxWidth": "80px",
+        "padding": "0.5850000000000001rem 1.125rem",
+      }
+    }
+  >
+    <img
+      height={20}
+      src={
+        Object {
+          "ReactComponent": Object {
+            "$$typeof": Symbol(react.forward_ref),
+            "render": [Function],
+          },
+          "__esModule": true,
+          "default": "minus.svg",
+        }
+      }
+    />
+  </button>
+  <button
+    className="sc-bcXHqe sc-gswNZR feNVH gHullA primary-light btn-md button"
+    style={
+      Object {
+        "border": "none",
+        "borderLeft": "1px solid white",
+        "borderRadius": "0",
+        "fontSize": "0.9500000000000001rem",
+        "maxHeight": "80px",
+        "maxWidth": "80px",
+        "padding": "0.5850000000000001rem 1.125rem",
+      }
+    }
+  >
+    <img
+      height={20}
+      src={
+        Object {
+          "ReactComponent": Object {
+            "$$typeof": Symbol(react.forward_ref),
+            "render": [Function],
+          },
+          "__esModule": true,
+          "default": "trash.svg",
+        }
+      }
+    />
+  </button>
+</div>
+`;

@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly logo 1`] = `
+<div
+  className="sc-bcXHqe hnPJle full logo"
+  style={
+    Object {
+      "background": "#151515",
+    }
+  }
+>
+  <img
+    src="logo.svg"
+  />
+</div>
+`;

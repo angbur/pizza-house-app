@@ -1,0 +1,462 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App should renders app correctly 1`] = `
+<div>
+  <header>
+    <div
+      class="sc-dIfARi SyZF header"
+    >
+      <a
+        class="header_logo"
+        href="/"
+      >
+        <div
+          class="sc-idXgbr bhdSCh full logo"
+          style="background: rgb(21, 21, 21);"
+        >
+          <img
+            src="logo.svg"
+          />
+        </div>
+      </a>
+      <div
+        class="header_title"
+      >
+        <img
+          src="quote.svg"
+        />
+      </div>
+      <div
+        class="sc-hHTYSt haXQyO header_actions"
+      >
+        <button
+          class="sc-bcXHqe sc-gswNZR feNVH gHullA primary-light btn-lg header_actions_button--desktop button"
+          style="padding: 0.65rem 1.25rem; font-size: 1.05rem;"
+        >
+          Sign in
+        </button>
+        <button
+          class="sc-bcXHqe sc-gKPRtg sc-ftTHYK feNVH hUzBlu hIdUJX button-text-dark btn-lg header_actions_button--desktop button"
+          style="padding: 0.65rem 1.25rem; font-size: 1.05rem;"
+        >
+          Sign up
+        </button>
+        <div
+          class="sc-kgTSHT iVIRak"
+        >
+          <button
+            class="sc-bcXHqe sc-jSUZER feNVH dkmCUq button-text-without-hover btn-lg button"
+            style="padding: 0.65rem 1.25rem; font-size: 1.05rem;"
+          >
+            <img
+              height="20"
+              src="[object Object]"
+            />
+          </button>
+          <div
+            class="sc-bBABsx jJonlw"
+            style="display: none;"
+          >
+            <li>
+              <button
+                class="sc-bcXHqe sc-jSUZER feNVH dkmCUq button-text-without-hover btn-lg button"
+                style="padding: 0.65rem 1.25rem; font-size: 1.05rem;"
+              >
+                Sign in
+              </button>
+            </li>
+            <li>
+              <button
+                class="sc-bcXHqe sc-jSUZER feNVH dkmCUq button-text-without-hover btn-lg button"
+                style="padding: 0.65rem 1.25rem; font-size: 1.05rem;"
+              >
+                Sign up
+              </button>
+            </li>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <div
+    class="sc-oZIhv cgIhcs"
+  >
+    <div
+      class="Toastify"
+    />
+    <nav>
+      <div
+        class="sc-bYMpWt dCyKVM sidebar"
+      >
+        <ul>
+          <li>
+            <a
+              aria-current="page"
+              class="active"
+              href="/"
+            >
+              <div
+                class="sc-iveFHk ftfZxz icon-item"
+              >
+                <img
+                  height="32"
+                  src="[object Object]"
+                />
+                <h5
+                  class="item-title"
+                  style="font-family: Source Sans Pro; font-weight: 600; font-size: 1rem; line-height: 1.4; letter-spacing: 1px; text-transform: uppercase;"
+                >
+                  menu
+                </h5>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a
+              class=""
+              href="/make-pizza"
+            >
+              <div
+                class="sc-iveFHk efCEpS icon-item"
+              >
+                <img
+                  height="32"
+                  src="[object Object]"
+                />
+                <h5
+                  class="item-title"
+                  style="font-family: Source Sans Pro; font-weight: 600; font-size: 1rem; line-height: 1.4; letter-spacing: 1px; text-transform: uppercase;"
+                >
+                  make pizza
+                </h5>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a
+              class=""
+              href="/order"
+            >
+              <div
+                class="sc-iveFHk efCEpS icon-item"
+              >
+                <img
+                  height="26"
+                  src="[object Object]"
+                />
+                <h5
+                  class="item-title"
+                  style="font-family: Source Sans Pro; font-weight: 600; font-size: 1rem; line-height: 1.4; letter-spacing: 1px; text-transform: uppercase;"
+                >
+                  order
+                </h5>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a
+              class=""
+              href="/contact"
+            >
+              <div
+                class="sc-iveFHk efCEpS icon-item"
+              >
+                <img
+                  height="20"
+                  src="[object Object]"
+                />
+                <h5
+                  class="item-title"
+                  style="font-family: Source Sans Pro; font-weight: 600; font-size: 1rem; line-height: 1.4; letter-spacing: 1px; text-transform: uppercase;"
+                >
+                  contact
+                </h5>
+              </div>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <div
+      class="sc-fEXmlR bWqDgE box"
+    >
+      <main>
+        <div
+          class="sc-fnGiBr MacNp"
+        >
+          <h5
+            class="item-title"
+            style="font-family: Source Sans Pro; font-weight: 600; font-size: 1rem; line-height: 1.4; letter-spacing: 1px; color: rgb(252, 251, 251); text-transform: uppercase;"
+          >
+            Sort by
+          </h5>
+          <button
+            class="sc-bcXHqe sc-gKPRtg sc-iBYQkv feNVH hUzBlu YZIpJ button-text-light btn-lg button"
+            style="padding: 0.65rem 1.25rem; font-size: 1.05rem;"
+          >
+            <h5
+              class="item-title"
+              style="font-family: Source Sans Pro; font-weight: 600; font-size: 1rem; line-height: 1.4; letter-spacing: 1px; color: rgb(235, 133, 62);"
+            >
+              name
+            </h5>
+          </button>
+          <button
+            class="sc-bcXHqe sc-gKPRtg sc-iBYQkv feNVH hUzBlu YZIpJ button-text-light btn-lg button"
+            style="padding: 0.65rem 1.25rem; font-size: 1.05rem;"
+          >
+            <h5
+              class="item-title"
+              style="font-family: Source Sans Pro; font-weight: 600; font-size: 1rem; line-height: 1.4; letter-spacing: 1px; color: rgb(252, 251, 251);"
+            >
+              price 
+              <img
+                height="8"
+                src="[object Object]"
+              />
+            </h5>
+          </button>
+          <button
+            class="sc-bcXHqe sc-gKPRtg sc-iBYQkv feNVH hUzBlu YZIpJ button-text-light btn-lg button"
+            style="padding: 0.65rem 1.25rem; font-size: 1.05rem;"
+          >
+            <h5
+              class="item-title"
+              style="font-family: Source Sans Pro; font-weight: 600; font-size: 1rem; line-height: 1.4; letter-spacing: 1px; color: rgb(252, 251, 251);"
+            >
+              price 
+              <img
+                height="8"
+                src="[object Object]"
+              />
+            </h5>
+          </button>
+        </div>
+        <div
+          class="sc-bjfHbI kWuuQk"
+        />
+      </main>
+    </div>
+  </div>
+  <footer>
+    <footer
+      class="sc-cwSeag cxQmHo footer"
+    >
+      <div
+        class="sc-lllmON ddJYWT"
+      >
+        <div
+          class="sc-idXgbr bhdSCh full logo"
+          style="background: rgb(235, 133, 62);"
+        >
+          <img
+            src="logo.svg"
+          />
+        </div>
+      </div>
+      <div
+        class="sc-lllmON ddJYWT"
+      >
+        <h5
+          class="item-title"
+          style="font-family: Source Sans Pro; font-weight: 600; font-size: 1rem; line-height: 1.4; letter-spacing: 1px; text-transform: uppercase;"
+        >
+          Sitemap
+        </h5>
+        <a
+          class="sc-iJnaPW fSRKJp"
+          href="/make-pizza"
+          theme="[object Object]"
+        >
+          Create own pizza
+        </a>
+        <a
+          class="sc-iJnaPW fSRKJp"
+          href="/contact"
+          theme="[object Object]"
+        >
+          Contact
+        </a>
+        <a
+          class="sc-iJnaPW fSRKJp"
+          href="/profile"
+          theme="[object Object]"
+        >
+          Profile
+        </a>
+        <a
+          class="sc-iJnaPW fSRKJp"
+          href="/history"
+          theme="[object Object]"
+        >
+          My orders
+        </a>
+        <a
+          class="sc-iJnaPW fSRKJp"
+          href="/"
+          theme="[object Object]"
+        >
+          Menu
+        </a>
+      </div>
+      <div
+        class="sc-lllmON ddJYWT"
+      >
+        <h5
+          class="item-title"
+          style="font-family: Source Sans Pro; font-weight: 600; font-size: 1rem; line-height: 1.4; letter-spacing: 1px; text-transform: uppercase;"
+        >
+          Tags
+        </h5>
+        <a
+          class="sc-iJnaPW fSRKJp"
+          href="/"
+          theme="[object Object]"
+        >
+          Vegetarian
+        </a>
+        <a
+          class="sc-iJnaPW fSRKJp"
+          href="/"
+          theme="[object Object]"
+        >
+          Meaty
+        </a>
+        <a
+          class="sc-iJnaPW fSRKJp"
+          href="/"
+          theme="[object Object]"
+        >
+          Spicy
+        </a>
+        <a
+          class="sc-iJnaPW fSRKJp"
+          href="/"
+          theme="[object Object]"
+        >
+          Seafood
+        </a>
+        <a
+          class="sc-iJnaPW fSRKJp"
+          href="/"
+          theme="[object Object]"
+        >
+          Most popular
+        </a>
+      </div>
+      <div
+        class="sc-lllmON ddJYWT"
+      >
+        <h5
+          class="item-title"
+          style="font-family: Source Sans Pro; font-weight: 600; font-size: 1rem; line-height: 1.4; letter-spacing: 1px; text-transform: uppercase;"
+        >
+          Find us
+        </h5>
+        <a
+          class="sc-iJnaPW fSRKJp"
+          href="/"
+          theme="[object Object]"
+        >
+          <img
+            height="14"
+            src="[object Object]"
+          />
+           Facebook
+        </a>
+        <a
+          class="sc-iJnaPW fSRKJp"
+          href="/"
+          theme="[object Object]"
+        >
+          <img
+            height="14"
+            src="[object Object]"
+          />
+           Instagram
+        </a>
+      </div>
+      <div
+        class="sc-gikAfH ioDXK"
+      >
+        <div
+          class="sc-ezOQGI bQeYwL"
+        >
+          <li>
+            <a
+              aria-current="page"
+              class="active"
+              href="/"
+            >
+              <div
+                class="sc-iveFHk ftfZxz icon-item"
+              >
+                <img
+                  height="32"
+                  src="[object Object]"
+                />
+                <h5
+                  class="item-title"
+                  style="font-family: Source Sans Pro; font-weight: 600; font-size: 1rem; line-height: 1.4; letter-spacing: 1px; text-transform: uppercase;"
+                >
+                  menu
+                </h5>
+              </div>
+            </a>
+          </li>
+        </div>
+        <div
+          class="sc-ezOQGI bQeYwL"
+        >
+          <li>
+            <a
+              class=""
+              href="/order"
+            >
+              <div
+                class="sc-iveFHk efCEpS icon-item"
+              >
+                <img
+                  height="32"
+                  src="[object Object]"
+                />
+                <h5
+                  class="item-title"
+                  style="font-family: Source Sans Pro; font-weight: 600; font-size: 1rem; line-height: 1.4; letter-spacing: 1px; text-transform: uppercase;"
+                >
+                  order
+                </h5>
+              </div>
+            </a>
+          </li>
+        </div>
+        <div
+          class="sc-ezOQGI bQeYwL"
+        >
+          <li>
+            <a
+              class=""
+              href="/make-pizza"
+            >
+              <div
+                class="sc-iveFHk efCEpS icon-item"
+              >
+                <img
+                  height="32"
+                  src="[object Object]"
+                />
+                <h5
+                  class="item-title"
+                  style="font-family: Source Sans Pro; font-weight: 600; font-size: 1rem; line-height: 1.4; letter-spacing: 1px; text-transform: uppercase;"
+                >
+                  make
+                </h5>
+              </div>
+            </a>
+          </li>
+        </div>
+      </div>
+    </footer>
+  </footer>
+</div>
+`;

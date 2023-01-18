@@ -2,7 +2,7 @@ import { OrderItem } from 'types/Order';
 import { createSlice, nanoid, PayloadAction } from '@reduxjs/toolkit';
 import { RootState } from 'store/store';
 import { toast } from 'react-toastify';
-import { logout } from 'store/userSlice';
+import { logout } from 'store/user/userSlice';
 
 type RequireOnly<T, P extends keyof T> = Pick<T, P> & Partial<Omit<T, P>>;
 
@@ -12,7 +12,7 @@ export const createItem = (draftItem: DraftItem): OrderItem => {
   return { _id: nanoid(), ...draftItem };
 };
 
-type OrderState = {
+export type OrderState = {
   entities: OrderItem[];
 };
 

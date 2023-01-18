@@ -1,0 +1,161 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header should renders header correctly for a logged in user 1`] = `
+<div>
+  <header>
+    <div
+      class="sc-kDvujY hragjb header"
+    >
+      <a
+        class="header_logo"
+        href="/"
+      >
+        <div
+          class="sc-jrcTuL cFiwzV full logo"
+          style="background: rgb(21, 21, 21);"
+        >
+          <img
+            src="logo.svg"
+          />
+        </div>
+      </a>
+      <div
+        class="header_title"
+      >
+        <img
+          src="quote.svg"
+        />
+      </div>
+      <div
+        class="sc-ipEyDJ cXcjSP header_actions"
+      >
+        <div
+          class="sc-bqWxrE eaVRud"
+        >
+          <button
+            class="sc-bcXHqe sc-jSUZER feNVH dkmCUq button-text-without-hover btn-lg button"
+            style="padding: 0.65rem 1.25rem; font-size: 1.05rem;"
+          >
+            <h5
+              class="item-title"
+              style="font-family: Source Sans Pro; font-weight: 600; font-size: 1rem; line-height: 1.4; letter-spacing: 1px; color: rgb(21, 21, 21);"
+            >
+              dummy_login
+            </h5>
+          </button>
+          <div
+            class="sc-ksBlkl hTPapp"
+            style="display: none;"
+          >
+            <li>
+              <button
+                class="sc-bcXHqe sc-jSUZER feNVH dkmCUq button-text-without-hover btn-lg button"
+                style="padding: 0.65rem 1.25rem; font-size: 1.05rem;"
+              >
+                <img
+                  height="14"
+                  src="[object Object]"
+                />
+                 Profile
+              </button>
+            </li>
+            <li>
+              <button
+                class="sc-bcXHqe sc-jSUZER feNVH dkmCUq button-text-without-hover btn-lg button"
+                style="padding: 0.65rem 1.25rem; font-size: 1.05rem;"
+              >
+                <img
+                  height="14"
+                  src="[object Object]"
+                />
+                 Log out
+              </button>
+            </li>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+</div>
+`;
+
+exports[`Header should renders header correctly for a non-logged in user 1`] = `
+<div>
+  <header>
+    <div
+      class="sc-kDvujY hragjb header"
+    >
+      <a
+        class="header_logo"
+        href="/"
+      >
+        <div
+          class="sc-jrcTuL cFiwzV full logo"
+          style="background: rgb(21, 21, 21);"
+        >
+          <img
+            src="logo.svg"
+          />
+        </div>
+      </a>
+      <div
+        class="header_title"
+      >
+        <img
+          src="quote.svg"
+        />
+      </div>
+      <div
+        class="sc-ipEyDJ cXcjSP header_actions"
+      >
+        <button
+          class="sc-bcXHqe sc-gswNZR feNVH gHullA primary-light btn-lg header_actions_button--desktop button"
+          style="padding: 0.65rem 1.25rem; font-size: 1.05rem;"
+        >
+          Sign in
+        </button>
+        <button
+          class="sc-bcXHqe sc-gKPRtg sc-ftTHYK feNVH hUzBlu hIdUJX button-text-dark btn-lg header_actions_button--desktop button"
+          style="padding: 0.65rem 1.25rem; font-size: 1.05rem;"
+        >
+          Sign up
+        </button>
+        <div
+          class="sc-eDWCr hgSJeQ"
+        >
+          <button
+            class="sc-bcXHqe sc-jSUZER feNVH dkmCUq button-text-without-hover btn-lg button"
+            style="padding: 0.65rem 1.25rem; font-size: 1.05rem;"
+          >
+            <img
+              height="20"
+              src="[object Object]"
+            />
+          </button>
+          <div
+            class="sc-ksBlkl hTPapp"
+            style="display: none;"
+          >
+            <li>
+              <button
+                class="sc-bcXHqe sc-jSUZER feNVH dkmCUq button-text-without-hover btn-lg button"
+                style="padding: 0.65rem 1.25rem; font-size: 1.05rem;"
+              >
+                Sign in
+              </button>
+            </li>
+            <li>
+              <button
+                class="sc-bcXHqe sc-jSUZER feNVH dkmCUq button-text-without-hover btn-lg button"
+                style="padding: 0.65rem 1.25rem; font-size: 1.05rem;"
+              >
+                Sign up
+              </button>
+            </li>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+</div>
+`;

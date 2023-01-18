@@ -1,9 +1,7 @@
 import { ChangeEventHandler, ReactNode } from 'react';
 import Login from './components/Login';
-import LoginSuccess from './components/LoginSuccess';
 import OrderDetail from './components/OrderDetail';
 import Register from './components/Register';
-import RegisterSuccess from './components/RegisterSuccess';
 import { FormType } from './dialogSlice';
 
 export type DialogWidth = 'sm' | 'md' | 'lg';
@@ -31,26 +29,10 @@ export const getDialogElement = (formType: FormType) => {
       },
     ],
     [
-      FormType.registerSuccess,
-      {
-        title: 'Congratulation',
-        component: RegisterSuccess,
-        width: 'sm',
-      },
-    ],
-    [
       FormType.login,
       {
         title: 'Log In',
         component: Login,
-        width: 'sm',
-      },
-    ],
-    [
-      FormType.loginSuccess,
-      {
-        title: 'Congratulation',
-        component: LoginSuccess,
         width: 'sm',
       },
     ],

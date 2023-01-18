@@ -3,7 +3,7 @@ import Typography from 'components/Atoms/Typography/Typography';
 import { openDialog, FormType } from 'components/Organisms/Dialog/dialogSlice';
 import { useAppDispatch, useAppSelector } from 'hooks';
 import { useNavigate } from 'react-router-dom';
-import { selectIsLoggedIn } from 'store/userSlice';
+import { selectIsLoggedIn } from 'store/user/userSlice';
 import styled from 'styled-components';
 import OrderList from '../../Organisms/OrderList/OrderList';
 import { removeAllOrder, selectListOfOrderItems } from './orderSlice';

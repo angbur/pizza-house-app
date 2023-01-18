@@ -1,0 +1,66 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Main Page should renders main page correctly 1`] = `
+<div>
+  <div
+    class="sc-fEXmlR bWqDgE box"
+  >
+    <main>
+      <div
+        class="sc-fnGiBr MacNp"
+      >
+        <h5
+          class="item-title"
+          style="font-family: Source Sans Pro; font-weight: 600; font-size: 1rem; line-height: 1.4; letter-spacing: 1px; color: rgb(252, 251, 251); text-transform: uppercase;"
+        >
+          Sort by
+        </h5>
+        <button
+          class="sc-bcXHqe sc-gKPRtg sc-iBYQkv feNVH hUzBlu YZIpJ button-text-light btn-lg button"
+          style="padding: 0.65rem 1.25rem; font-size: 1.05rem;"
+        >
+          <h5
+            class="item-title"
+            style="font-family: Source Sans Pro; font-weight: 600; font-size: 1rem; line-height: 1.4; letter-spacing: 1px; color: rgb(235, 133, 62);"
+          >
+            name
+          </h5>
+        </button>
+        <button
+          class="sc-bcXHqe sc-gKPRtg sc-iBYQkv feNVH hUzBlu YZIpJ button-text-light btn-lg button"
+          style="padding: 0.65rem 1.25rem; font-size: 1.05rem;"
+        >
+          <h5
+            class="item-title"
+            style="font-family: Source Sans Pro; font-weight: 600; font-size: 1rem; line-height: 1.4; letter-spacing: 1px; color: rgb(252, 251, 251);"
+          >
+            price 
+            <img
+              height="8"
+              src="[object Object]"
+            />
+          </h5>
+        </button>
+        <button
+          class="sc-bcXHqe sc-gKPRtg sc-iBYQkv feNVH hUzBlu YZIpJ button-text-light btn-lg button"
+          style="padding: 0.65rem 1.25rem; font-size: 1.05rem;"
+        >
+          <h5
+            class="item-title"
+            style="font-family: Source Sans Pro; font-weight: 600; font-size: 1rem; line-height: 1.4; letter-spacing: 1px; color: rgb(252, 251, 251);"
+          >
+            price 
+            <img
+              height="8"
+              src="[object Object]"
+            />
+          </h5>
+        </button>
+      </div>
+      <div
+        class="sc-bjfHbI kWuuQk"
+      />
+    </main>
+  </div>
+</div>
+`;

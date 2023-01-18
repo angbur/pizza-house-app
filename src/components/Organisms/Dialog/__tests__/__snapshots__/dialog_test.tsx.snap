@@ -1,0 +1,283 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Dialog should renders dialog component correctly with login-component 1`] = `
+<div>
+  <div
+    class="sc-eDWCr vNJod"
+  >
+    <div
+      class="sc-bqWxrE iDiwNo"
+    />
+    <div
+      class="sc-ksBlkl hPuuqZ"
+      style="max-width: 400px;"
+    >
+      <div
+        class="dialog-header"
+      >
+        <button
+          class="sc-bcXHqe sc-pyfCe feNVH hIOFrL icon-button btn-lg header_actions_button--mobile button"
+          style="padding: 0px; font-size: 1.05rem;"
+        >
+          <img
+            alt=""
+            height="12px"
+            src="cancel-cross.svg"
+          />
+        </button>
+        <h2
+          class="dialog-title"
+          style="font-family: Source Sans Pro; font-weight: 600; font-size: 1.6rem; line-height: 1.6; letter-spacing: 1px; color: rgb(21, 21, 21); text-transform: uppercase;"
+        >
+          Log In
+        </h2>
+      </div>
+      <div>
+        <form>
+          <div
+            class="sc-kDvujY epQXUX"
+          >
+            <div
+              class="sc-jrcTuL cwMVBS"
+            >
+              <label
+                style="color: rgb(21, 21, 21);"
+              >
+                Login
+              </label>
+              <input
+                name="login"
+                placeholder="Your login"
+                style="color: rgb(21, 21, 21);"
+                type="text"
+                value=""
+              />
+              <p
+                class="paragraph"
+                style="font-family: Source Sans Pro; font-weight: 400; font-size: 1rem; line-height: 1.6; letter-spacing: 0; color: rgb(231, 76, 60);"
+              />
+            </div>
+            <div
+              class="sc-jrcTuL cwMVBS"
+            >
+              <label
+                style="color: rgb(21, 21, 21);"
+              >
+                Password
+              </label>
+              <input
+                name="password"
+                placeholder="Password"
+                style="color: rgb(21, 21, 21);"
+                type="password"
+                value=""
+              />
+              <p
+                class="paragraph"
+                style="font-family: Source Sans Pro; font-weight: 400; font-size: 1rem; line-height: 1.6; letter-spacing: 0; color: rgb(231, 76, 60);"
+              />
+            </div>
+          </div>
+        </form>
+      </div>
+      <div
+        class="sc-hBxehG fXFSFF"
+      >
+        <button
+          class="sc-bcXHqe sc-gswNZR feNVH gHullA primary-light btn-md button"
+          style="padding: 0.5850000000000001rem 1.125rem; font-size: 0.9500000000000001rem;"
+        >
+          Log In
+        </button>
+        <p
+          class="paragraph"
+          style="font-family: Source Sans Pro; font-weight: 400; font-size: 1rem; line-height: 1.6; letter-spacing: 0; color: rgb(21, 21, 21);"
+        >
+          If you do not have an account
+          <button
+            class="sc-bcXHqe sc-gKPRtg sc-iBYQkv feNVH hUzBlu YZIpJ button-text-light btn-sm button"
+            style="padding: 0.52rem 1rem; font-size: 0.8500000000000001rem;"
+          >
+            SIGN UP
+          </button>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Dialog should renders dialog component correctly with register-component 1`] = `
+<div>
+  <div
+    class="sc-eDWCr vNJod"
+  >
+    <div
+      class="sc-bqWxrE iDiwNo"
+    />
+    <div
+      class="sc-ksBlkl hPuuqZ"
+      style="max-width: 440.00000000000006px;"
+    >
+      <div
+        class="dialog-header"
+      >
+        <button
+          class="sc-bcXHqe sc-pyfCe feNVH hIOFrL icon-button btn-lg header_actions_button--mobile button"
+          style="padding: 0px; font-size: 1.05rem;"
+        >
+          <img
+            alt=""
+            height="12px"
+            src="cancel-cross.svg"
+          />
+        </button>
+        <h2
+          class="dialog-title"
+          style="font-family: Source Sans Pro; font-weight: 600; font-size: 1.6rem; line-height: 1.6; letter-spacing: 1px; color: rgb(21, 21, 21); text-transform: uppercase;"
+        >
+          Sign Up
+        </h2>
+      </div>
+      <div>
+        <form>
+          <div
+            class="sc-csuSiG iIwxMD"
+          >
+            <div
+              class="sc-jrcTuL cwMVBS"
+            >
+              <label
+                style="color: rgb(21, 21, 21);"
+              >
+                Login
+              </label>
+              <input
+                name="login"
+                placeholder="Your login"
+                style="color: rgb(21, 21, 21);"
+                type="text"
+                value=""
+              />
+              <p
+                class="paragraph"
+                style="font-family: Source Sans Pro; font-weight: 400; font-size: 1rem; line-height: 1.6; letter-spacing: 0; color: rgb(231, 76, 60);"
+              >
+                Minimum 4 letters, at least one capital letter and one number
+              </p>
+            </div>
+            <div
+              class="sc-jrcTuL cwMVBS"
+            >
+              <label
+                style="color: rgb(21, 21, 21);"
+              >
+                First name
+              </label>
+              <input
+                name="firstName"
+                placeholder="Your first name"
+                style="color: rgb(21, 21, 21);"
+                type="text"
+                value=""
+              />
+              <p
+                class="paragraph"
+                style="font-family: Source Sans Pro; font-weight: 400; font-size: 1rem; line-height: 1.6; letter-spacing: 0; color: rgb(231, 76, 60);"
+              >
+                Minimum 3 letters
+              </p>
+            </div>
+            <div
+              class="sc-jrcTuL cwMVBS"
+            >
+              <label
+                style="color: rgb(21, 21, 21);"
+              >
+                Last name
+              </label>
+              <input
+                name="lastName"
+                placeholder="Your last name"
+                style="color: rgb(21, 21, 21);"
+                type="text"
+                value=""
+              />
+              <p
+                class="paragraph"
+                style="font-family: Source Sans Pro; font-weight: 400; font-size: 1rem; line-height: 1.6; letter-spacing: 0; color: rgb(231, 76, 60);"
+              >
+                Minimum 3 letters
+              </p>
+            </div>
+            <div
+              class="sc-jrcTuL cwMVBS"
+            >
+              <label
+                style="color: rgb(21, 21, 21);"
+              >
+                Email
+              </label>
+              <input
+                name="email"
+                placeholder="Your email"
+                style="color: rgb(21, 21, 21);"
+                type="email"
+                value=""
+              />
+              <p
+                class="paragraph"
+                style="font-family: Source Sans Pro; font-weight: 400; font-size: 1rem; line-height: 1.6; letter-spacing: 0; color: rgb(231, 76, 60);"
+              />
+            </div>
+            <div
+              class="sc-jrcTuL cwMVBS"
+            >
+              <label
+                style="color: rgb(21, 21, 21);"
+              >
+                Password
+              </label>
+              <input
+                name="password"
+                placeholder="Password"
+                style="color: rgb(21, 21, 21);"
+                type="password"
+                value=""
+              />
+              <p
+                class="paragraph"
+                style="font-family: Source Sans Pro; font-weight: 400; font-size: 1rem; line-height: 1.6; letter-spacing: 0; color: rgb(231, 76, 60);"
+              >
+                At least 8 characters, one capital letter and one number
+              </p>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div
+        class="sc-hBxehG fXFSFF"
+      >
+        <button
+          class="sc-bcXHqe sc-gswNZR feNVH gHullA primary-light btn-md button"
+          style="padding: 0.5850000000000001rem 1.125rem; font-size: 0.9500000000000001rem;"
+        >
+          Create Account
+        </button>
+        <p
+          class="paragraph"
+          style="font-family: Source Sans Pro; font-weight: 400; font-size: 1rem; line-height: 1.6; letter-spacing: 0; color: rgb(21, 21, 21);"
+        >
+          If you already have an account just
+          <button
+            class="sc-bcXHqe sc-gKPRtg sc-iBYQkv feNVH hUzBlu YZIpJ button-text-light btn-sm button"
+            style="padding: 0.52rem 1rem; font-size: 0.8500000000000001rem;"
+          >
+            SIGN IN
+          </button>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+`;

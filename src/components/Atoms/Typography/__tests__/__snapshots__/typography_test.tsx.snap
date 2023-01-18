@@ -1,0 +1,160 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Typography renders correctly caption 1`] = `
+<p
+  className="caption"
+  style={
+    Object {
+      "color": "none",
+      "fontFamily": "Klepon Ijo",
+      "fontSize": "2rem",
+      "fontWeight": "400",
+      "letterSpacing": "0",
+      "lineHeight": "1.6",
+    }
+  }
+>
+  Text
+</p>
+`;
+
+exports[`Typography renders correctly card-subtitle 1`] = `
+<h4
+  className="card-subtitle"
+  style={
+    Object {
+      "color": "none",
+      "fontFamily": "Source Sans Pro",
+      "fontSize": "0.9rem",
+      "fontWeight": "400",
+      "lineHeight": "1.6",
+    }
+  }
+>
+  Text
+</h4>
+`;
+
+exports[`Typography renders correctly card-title 1`] = `
+<h3
+  className="card-title"
+  style={
+    Object {
+      "color": "none",
+      "fontFamily": "Klepon Ijo",
+      "fontSize": "2rem",
+      "fontWeight": "400",
+      "letterSpacing": "2px",
+      "lineHeight": "1.2",
+    }
+  }
+>
+  Text
+</h3>
+`;
+
+exports[`Typography renders correctly dialog-title 1`] = `
+<h2
+  className="dialog-title"
+  style={
+    Object {
+      "color": "none",
+      "fontFamily": "Source Sans Pro",
+      "fontSize": "1.6rem",
+      "fontWeight": "600",
+      "letterSpacing": "1px",
+      "lineHeight": "1.6",
+    }
+  }
+>
+  Text
+</h2>
+`;
+
+exports[`Typography renders correctly item-title 1`] = `
+<h5
+  className="item-title"
+  style={
+    Object {
+      "color": "none",
+      "fontFamily": "Source Sans Pro",
+      "fontSize": "1rem",
+      "fontWeight": "600",
+      "letterSpacing": "1px",
+      "lineHeight": "1.4",
+    }
+  }
+>
+  Text
+</h5>
+`;
+
+exports[`Typography renders correctly main-title 1`] = `
+<h1
+  className="main-title"
+  style={
+    Object {
+      "color": "none",
+      "fontFamily": "Klepon Ijo",
+      "fontSize": "3rem",
+      "fontWeight": "400",
+      "letterSpacing": "1px",
+      "lineHeight": "1.6",
+    }
+  }
+>
+  Text
+</h1>
+`;
+
+exports[`Typography renders correctly paragraph 1`] = `
+<p
+  className="paragraph"
+  style={
+    Object {
+      "color": "none",
+      "fontFamily": "Source Sans Pro",
+      "fontSize": "1rem",
+      "fontWeight": "400",
+      "letterSpacing": "0",
+      "lineHeight": "1.6",
+    }
+  }
+>
+  Text
+</p>
+`;
+
+exports[`Typography renders correctly price-tag 1`] = `
+<p
+  className="price-tag"
+  style={
+    Object {
+      "color": "none",
+      "fontFamily": "Klepon Ijo",
+      "fontSize": "3rem",
+      "letterSpacing": "0",
+    }
+  }
+>
+  Text
+</p>
+`;
+
+exports[`Typography renders correctly section-title 1`] = `
+<h2
+  className="section-title"
+  style={
+    Object {
+      "color": "none",
+      "fontFamily": "Source Sans Pro",
+      "fontSize": "2.25rem",
+      "fontWeight": "300",
+      "letterSpacing": "1px",
+      "lineHeight": "1.3",
+    }
+  }
+>
+  Text
+</h2>
+`;

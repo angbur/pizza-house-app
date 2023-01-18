@@ -4,8 +4,6 @@ import { RootState } from 'store/store';
 export enum FormType {
   register = 'register',
   login = 'login',
-  registerSuccess = 'registerSuccess',
-  loginSuccess = 'loginSuccess',
   orderDetail = 'orderDetail',
 }
 

@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { RootState } from './store';
+import { RootState } from '../store';
 import { toast } from 'react-toastify';
-import { userApi } from 'services/user';
+import { userApi } from 'services/user/user';
 
 type User = {
   loggedIn: boolean;

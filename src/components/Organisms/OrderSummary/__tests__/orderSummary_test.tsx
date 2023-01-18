@@ -16,7 +16,7 @@ const data = {
 const Wrapper = () => {
   return (
     <ThemeProvider>
-      <OrderSummary data={data} />
+      <OrderSummary data={data} onClick={jest.fn()} />
     </ThemeProvider>
   );
 };
@@ -24,112 +24,6 @@ const Wrapper = () => {
 describe('Order Summary', () => {
   it('should renders order summary correctly', () => {
     const tree = renderer.create(<Wrapper />).toJSON();
-    expect(tree).toMatchInlineSnapshot(`
-      <div
-        className="sc-jrcTuL cgPqIu"
-      >
-        <h3
-          className="card-title title"
-          style={
-            Object {
-              "color": "#EB853E",
-              "fontFamily": "Klepon Ijo",
-              "fontSize": "2rem",
-              "fontWeight": "400",
-              "letterSpacing": "2px",
-              "lineHeight": "1.2",
-            }
-          }
-        >
-          Address:
-        </h3>
-        <p
-          className="paragraph"
-          style={
-            Object {
-              "color": "#FCFBFB",
-              "fontFamily": "Source Sans Pro",
-              "fontSize": "1rem",
-              "fontWeight": "400",
-              "letterSpacing": "0",
-              "lineHeight": "1.6",
-            }
-          }
-        >
-          Kamila Lasocka
-        </p>
-        <p
-          className="paragraph"
-          style={
-            Object {
-              "color": "#FCFBFB",
-              "fontFamily": "Source Sans Pro",
-              "fontSize": "1rem",
-              "fontWeight": "400",
-              "letterSpacing": "0",
-              "lineHeight": "1.6",
-            }
-          }
-        >
-          lasocka@gmail.com
-        </p>
-        <p
-          className="paragraph"
-          style={
-            Object {
-              "color": "#FCFBFB",
-              "fontFamily": "Source Sans Pro",
-              "fontSize": "1rem",
-              "fontWeight": "400",
-              "letterSpacing": "0",
-              "lineHeight": "1.6",
-            }
-          }
-        >
-          697748282
-        </p>
-        <p
-          className="paragraph"
-          style={
-            Object {
-              "color": "#FCFBFB",
-              "fontFamily": "Source Sans Pro",
-              "fontSize": "1rem",
-              "fontWeight": "400",
-              "letterSpacing": "0",
-              "lineHeight": "1.6",
-            }
-          }
-        >
-          Malinowa 3a
-        </p>
-        <p
-          className="paragraph"
-          style={
-            Object {
-              "color": "#FCFBFB",
-              "fontFamily": "Source Sans Pro",
-              "fontSize": "1rem",
-              "fontWeight": "400",
-              "letterSpacing": "0",
-              "lineHeight": "1.6",
-            }
-          }
-        >
-          55-001 Wrocław
-        </p>
-        <button
-          className="sc-bcXHqe sc-hLBbgP feNVH joABVS secondary-light btn-lg button"
-          style={
-            Object {
-              "fontSize": "1.05rem",
-              "padding": "0.65rem 1.25rem",
-            }
-          }
-        >
-          Edit
-        </button>
-      </div>
-    `);
+    expect(tree).toMatchSnapshot();
   });
 });

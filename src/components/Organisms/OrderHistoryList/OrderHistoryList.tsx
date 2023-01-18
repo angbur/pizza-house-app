@@ -1,7 +1,7 @@
 import OrderHistoryListItem from 'components/Molecules/OrderHistoryListItem/OrderHistoryListItem';
 import { useAppSelector } from 'hooks';
-import { useGetOrdersByUserIdQuery } from 'services/order';
-import { selectUserId } from 'store/userSlice';
+import { useGetOrdersByUserIdQuery } from 'services/order/order';
+import { selectUserId } from 'store/user/userSlice';
 import styled from 'styled-components';
 
 const List = styled.ul`
@@ -14,8 +14,8 @@ const List = styled.ul`
 `;
 
 const OrderHistoryList = () => {
-  const userId = useAppSelector(selectUserId);
-  const { data } = useGetOrdersByUserIdQuery(userId);
+  const userId: string | undefined = useAppSelector(selectUserId);
+  const { data } = useGetOrdersByUserIdQuery(userId as string);
 
   return (
     <List>

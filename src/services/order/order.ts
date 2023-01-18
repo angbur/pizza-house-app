@@ -16,7 +16,7 @@ export type OrderDetailRequest = {
 
 export type OrderDetail = OrderDetailRequest & {
   _id: string;
-  date: Date;
+  date: string;
 };
 
 type OrderDetailResponse = {

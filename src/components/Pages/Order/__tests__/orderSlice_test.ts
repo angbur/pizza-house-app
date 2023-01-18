@@ -1,3 +1,4 @@
+import { pizzaMocks } from 'test/mock/pizzaMock';
 import orderReducer, {
   createItem,
   addToOrder,
@@ -9,24 +10,14 @@ describe('orderSlice', () => {
   const initialState = {
     entities: [
       createItem({
-        item: {
-          _id: '63b2d3b592b7f0f1c7c567b8',
-          name: 'Pinza Mare',
-          ingredients: ['shrimps', 'red fish', 'olives', 'white sauce', 'oregano', 'basil'],
-          price: 26,
-        },
+        item: pizzaMocks[0],
         quantity: 1,
       }),
     ],
   };
 
   const item = createItem({
-    item: {
-      _id: '63b2d3c092b7f0f1c7c567ba',
-      name: 'The Crispy Crust',
-      ingredients: ['tomato sauce', 'salami', 'oregano', 'olives', 'cheese', 'basil'],
-      price: 30,
-    },
+    item: pizzaMocks[1],
     quantity: 1,
   });
 

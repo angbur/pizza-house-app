@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Icon should renders correctly icon 1`] = `
+<div>
+  <img
+    height="20"
+    src="[object Object]"
+  />
+</div>
+`;

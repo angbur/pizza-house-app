@@ -13,7 +13,7 @@ import { useContext, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAppDispatch, useAppSelector } from 'hooks';
 import { FormType, openDialog } from '../Dialog/dialogSlice';
-import { logout, selectIsLoggedIn, selectLogin } from 'store/userSlice';
+import { logout, selectIsLoggedIn, selectLogin } from 'store/user/userSlice';
 import Typography from 'components/Atoms/Typography/Typography';
 import Icon from 'components/Atoms/Icon/Icon';
 

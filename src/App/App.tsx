@@ -17,7 +17,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import ProfilePage from 'components/Pages/Profile/ProfilePage';
 import ScrollToTop from './ScrollToTop';
 import { useAppSelector } from 'hooks';
-import { selectIsLoggedIn } from 'store/userSlice';
+import { selectIsLoggedIn } from 'store/user/userSlice';
 import { useUserData } from 'components/Organisms/OrderForm/useUserData';
 
 const Container = styled.div`

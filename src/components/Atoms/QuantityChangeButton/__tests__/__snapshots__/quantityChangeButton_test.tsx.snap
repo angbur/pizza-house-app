@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly quantity change button 1`] = `
+<div
+  className="sc-bcXHqe eqesaf quantity-button"
+>
+  <button
+    onClick={[MockFunction]}
+  >
+    <img
+      height={14}
+      src={
+        Object {
+          "ReactComponent": Object {
+            "$$typeof": Symbol(react.forward_ref),
+            "render": [Function],
+          },
+          "__esModule": true,
+          "default": "arrow-up-active.svg",
+        }
+      }
+    />
+  </button>
+  <button
+    onClick={[MockFunction]}
+  >
+    <img
+      height={14}
+      src={
+        Object {
+          "ReactComponent": Object {
+            "$$typeof": Symbol(react.forward_ref),
+            "render": [Function],
+          },
+          "__esModule": true,
+          "default": "arrow-down-active.svg",
+        }
+      }
+    />
+  </button>
+</div>
+`;

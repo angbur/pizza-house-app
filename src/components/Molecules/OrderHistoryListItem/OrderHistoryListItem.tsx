@@ -5,7 +5,7 @@ import { FormType, openDialog } from 'components/Organisms/Dialog/dialogSlice';
 import { ThemeContext } from 'components/Theme/ThemeContext';
 import { useAppDispatch } from 'hooks';
 import { useContext } from 'react';
-import { OrderDetail } from 'services/order';
+import { OrderDetail } from 'services/order/order';
 import styled from 'styled-components';
 import { OrderItem } from 'types/Order';
 
@@ -42,8 +42,6 @@ type OrderHistoryListItemProps = {
 const OrderHistoryListItem = ({ element }: OrderHistoryListItemProps) => {
   const theme = useContext(ThemeContext);
   const dispatch = useAppDispatch();
-
-  console.log(element);
 
   const getDescription = (arr: Omit<OrderItem, '_id'>[]) => {
     let result = '';

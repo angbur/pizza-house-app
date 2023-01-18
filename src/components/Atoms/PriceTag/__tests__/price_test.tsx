@@ -12,19 +12,5 @@ const Wrapper = () => {
 
 it('renders correctly price tag', () => {
   const tree = renderer.create(<Wrapper />).toJSON();
-  expect(tree).toMatchInlineSnapshot(`
-    <p
-      className="price-tag"
-      style={
-        Object {
-          "color": "#EB853E",
-          "fontFamily": "Klepon Ijo",
-          "fontSize": "3.1500000000000004rem",
-          "letterSpacing": "0",
-        }
-      }
-    >
-      12$
-    </p>
-  `);
+  expect(tree).toMatchSnapshot();
 });

@@ -1,0 +1,226 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Footer should renders footer correctly 1`] = `
+<div>
+  <footer>
+    <footer
+      class="sc-dkrFOg drTETr footer"
+    >
+      <div
+        class="sc-hLBbgP bHyvAM"
+      >
+        <div
+          class="sc-bcXHqe hnPJle full logo"
+          style="background: rgb(235, 133, 62);"
+        >
+          <img
+            src="logo.svg"
+          />
+        </div>
+      </div>
+      <div
+        class="sc-hLBbgP bHyvAM"
+      >
+        <h5
+          class="item-title"
+          style="font-family: Source Sans Pro; font-weight: 600; font-size: 1rem; line-height: 1.4; letter-spacing: 1px; text-transform: uppercase;"
+        >
+          Sitemap
+        </h5>
+        <a
+          class="sc-eDvSVe gEhQXJ"
+          href="/make-pizza"
+          theme="[object Object]"
+        >
+          Create own pizza
+        </a>
+        <a
+          class="sc-eDvSVe gEhQXJ"
+          href="/contact"
+          theme="[object Object]"
+        >
+          Contact
+        </a>
+        <a
+          class="sc-eDvSVe gEhQXJ"
+          href="/profile"
+          theme="[object Object]"
+        >
+          Profile
+        </a>
+        <a
+          class="sc-eDvSVe gEhQXJ"
+          href="/history"
+          theme="[object Object]"
+        >
+          My orders
+        </a>
+        <a
+          class="sc-eDvSVe gEhQXJ"
+          href="/"
+          theme="[object Object]"
+        >
+          Menu
+        </a>
+      </div>
+      <div
+        class="sc-hLBbgP bHyvAM"
+      >
+        <h5
+          class="item-title"
+          style="font-family: Source Sans Pro; font-weight: 600; font-size: 1rem; line-height: 1.4; letter-spacing: 1px; text-transform: uppercase;"
+        >
+          Tags
+        </h5>
+        <a
+          class="sc-eDvSVe gEhQXJ"
+          href="/"
+          theme="[object Object]"
+        >
+          Vegetarian
+        </a>
+        <a
+          class="sc-eDvSVe gEhQXJ"
+          href="/"
+          theme="[object Object]"
+        >
+          Meaty
+        </a>
+        <a
+          class="sc-eDvSVe gEhQXJ"
+          href="/"
+          theme="[object Object]"
+        >
+          Spicy
+        </a>
+        <a
+          class="sc-eDvSVe gEhQXJ"
+          href="/"
+          theme="[object Object]"
+        >
+          Seafood
+        </a>
+        <a
+          class="sc-eDvSVe gEhQXJ"
+          href="/"
+          theme="[object Object]"
+        >
+          Most popular
+        </a>
+      </div>
+      <div
+        class="sc-hLBbgP bHyvAM"
+      >
+        <h5
+          class="item-title"
+          style="font-family: Source Sans Pro; font-weight: 600; font-size: 1rem; line-height: 1.4; letter-spacing: 1px; text-transform: uppercase;"
+        >
+          Find us
+        </h5>
+        <a
+          class="sc-eDvSVe gEhQXJ"
+          href="/"
+          theme="[object Object]"
+        >
+          <img
+            height="14"
+            src="[object Object]"
+          />
+           Facebook
+        </a>
+        <a
+          class="sc-eDvSVe gEhQXJ"
+          href="/"
+          theme="[object Object]"
+        >
+          <img
+            height="14"
+            src="[object Object]"
+          />
+           Instagram
+        </a>
+      </div>
+      <div
+        class="sc-jSUZER kXbfxh"
+      >
+        <div
+          class="sc-gKPRtg cDjubB"
+        >
+          <li>
+            <a
+              aria-current="page"
+              class="active"
+              href="/"
+            >
+              <div
+                class="sc-gswNZR cqszsx icon-item"
+              >
+                <img
+                  height="32"
+                  src="[object Object]"
+                />
+                <h5
+                  class="item-title"
+                  style="font-family: Source Sans Pro; font-weight: 600; font-size: 1rem; line-height: 1.4; letter-spacing: 1px; text-transform: uppercase;"
+                >
+                  menu
+                </h5>
+              </div>
+            </a>
+          </li>
+        </div>
+        <div
+          class="sc-gKPRtg cDjubB"
+        >
+          <li>
+            <a
+              class=""
+              href="/order"
+            >
+              <div
+                class="sc-gswNZR gGndno icon-item"
+              >
+                <img
+                  height="32"
+                  src="[object Object]"
+                />
+                <h5
+                  class="item-title"
+                  style="font-family: Source Sans Pro; font-weight: 600; font-size: 1rem; line-height: 1.4; letter-spacing: 1px; text-transform: uppercase;"
+                >
+                  order
+                </h5>
+              </div>
+            </a>
+          </li>
+        </div>
+        <div
+          class="sc-gKPRtg cDjubB"
+        >
+          <li>
+            <a
+              class=""
+              href="/make-pizza"
+            >
+              <div
+                class="sc-gswNZR gGndno icon-item"
+              >
+                <img
+                  height="32"
+                  src="[object Object]"
+                />
+                <h5
+                  class="item-title"
+                  style="font-family: Source Sans Pro; font-weight: 600; font-size: 1rem; line-height: 1.4; letter-spacing: 1px; text-transform: uppercase;"
+                >
+                  make
+                </h5>
+              </div>
+            </a>
+          </li>
+        </div>
+      </div>
+    </footer>
+  </footer>
+</div>
+`;

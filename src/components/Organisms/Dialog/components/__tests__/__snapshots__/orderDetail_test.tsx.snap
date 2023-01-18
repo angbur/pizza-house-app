@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Register content of dialog should renders register component correctly 1`] = `
+<div>
+  <div
+    class="sc-dkrFOg keXQyv"
+  >
+    <h5
+      class="item-title"
+      style="font-family: Source Sans Pro; font-weight: 600; font-size: 1rem; line-height: 1.4; letter-spacing: 1px; color: rgb(21, 21, 21);"
+    >
+      In progress...
+       
+    </h5>
+  </div>
+</div>
+`;
