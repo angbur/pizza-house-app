@@ -1,22 +1,20 @@
-import renderer from 'react-test-renderer';
-import ThemeProvider from 'components/Theme/ThemeContext';
-import { setupStore } from 'store/store';
-import { Provider } from 'react-redux';
 import OrderList from '../OrderList';
-
-const Wrapper = () => {
-  return (
-    <ThemeProvider>
-      <Provider store={setupStore()}>
-        <OrderList />
-      </Provider>
-    </ThemeProvider>
-  );
-};
+import { orderMocks } from 'test/mock/orderMock';
+import { OrderState } from 'components/Pages/Order/orderSlice';
+import { renderWithProviders } from 'test/test-utils';
 
 describe('Order List', () => {
   it('should renders order list correctly', () => {
-    const tree = renderer.create(<Wrapper />).toJSON();
-    expect(tree).toMatchSnapshot();
+    const initialState: OrderState = {
+      entities: orderMocks,
+    };
+
+    const orderList = renderWithProviders(<OrderList />, {
+      preloadedState: {
+        order: initialState,
+      },
+    }).container;
+
+    expect(orderList).toMatchSnapshot();
   });
 });

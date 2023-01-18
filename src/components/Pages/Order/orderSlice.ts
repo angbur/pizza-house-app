@@ -12,7 +12,7 @@ export const createItem = (draftItem: DraftItem): OrderItem => {
   return { _id: nanoid(), ...draftItem };
 };
 
-type OrderState = {
+export type OrderState = {
   entities: OrderItem[];
 };
 

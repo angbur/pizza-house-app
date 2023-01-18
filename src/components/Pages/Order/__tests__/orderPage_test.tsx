@@ -1,25 +1,28 @@
-import renderer from 'react-test-renderer';
-import ThemeProvider from 'components/Theme/ThemeContext';
-import { setupStore } from 'store/store';
-import { Provider } from 'react-redux';
+import { screen } from '@testing-library/react';
+import { orderMocks } from 'test/mock/orderMock';
+import { renderWithProviders } from 'test/test-utils';
 import OrderPage from '../OrderPage';
-import { BrowserRouter } from 'react-router-dom';
+import { OrderState } from '../orderSlice';
 
-const Wrapper = () => {
-  return (
-    <ThemeProvider>
-      <BrowserRouter>
-        <Provider store={setupStore()}>
-          <OrderPage />
-        </Provider>
-      </BrowserRouter>
-    </ThemeProvider>
-  );
+const initialState: OrderState = {
+  entities: orderMocks,
 };
 
 describe('Order Page', () => {
-  test('should renders order page correctly', () => {
-    const tree = renderer.create(<Wrapper />).toJSON();
-    expect(tree).toMatchSnapshot();
+  it('should renders order page correctly when order list is not empty', () => {
+    const orderPage = renderWithProviders(<OrderPage />, {
+      preloadedState: {
+        order: initialState,
+      },
+    }).container;
+
+    expect(orderPage).toMatchSnapshot();
+  });
+
+  it('should renders order page correctly when order list is empty', async () => {
+    renderWithProviders(<OrderPage />, {
+      preloadedState: {},
+    }).container;
+    expect(await screen.findByText(/You have not ordered anything yet./i)).toBeInTheDocument();
   });
 });

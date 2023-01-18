@@ -3,9 +3,9 @@ import { renderWithProviders } from 'test/test-utils';
 
 describe('Header', () => {
   it('should renders header correctly for a non-logged in user', () => {
-    const renderedHeader = renderWithProviders(<Header />, {}).container;
+    const header = renderWithProviders(<Header />, {}).container;
 
-    expect(renderedHeader).toMatchSnapshot();
+    expect(header).toMatchSnapshot();
   });
 
   it('should renders header correctly for a logged in user', async () => {

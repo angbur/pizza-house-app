@@ -1,17 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Icon should renders correctly icon 1`] = `
-<img
-  height={20}
-  src={
-    Object {
-      "ReactComponent": Object {
-        "$$typeof": Symbol(react.forward_ref),
-        "render": [Function],
-      },
-      "__esModule": true,
-      "default": "menu-burger.svg",
-    }
-  }
-/>
+<div>
+  <img
+    height="20"
+    src="[object Object]"
+  />
+</div>
 `;

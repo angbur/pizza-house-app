@@ -1,82 +1,52 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Login content of dialog should renders login component correctly 1`] = `
-<form>
-  <div
-    className="sc-gswNZR tROUR"
-  >
+<div>
+  <form>
     <div
-      className="sc-bcXHqe dHZfIZ"
+      class="sc-gswNZR tROUR"
     >
-      <label
-        style={
-          Object {
-            "color": "#151515",
-          }
-        }
+      <div
+        class="sc-bcXHqe dHZfIZ"
       >
-        Login
-      </label>
-      <input
-        name="login"
-        placeholder="Your login"
-        style={
-          Object {
-            "color": "#151515",
-          }
-        }
-        type="text"
-      />
-      <p
-        className="paragraph"
-        style={
-          Object {
-            "color": "#e74c3c",
-            "fontFamily": "Source Sans Pro",
-            "fontSize": "1rem",
-            "fontWeight": "400",
-            "letterSpacing": "0",
-            "lineHeight": "1.6",
-          }
-        }
-      />
-    </div>
-    <div
-      className="sc-bcXHqe dHZfIZ"
-    >
-      <label
-        style={
-          Object {
-            "color": "#151515",
-          }
-        }
+        <label
+          style="color: rgb(21, 21, 21);"
+        >
+          Login
+        </label>
+        <input
+          name="login"
+          placeholder="Your login"
+          style="color: rgb(21, 21, 21);"
+          type="text"
+          value=""
+        />
+        <p
+          class="paragraph"
+          style="font-family: Source Sans Pro; font-weight: 400; font-size: 1rem; line-height: 1.6; letter-spacing: 0; color: rgb(231, 76, 60);"
+        />
+      </div>
+      <div
+        class="sc-bcXHqe dHZfIZ"
       >
-        Password
-      </label>
-      <input
-        name="password"
-        placeholder="Password"
-        style={
-          Object {
-            "color": "#151515",
-          }
-        }
-        type="password"
-      />
-      <p
-        className="paragraph"
-        style={
-          Object {
-            "color": "#e74c3c",
-            "fontFamily": "Source Sans Pro",
-            "fontSize": "1rem",
-            "fontWeight": "400",
-            "letterSpacing": "0",
-            "lineHeight": "1.6",
-          }
-        }
-      />
+        <label
+          style="color: rgb(21, 21, 21);"
+        >
+          Password
+        </label>
+        <input
+          name="password"
+          placeholder="Password"
+          style="color: rgb(21, 21, 21);"
+          type="password"
+          value=""
+        />
+        <p
+          class="paragraph"
+          style="font-family: Source Sans Pro; font-weight: 400; font-size: 1rem; line-height: 1.6; letter-spacing: 0; color: rgb(231, 76, 60);"
+        />
+      </div>
     </div>
-  </div>
-</form>
+  </form>
+</div>
 `;

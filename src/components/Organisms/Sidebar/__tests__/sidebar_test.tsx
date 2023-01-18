@@ -1,25 +1,29 @@
-import renderer from 'react-test-renderer';
-import ThemeProvider from 'components/Theme/ThemeContext';
-import { setupStore } from 'store/store';
-import { Provider } from 'react-redux';
-import { BrowserRouter } from 'react-router-dom';
 import Sidebar from '../Sidebar';
-
-const Wrapper = () => {
-  return (
-    <ThemeProvider>
-      <BrowserRouter>
-        <Provider store={setupStore()}>
-          <Sidebar />
-        </Provider>
-      </BrowserRouter>
-    </ThemeProvider>
-  );
-};
+import { renderWithProviders } from 'test/test-utils';
 
 describe('Sidebar', () => {
-  test('should renders sidebar correctly', () => {
-    const tree = renderer.create(<Wrapper />).toJSON();
-    expect(tree).toMatchSnapshot();
+  it('should renders Sidebar correctly for a non-logged in user', () => {
+    const sidebar = renderWithProviders(<Sidebar />, {}).container;
+
+    expect(sidebar).toMatchSnapshot();
+  });
+
+  it('should renders Sidebar correctly for a logged in user', async () => {
+    const initialState = {
+      loggedIn: true,
+      status: '200',
+      error: undefined,
+      userId: 'dummy_id',
+      login: 'dummy_login',
+      token: 'dummy_token',
+    };
+
+    const sidebar = renderWithProviders(<Sidebar />, {
+      preloadedState: {
+        user: initialState,
+      },
+    }).container;
+
+    expect(sidebar).toMatchSnapshot();
   });
 });
