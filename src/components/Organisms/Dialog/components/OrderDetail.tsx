@@ -14,7 +14,9 @@ const Container = styled.div`
 const OrderDetail = (): ReactNode => {
   return (
     <Container>
-      <Typography variant='item-title' color='secondary'>In progress... </Typography>
+      <Typography variant='item-title' color='secondary'>
+        In progress...{' '}
+      </Typography>
     </Container>
   );
 };

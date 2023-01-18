@@ -19,9 +19,17 @@ const Box = styled.div`
     padding: 0.625rem;
     border-radius: 8px;
     width: 300px;
+    @media (max-width: 360px) {
+      width: auto;
+    }
   }
   & > p {
     max-width: 300px;
+  }
+  & label {
+    @media (max-width: 360px) {
+      font-size: 0.8rem;
+    }
   }
 `;
 

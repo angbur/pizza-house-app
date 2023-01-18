@@ -99,10 +99,14 @@ const Header = () => {
                 </Button>
                 <DropdownContent style={{ display: isOpen ? 'block' : 'none' }}>
                   <li>
-                    <Button variant='button-text-without-hover'>Sign in</Button>
+                    <Button variant='button-text-without-hover' onClick={handleSignIn}>
+                      Sign in
+                    </Button>
                   </li>
                   <li>
-                    <Button variant='button-text-without-hover'>Sign up</Button>
+                    <Button variant='button-text-without-hover' onClick={handleSignUp}>
+                      Sign up
+                    </Button>
                   </li>
                 </DropdownContent>
               </DropdownContainerMobile>

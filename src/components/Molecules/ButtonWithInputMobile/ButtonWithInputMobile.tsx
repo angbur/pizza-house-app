@@ -1,8 +1,7 @@
 import Button from 'components/Atoms/Button/Button';
 import Icon from 'components/Atoms/Icon/Icon';
-import QuantityChangeButton from 'components/Atoms/QuantityChangeButton/QuantityChangeButton';
 import { ChangeEventHandler, MouseEventHandler } from 'react';
-import styled from 'styled-components';
+import styled, { CSSProperties } from 'styled-components';
 
 const StyledInput = styled.input`
   font-family: 'Source Sans Pro';
@@ -24,11 +23,9 @@ const StyledDiv = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 100%;
   & > button {
     border-radius: 8px 0 0 8px;
-    & > img {
-      margin-right: 10px;
-    }
   }
   & > input[type='number']::-webkit-inner-spin-button,
   & > input[type='number']::-webkit-outer-spin-button {
@@ -39,36 +36,55 @@ const StyledDiv = styled.div`
   & > input[type='number'] {
     -moz-appearance: textfield;
   }
-  @media (max-width: 545px) {
+  @media (min-width: 545px) {
     display: none;
   }
 `;
 
-type ButtonWithInputProps = {
+type ButtonWithInputMobileProps = {
   value: number;
   onIncrement?: MouseEventHandler<HTMLButtonElement>;
   onDecrement?: MouseEventHandler<HTMLButtonElement>;
   onClick?: MouseEventHandler<HTMLButtonElement>;
   onChange?: ChangeEventHandler<HTMLInputElement>;
+  withRemove: boolean;
 };
 
-const ButtonWithInput = ({
+const ButtonWithInputMobile = ({
   value,
   onIncrement,
   onDecrement,
   onClick,
   onChange,
-}: ButtonWithInputProps) => {
+  withRemove,
+}: ButtonWithInputMobileProps) => {
+  const buttonStyles: CSSProperties = {
+    border: 'none',
+    maxWidth: '80px',
+    maxHeight: '80px',
+    borderRadius: '0',
+  };
   return (
-    <StyledDiv className={'quantity-button'}>
-      <Button variant='secondary-dark' size={'sm'} onClick={onClick}>
-        {Icon({ name: 'basket', size: 17, isActive: false })}
-        Add to order
+    <StyledDiv className={'quantity-button-mobile'}>
+      <Button variant='primary-light' size={'md'} onClick={onIncrement} style={{ ...buttonStyles }}>
+        {Icon({ name: 'plus', size: 20, isActive: false })}
       </Button>
-      <StyledInput type='number' value={value} onChange={onChange} />
-      <QuantityChangeButton onIncrement={onIncrement} onDecrement={onDecrement} />
+      <StyledInput type='number' value={value} onChange={onChange} style={{ ...buttonStyles }} />
+      <Button variant='primary-light' size={'md'} onClick={onDecrement} style={{ ...buttonStyles }}>
+        {Icon({ name: 'minus', size: 20, isActive: false })}
+      </Button>
+      {withRemove && (
+        <Button
+          variant='primary-light'
+          size={'md'}
+          onClick={onClick}
+          style={{ ...buttonStyles, borderLeft: '1px solid white' }}
+        >
+          {Icon({ name: 'trash', size: 20, isActive: false })}
+        </Button>
+      )}
     </StyledDiv>
   );
 };
 
-export default ButtonWithInput;
+export default ButtonWithInputMobile;

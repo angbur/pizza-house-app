@@ -1,6 +1,6 @@
 import PriceTag from 'components/Atoms/PriceTag/PriceTag';
 import Typography from 'components/Atoms/Typography/Typography';
-import OrderListItem from 'components/Organisms/OrderListItem/OrderListItem';
+import OrderListItem from 'components/Molecules/OrderListItem/OrderListItem';
 import { useAppSelector } from 'hooks';
 import styled from 'styled-components';
 import { OrderItem } from 'types/Order';
@@ -9,6 +9,7 @@ import { selectListOfOrderItems, selectSumOfOrder } from '../../Pages/Order/orde
 const StyledList = styled.ul`
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 1.5rem;
 `;
 

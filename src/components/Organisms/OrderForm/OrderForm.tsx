@@ -29,6 +29,7 @@ const Container = styled.section`
     margin: 2rem 0 4rem 0;
   }
   margin: 2rem;
+  margin-bottom: 10rem;
 `;
 
 const Box = styled.div`
@@ -41,6 +42,9 @@ const FormActions = styled.div`
   display: flex;
   gap: 3rem;
   margin: 2rem;
+  @media (max-width: 560px) {
+    flex-direction: column-reverse;
+  }
 `;
 
 const SummaryContainer = styled.div`
@@ -49,12 +53,22 @@ const SummaryContainer = styled.div`
   width: 100%;
   padding: 0 2rem;
   gap: 1rem;
+  @media (max-width: 766px) {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+  }
 `;
 
 const StyledDiv = styled.div`
   display: flex;
   gap: 3rem;
   margin: 4rem;
+  @media (max-width: 560px) {
+    flex-direction: column-reverse;
+    margin-bottom: 10rem;
+  }
 `;
 
 type OrderForm = {
@@ -89,7 +103,7 @@ const OrderForm = ({ user }: OrderFormProps) => {
     houseNumber: '',
     phone: '',
   });
-  const [createOrder, { isSuccess }] = useCreateOrderMutation();
+  const [createOrder] = useCreateOrderMutation();
 
   const handleBack = () => {
     navigate('/order');
@@ -127,6 +141,7 @@ const OrderForm = ({ user }: OrderFormProps) => {
     const order: Omit<OrderItem, '_id'>[] = [];
 
     for (const element of orderList) {
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
       const { _id, ...rest } = element;
       order.push({ ...rest });
     }
@@ -139,6 +154,7 @@ const OrderForm = ({ user }: OrderFormProps) => {
     };
 
     try {
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
       const order = await createOrder(requestData).unwrap();
       dispatch(removeAllOrder());
       toast.success('Order sent!');

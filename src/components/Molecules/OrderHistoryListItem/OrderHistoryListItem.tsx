@@ -43,7 +43,7 @@ const OrderHistoryListItem = ({ element }: OrderHistoryListItemProps) => {
   const theme = useContext(ThemeContext);
   const dispatch = useAppDispatch();
 
-  console.log(element)
+  console.log(element);
 
   const getDescription = (arr: Omit<OrderItem, '_id'>[]) => {
     let result = '';
@@ -77,7 +77,9 @@ const OrderHistoryListItem = ({ element }: OrderHistoryListItemProps) => {
       >
         {getDescription(element.order)}
       </Typography>
-      <Button variant='primary-light' onClick={handleClick}>Details</Button>
+      <Button variant='primary-light' onClick={handleClick}>
+        Details
+      </Button>
     </StyledListItem>
   );
 };

@@ -28,7 +28,7 @@ type QuantityButtonProps = {
 const QuantityChangeButton = ({ onDecrement, onIncrement }: QuantityButtonProps) => {
   const theme = useContext(ThemeContext);
   return (
-    <QuantityPanel theme={theme}>
+    <QuantityPanel theme={theme} className={'quantity-button'}>
       <button onClick={onIncrement}>{Icon({ name: 'arrow-up', size: 14, isActive: true })}</button>
       <button onClick={onDecrement}>
         {Icon({ name: 'arrow-down', size: 14, isActive: true })}

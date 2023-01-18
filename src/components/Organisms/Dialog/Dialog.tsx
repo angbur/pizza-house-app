@@ -7,8 +7,7 @@ import styled, { CSSProperties } from 'styled-components';
 import { DialogWidth, getDialogElement } from './dialog.utils';
 import { closeDialog, FormType, openDialog, selectDialogState } from './dialogSlice';
 import CloseIcon from 'assets/icon/cancel-cross.svg';
-import { RequestData, useRegisterMutation, useLoginMutation, LoginResponse } from 'services/user';
-import { toast } from 'react-toastify';
+import { RequestData, useRegisterMutation, useLoginMutation } from 'services/user';
 
 const Modal = styled.div`
   position: fixed;
@@ -100,6 +99,7 @@ const Dialog = () => {
 
   const handleSubmitRegister = async () => {
     try {
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
       const user = await register(data).unwrap();
       dispatch(closeDialog());
     } catch (err) {
@@ -108,8 +108,10 @@ const Dialog = () => {
   };
 
   const handleSubmitLogin = async () => {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const { firstName, lastName, email, ...rest } = data;
     try {
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
       const user = await login({ ...rest }).unwrap();
       dispatch(closeDialog());
     } catch (err) {
@@ -131,7 +133,7 @@ const Dialog = () => {
     if (width === 'lg') scale = 1.4;
 
     const style: CSSProperties = {
-      width: `${400 * scale}px`,
+      maxWidth: `${400 * scale}px`,
     };
     return style;
   };

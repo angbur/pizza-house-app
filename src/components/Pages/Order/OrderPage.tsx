@@ -24,13 +24,17 @@ const StyledDiv = styled.div`
   display: flex;
   gap: 3rem;
   margin: 2rem;
+  @media (max-width: 560px) {
+    flex-direction: column-reverse;
+    margin-bottom: 10rem;
+  }
 `;
 
 const OrderPage = () => {
   const navigate = useNavigate();
   const dispatch = useAppDispatch();
   const isLoggedIn = useAppSelector(selectIsLoggedIn);
-  const orderList = useAppSelector(selectListOfOrderItems);
+  const order = useAppSelector(selectListOfOrderItems);
 
   const handleRemoveAll = () => {
     dispatch(removeAllOrder());
@@ -46,7 +50,7 @@ const OrderPage = () => {
         My Order
       </Typography>
       <OrderList />
-      {orderList.length !== 0 ? (
+      {order.length !== 0 ? (
         <StyledDiv>
           <Button variant='button-text-light' onClick={handleRemoveAll}>
             Remove all
