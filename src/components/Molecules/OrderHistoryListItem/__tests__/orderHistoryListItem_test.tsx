@@ -7,7 +7,7 @@ import { OrderDetail } from 'services/order';
 
 const orderItem: OrderDetail = {
   _id: 'awesome_id',
-  date: Date('2023-01-13T16:12:16.982Z'),
+  date: '2023-01-13T16:12:16.982Z',
   order: [
     {
       item: {
@@ -19,6 +19,18 @@ const orderItem: OrderDetail = {
       quantity: 2,
     },
   ],
+  deliveryAddress: {
+    firstName: 'Agnieszka',
+    lastName: 'Kowal',
+    email: 'malina@gmail.com',
+    city: 'Wrocław',
+    postalCode: '55-003',
+    street: 'Wiklinowa',
+    houseNumber: '2a',
+    phone: '745773883'
+},
+  total: 342,
+  user: '63bbed0041a1e3441e77f16e'
 };
 
 const Wrapper = () => {

@@ -17,7 +17,7 @@ exports[`Order History List item should renders order list item correctly 1`] = 
       }
     }
   >
-    18.01.2023
+    13.01.2023
   </h5>
   <p
     className="price-tag"
@@ -30,7 +30,7 @@ exports[`Order History List item should renders order list item correctly 1`] = 
       }
     }
   >
-    undefined$
+    342$
   </p>
   <p
     className="paragraph"
