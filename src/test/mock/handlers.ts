@@ -2,11 +2,11 @@ import { rest } from 'msw';
 import { Pizza } from 'types/Pizza';
 import { pizzaMocks } from './pizzaMock';
 
-export const handlers = {
-  getPizzasList: rest.get('http://localhost:3000/pizza', (_, res, ctx) =>
+export const handlers = [
+  rest.get('http://localhost:3000/pizza', (_, res, ctx) =>
     res(ctx.status(200), ctx.json<Pizza[]>(pizzaMocks)),
   ),
-  login: rest.post('http://localhost:3000/login', (_, res, ctx) => {
+  rest.post('http://localhost:3000/login', (_, res, ctx) => {
     localStorage.setItem('token', 'dummy_token');
     return res(
       ctx.status(200),
@@ -23,7 +23,7 @@ export const handlers = {
     );
   }),
 
-  register: rest.post('http://localhost:3000/register', (_, res, ctx) => {
+  rest.post('http://localhost:3000/register', (_, res, ctx) => {
     return res(
       ctx.status(201),
       ctx.json({
@@ -36,7 +36,7 @@ export const handlers = {
     );
   }),
 
-  getUserById: rest.get('http://localhost:3000/user/:userId', (_, res, ctx) => {
+  rest.get('http://localhost:3000/user/:userId', (_, res, ctx) => {
     return res(
       ctx.json({
         data: {
@@ -49,7 +49,7 @@ export const handlers = {
     );
   }),
 
-  createOrder: rest.post('http://localhost:3000/order', (_, res, ctx) => {
+  rest.post('http://localhost:3000/order', (_, res, ctx) => {
     return res(
       ctx.json({
         status: 201,
@@ -61,7 +61,7 @@ export const handlers = {
     );
   }),
 
-  getOrdersByUserId: rest.get('http://localhost:3000/order/:userId', (_, res, ctx) => {
+  rest.get('http://localhost:3000/order/:userId', (_, res, ctx) => {
     return res(
       ctx.json({
         data: {
@@ -73,4 +73,4 @@ export const handlers = {
       }),
     );
   }),
-};
+];

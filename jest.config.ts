@@ -1,9 +1,5 @@
 module.exports = {
     setupFilesAfterEnv: ['src/jest.setup.ts'],
-    collectCoverageFrom: [
-        '**/__tests__/*.{ts,jsx}',
-        '!**/node_modules/**',
-    ],
     coverageThreshold: {
         global: {
           branches: 80,
@@ -12,4 +8,8 @@ module.exports = {
           statements: -10,
         },
     },
+    preset: 'ts-jest',
+    testEnvironment: 'node',
+    verbose: true,
+    automock: true,
 };

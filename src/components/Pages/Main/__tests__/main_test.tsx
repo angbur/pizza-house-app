@@ -1,12 +1,14 @@
 import Main from '../Main';
 import { renderWithProviders } from 'test/test-utils';
+import { waitFor } from '@testing-library/react';
 
 describe('Main Page', () => {
   it('should renders main page correctly', async () => {
-    const main = await renderWithProviders(<Main />, {
-      preloadedState: {},
-    }).container;
+    const main =  renderWithProviders(<Main />).container;
 
-    expect(main).toMatchSnapshot();
+    await waitFor(() => {
+      expect(main).toMatchSnapshot();
+    });
+    
   });
 });

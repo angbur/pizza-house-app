@@ -116,7 +116,7 @@ const OrderListItem = ({ item }: OrderListItemProps) => {
   const handleOnDecrement = () => {
     const newItem = { ...item };
     if (item.quantity != 1) {
-      newItem.quantity = +1;
+      newItem.quantity -= 1;
       dispatch(updateOrderItem(newItem));
     }
     if (item.quantity === 1) {

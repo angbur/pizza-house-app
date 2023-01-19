@@ -24,6 +24,7 @@ export function renderWithProviders(
     ...renderOptions
   }: ExtendedRenderOptions = {},
 ) {
+
   function Wrapper({ children }: PropsWithChildren<{}>): JSX.Element {
     return (
       <ThemeProvider>
@@ -35,4 +36,4 @@ export function renderWithProviders(
   }
 
   return { store, ...render(ui, { wrapper: Wrapper, ...renderOptions }) };
-}
+};
